@@ -1,103 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>naxoc.net</title>
-  <meta name="author" content="Camilla Krag Jensen">
-
-  
-  <meta name="description" content="I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;spinach in your teeth&rdquo; about whitespace and non- &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://naxoc.github.io">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="naxoc.net" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
-</head>
-
-<body   >
-  <header role="banner"><img src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/queen.png" />
-<hgroup>
-<h1><a href="/">naxoc.net</a></h1>
-  
-    <h2>Liking the holes in cheese since 1975</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:naxoc.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[naxoc.net]]></title>
+  <link href="http://naxoc.github.io/atom.xml" rel="self"/>
+  <link href="http://naxoc.github.io/"/>
+  <updated>2013-08-09T20:48:34+02:00</updated>
+  <id>http://naxoc.github.io/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">A Git Commit Hook Helps You Keep Your Code Clean</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2012-11-26T22:18:00+01:00" pubdate data-updated="true">Nov 26<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;<a href="http://xjm.drupalgardens.com/review-guide">spinach in your teeth</a>&rdquo; about whitespace and non-conforming coding standards.</p>
+  <entry>
+    <title type="html"><![CDATA[A git commit hook helps you keep your code clean]]></title>
+    <link href="http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/"/>
+    <updated>2012-11-26T22:18:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean</id>
+    <content type="html"><![CDATA[<p>I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;<a href="http://xjm.drupalgardens.com/review-guide">spinach in your teeth</a>&rdquo; about whitespace and non-conforming coding standards.</p>
 
 <p>I got (heavily) inspired by Josh The Geek&rsquo;s <a href="http://drupal.org/sandbox/JoshTheGeek/1143338">git pre-commit hook</a>, and made myself a commit hook that will check the code I am about to commit for common errors. In addition to whitespace, I like to make sure that I don&rsquo;t accidentally commit debug code like <code>krumo()</code>. The commit hook also checks for common calls to debug functions.</p>
 
@@ -112,44 +33,15 @@
 
 
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using Specific Versions of Formula With Homebrew</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-05T13:54:00+02:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/06/05/using-specific-versions-of-formula-with-homebrew/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
+  <entry>
+    <title type="html"><![CDATA[Using specific versions of formula with Homebrew]]></title>
+    <link href="http://naxoc.github.io/blog/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
+    <updated>2012-06-05T13:54:00+02:00</updated>
+    <id>http://naxoc.github.io/blog/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
+    <content type="html"><![CDATA[<p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
 
 <p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:
 <code>
@@ -176,86 +68,28 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
 <p>Change the version number and the formula above to whatever makes sense for what you are doing.</p>
 
 <p>The example above is using a command that is an <a href="https://github.com/mxcl/homebrew/wiki/External-Commands">external command</a> for Homebrew. It works super fast and is easy to use.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/05/whats-with-the-weird-name/">What&#8217;s With the Weird Name?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-05T19:09:00+01:00" pubdate data-updated="true">Feb 5<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/02/05/whats-with-the-weird-name/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So, Camilla.. Why is your nick everywhere <em>naxoc</em>?.</p>
+  <entry>
+    <title type="html"><![CDATA[What's with the weird name?]]></title>
+    <link href="http://naxoc.github.io/blog/2012/02/05/whats-with-the-weird-name/"/>
+    <updated>2012-02-05T19:09:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2012/02/05/whats-with-the-weird-name</id>
+    <content type="html"><![CDATA[<p>So, Camilla.. Why is your nick everywhere <em>naxoc</em>?.</p>
 
 <p>Xoc means shark in Yucatec Maya. It might actually be <a href="" title="http://en.wikipedia.org/wiki/Yucatec_Maya_language#English_words_derived_from_Maya">one of the very few words that made it into English</a>. I used to study American Indian Language and Culture at the University of Copenhagen. Those were the days with much nerding over Mayan hieroglyphics. Maya hieroglyphic texts are often about how fantastic the rulers where and one of the more fantastic female rulers was called <a href="" title="http://en.wikipedia.org/wiki/Lady_Xoc">Lady Xoc</a>. I thought she was pretty cool, so I stole the name. The Na- prefix is simply a marker for female. So there is the story of my weird nick.</p>
 
 <p>It is pronounced “nashoc”.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/14/navigating-with-krumo/">Navigating With Krumo</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-14T09:13:00+02:00" pubdate data-updated="true">Sep 14<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/09/14/navigating-with-krumo/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://drupal.org/project/devel" title="Devel | drupal.org">The Devel module</a> includes the super helpful <a href="http://krumo.sourceforge.net/">Krumo library</a>. I use <code>dsm()</code> and <code>krumo()</code> all the time. If you are not familiar with Devel, you should try it. Morten Wulff wrote a <a href="https://ratatosk.backpackit.com/pub/1836982-debugging-drupal">demo page for the module</a>.<br/>
+  <entry>
+    <title type="html"><![CDATA[Navigating with Krumo]]></title>
+    <link href="http://naxoc.github.io/blog/2011/09/14/navigating-with-krumo/"/>
+    <updated>2011-09-14T09:13:00+02:00</updated>
+    <id>http://naxoc.github.io/blog/2011/09/14/navigating-with-krumo</id>
+    <content type="html"><![CDATA[<p><a href="http://drupal.org/project/devel" title="Devel | drupal.org">The Devel module</a> includes the super helpful <a href="http://krumo.sourceforge.net/">Krumo library</a>. I use <code>dsm()</code> and <code>krumo()</code> all the time. If you are not familiar with Devel, you should try it. Morten Wulff wrote a <a href="https://ratatosk.backpackit.com/pub/1836982-debugging-drupal">demo page for the module</a>.<br/>
 <img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png"><br/>
 Today a client suggested that the Devel module Krumo could display the &ldquo;path&rdquo; to an item in an array by right clicking or otherwise interacting with the nested elements in the output from Krumo. I was really excited about that idea &ndash; I can&rsquo;t count the number of times I have tried and failed to target an item deep in a form array or an item in the node object simply because my human brain can&rsquo;t remember a structure like <code>$form['#node']-&gt;content['links']['comment']['#attributes']['class']</code> for more than 3 seconds.</p>
 
@@ -265,44 +99,15 @@ If you double click an item in the Krumo output it prints the items array &ldquo
 Thanks to Niels Fanøe for the inspiration.</p>
 
 <p>EDIT: I was using the dev D7 version, and the feature just went in this August. Thanks to Mark Theunissen for pointing that out. I also feel less stupid for not discovering the feature before now!</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/11/moving-an-itunes-library/">Moving an iTunes Library</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-11T15:22:00+02:00" pubdate data-updated="true">May 11<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/05/11/moving-an-itunes-library/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you are moving an iTunes library to a new mac it will go smooth if the user login is the same. So if I move my iTunes library from an old machine where it was located in <code>/Users/ckj/iTunes</code> to a new machine where it is gonna go in <code>/Users/ckj/iTunes</code> &ndash; I have no problems. But if I changed to another username on the new machine &ndash; all the paths in the iTunes Library.xml file will not be correct anymore. I have moved libraries so many times now and I thought I would share a really quick way to fix the iTunes Library.xml file to reflect the correct user directory.</p>
+  <entry>
+    <title type="html"><![CDATA[Moving an iTunes Library]]></title>
+    <link href="http://naxoc.github.io/blog/2011/05/11/moving-an-itunes-library/"/>
+    <updated>2011-05-11T15:22:00+02:00</updated>
+    <id>http://naxoc.github.io/blog/2011/05/11/moving-an-itunes-library</id>
+    <content type="html"><![CDATA[<p>If you are moving an iTunes library to a new mac it will go smooth if the user login is the same. So if I move my iTunes library from an old machine where it was located in <code>/Users/ckj/iTunes</code> to a new machine where it is gonna go in <code>/Users/ckj/iTunes</code> &ndash; I have no problems. But if I changed to another username on the new machine &ndash; all the paths in the iTunes Library.xml file will not be correct anymore. I have moved libraries so many times now and I thought I would share a really quick way to fix the iTunes Library.xml file to reflect the correct user directory.</p>
 
 <p>If you use the built-in command line tool called <a href="http://en.wikipedia.org/wiki/Sed">sed</a>, you can type one line in the terminal and be done. Let’s say I was moving from a mac with a user directory called &ldquo;ckj&rdquo; to another machine with a user directory called &ldquo;naxoc&rdquo;. All I would have to do in the terminal would be this:</p>
 
@@ -312,44 +117,15 @@ Thanks to Niels Fanøe for the inspiration.</p>
 Note the funky syntax with the &lt;code&gt;-i ""</code> This is a mac quirck in sed. I found some info on it <a href="http://stackoverflow.com/questions/2320564/variations-of-sed-between-osx-and-gnu-linux">here</a>.</li>
 </ol>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/27/hot-laptop-vacuum-it/">Hot Laptop? Vacuum It!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-27T21:48:00+02:00" pubdate data-updated="true">Apr 27<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/27/hot-laptop-vacuum-it/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My beloved 3years old Macbook Pro was starting to get really hot when I used it. It had gotten to the point where I would burn my legs if it was on my lap, and since having your <em>lap</em>top on the lap is kinda the point, I felt had to do something about it.</p>
+  <entry>
+    <title type="html"><![CDATA[Hot Laptop? Vacuum it!]]></title>
+    <link href="http://naxoc.github.io/blog/2011/04/27/hot-laptop-vacuum-it/"/>
+    <updated>2011-04-27T21:48:00+02:00</updated>
+    <id>http://naxoc.github.io/blog/2011/04/27/hot-laptop-vacuum-it</id>
+    <content type="html"><![CDATA[<p>My beloved 3years old Macbook Pro was starting to get really hot when I used it. It had gotten to the point where I would burn my legs if it was on my lap, and since having your <em>lap</em>top on the lap is kinda the point, I felt had to do something about it.</p>
 
 <p>I bought a <a href="%E2%80%9Chttp://www.amazon.com/Logitech-Notebook-Cooling-N100-Gray/dp/B003BEDQYY/ref=sr_1_1?ie=UTF8&amp;qid=1303933766&amp;sr=8-1%E2%80%9D">Logitech Notebook Cooling Pad</a> that actually is very comfortable and does exactly as it says it will, but I was still curious to see if I could get my old healthy Macbook back.</p>
 
@@ -357,44 +133,15 @@ Note the funky syntax with the &lt;code&gt;-i ""</code> This is a mac quirck in 
 
 <p><img class="center" src="http://naxoc.net/files/naxoc.net/styles/large/public/kitty_vacuum.jpg"><br/>
 <em>Image from <a href="http://www.flickr.com/photos/noortje/268437984/"><em>n</em>o<em>o</em>r*</a>.</em></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator/">Pet Peeve #1 - the Comparison Operator</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-10T14:27:00+01:00" pubdate data-updated="true">Dec 10<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.</p>
+  <entry>
+    <title type="html"><![CDATA[Pet peeve #1 - the comparison operator]]></title>
+    <link href="http://naxoc.github.io/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator/"/>
+    <updated>2010-12-10T14:27:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator</id>
+    <content type="html"><![CDATA[<p>I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.</p>
 
 <p>When making comparisons, switch the order of the things you compare like this:</p>
 
@@ -419,86 +166,28 @@ Note the funky syntax with the &lt;code&gt;-i ""</code> This is a mac quirck in 
 
 
 <p>See what happened? I only put one = instead of two. PHP will not complain about this, I will just not get what I expect. If I had switched the items, PHP would have complained as I tried to assign an object to a non-variable.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/20/social-media-meta/">Social Media Meta</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-20T11:33:00+02:00" pubdate data-updated="true">Oct 20<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/10/20/social-media-meta/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I am doing some integration with facebook these days. I don&rsquo;t use facebook much and I certainly no not want all kinds of test data on my profile so I made a test profile using names that just came to mind :-P</p>
+  <entry>
+    <title type="html"><![CDATA[Social media meta]]></title>
+    <link href="http://naxoc.github.io/blog/2010/10/20/social-media-meta/"/>
+    <updated>2010-10-20T11:33:00+02:00</updated>
+    <id>http://naxoc.github.io/blog/2010/10/20/social-media-meta</id>
+    <content type="html"><![CDATA[<p>I am doing some integration with facebook these days. I don&rsquo;t use facebook much and I certainly no not want all kinds of test data on my profile so I made a test profile using names that just came to mind :-P</p>
 
 <p>On the facebook developer pages there is a demonstration of the like button. That you can like&hellip; Gotta love the meta!</p>
 
 <p><img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/like.png"></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/18/upgraded-to-drupal-7/">Upgraded to Drupal 7</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-18T20:53:00+02:00" pubdate data-updated="true">Oct 18<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/10/18/upgraded-to-drupal-7/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I updated this website to D7 this weekend. <a href="http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7" title="Relauching my blog on Drupal 7 | Mikkel Høgh">Mikkel</a> upgraded his site and urges others to do so now, so I thought I&rsquo;d give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.</p>
+  <entry>
+    <title type="html"><![CDATA[Upgraded to Drupal 7]]></title>
+    <link href="http://naxoc.github.io/blog/2010/10/18/upgraded-to-drupal-7/"/>
+    <updated>2010-10-18T20:53:00+02:00</updated>
+    <id>http://naxoc.github.io/blog/2010/10/18/upgraded-to-drupal-7</id>
+    <content type="html"><![CDATA[<p>I updated this website to D7 this weekend. <a href="http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7" title="Relauching my blog on Drupal 7 | Mikkel Høgh">Mikkel</a> upgraded his site and urges others to do so now, so I thought I&rsquo;d give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.</p>
 
 <p>I actually never did an actual core upgrade via the upgrade path before. The sites I have upgraded from D5 to D6 have pretty much all had such a complex data structure that I had to do an upgrade with a data migration. While that is a lot of work (and requires a programmer), I still like the opportunity it gives to clear out a data model that might have grown a little too organically. For this site though, that would be gross overkill. So my approach was simply to read UPGRADE.txt and follow the steps.</p>
 
@@ -535,44 +224,15 @@ I use <a href="http://illuminex.com/ecto/" title="illumineX :: ecto - blog edito
 <p>Another thing in D7 that really threw me off during the upgrade was that the core modules are listed first on the modules page. For a while I thought that drupal was just not finding my contrib modules. I would probably put them at the bottom if I was to sort them other than alphabetically.</p>
 
 <p>I am excited to finally run Drupal 7! And I can&rsquo;t wait to play with more contrib modules more and see what cool stuff comes out of all the new opportunities in D7.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/">Backup and Migrate Module + Dropbox = Peace of Mind</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-11-16T21:06:00+01:00" pubdate data-updated="true">Nov 16<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The <a href="http://drupal.org/project/backup_migrate">backup and migrate</a> module is truly sweet. We all know that it is a <em>really</em> good idea to back up data. But if you are like me &ndash; you forgot to do it or just don&rsquo;t do it for some lame reason. So backups should be automated. The backup and migrate module does exactly that &ndash; it can be configured to run every X hours if you have cron (and you should have) running on your site. <br/>
+  <entry>
+    <title type="html"><![CDATA[Backup and migrate module + Dropbox = peace of mind]]></title>
+    <link href="http://naxoc.github.io/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/"/>
+    <updated>2009-11-16T21:06:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind</id>
+    <content type="html"><![CDATA[<p>The <a href="http://drupal.org/project/backup_migrate">backup and migrate</a> module is truly sweet. We all know that it is a <em>really</em> good idea to back up data. But if you are like me &ndash; you forgot to do it or just don&rsquo;t do it for some lame reason. So backups should be automated. The backup and migrate module does exactly that &ndash; it can be configured to run every X hours if you have cron (and you should have) running on your site. <br/>
 The module makes a dump of the database and puts it in a folder in the files folder of the site. Even if you use the public <a href="http://drupal.org/node/22240">download method</a>, the security is OK &ndash; a .htacces file put in the folder by the backup and migrate module and dissalows access to the folder&rsquo;s content.</p>
 
 <p>In the unlikely event that my server goes up in flames, I like to have some backups that are not physically on the same server as the site. I really like Dropbox, so I thought I would figure out a way to use that for the database dumps. I found this very <a href="http://jaka.kubje.org/software/dropboxuploader/">nice and simple php script</a>, that will upload files to your dropbox. I used that to write a super simple php file that my cronjob will call once a day. I settled with having daily backups a week back in time, so the filenames are day names. That way monday&rsquo;s file will be overwritten next monday.</p>
@@ -639,143 +299,56 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
 </span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
 </span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Hide Drupal files with .htaccess]]></title>
+    <link href="http://naxoc.github.io/blog/2009/11/13/hide-drupal-files-with-htaccess/"/>
+    <updated>2009-11-13T23:50:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2009/11/13/hide-drupal-files-with-htaccess</id>
+    <content type="html"><![CDATA[<p>If one goes to somedrupalsite.com/CHANGELOG.txt &ndash; it is normally possible to read the file and see what version of Drupal the site is running. If you don&rsquo;t want everybody to see what version you are running, it is a good idea to cloak the *.txt files in the Drupal install.</p>
+
+<p>Using rewrite rules in .htaccess, the *.txt files in Drupal can be hidden. I use a 403 &ndash; forbidden on these files. That is what the [F] means See the Apache documentation on RewriteRule for more options.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># No need for the common visitor to read these files.
+</span><span class='line'># They can just go download their own Drupal. It's
+</span><span class='line'># free and everything.
+</span><span class='line'>RewriteRule ^(.*)CHANGELOG\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)INSTALL\.mysql\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)INSTALL\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)MAINTAINERS\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)INSTALL\.pgsql\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)LICENSE\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)UPGRADE\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)README\.txt$ - [F]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Put these lines in the bottom of the .htaccess file, but before the <code>&lt;/IfModule&gt;</code> &ldquo;tag&rdquo;. The .htaccess file lives in the root of your Drupal installation.</p>
+
+<h2>Using version control?</h2>
+
+<p>Metadata folders left by whatever version control system should be hidden too.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Don't let people pry in version control folders
+</span><span class='line'>RewriteRule (^|/)(CVS|\.svn|\.git)/ - [F]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Put the above snippet inside the <code>&lt;/IfModule&gt;</code> in .htaccess as well.</p>
+]]></content>
+  </entry>
   
-
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">A Git Commit Hook Helps You Keep Your Code Clean</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using Specific Versions of Formula With Homebrew</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/05/whats-with-the-weird-name/">What&#8217;s With the Weird Name?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/09/14/navigating-with-krumo/">Navigating With Krumo</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/05/11/moving-an-itunes-library/">Moving an iTunes Library</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/naxoc">@naxoc</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'naxoc',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-<section>
-  <h1>On Goodreads</h1>
-  <div id="goodreads"></div>
-      <style type="text/css" media="screen">
-        .gr_grid_container {
-          /* customize grid container div here. eg: width: 500px; */
-        }
-
-        .gr_grid_book_container {
-          /* customize book cover container div here */
-          float: left;
-          width: 98px;
-          height: 160px;
-          padding: 0px 0px;
-          overflow: hidden;
-        }
-      </style>
-      <div id="gr_grid_widget_1375689543">
-        <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work -->
-          <div class="gr_grid_container">
-          </div>
-      </div>
-      <script src="http://www.goodreads.com/review/grid_widget/1493819.Camilla's%20bookshelf:%20read?cover_size=medium&hide_link=true&hide_title=true&num_books=20&order=d&shelf=read&sort=date_read&widget_id=1375689543" type="text/javascript" charset="utf-8"></script>
-i
-</section>
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Camilla Krag Jensen -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'naxocnet';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+</feed>

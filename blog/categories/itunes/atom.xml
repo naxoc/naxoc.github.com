@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: itunes | naxoc.net]]></title>
+  <link href="http://naxoc.github.io/blog/categories/itunes/atom.xml" rel="self"/>
+  <link href="http://naxoc.github.io/"/>
+  <updated>2013-08-09T20:48:34+02:00</updated>
+  <id>http://naxoc.github.io/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Moving an iTunes Library]]></title>
+    <link href="http://naxoc.github.io/blog/2011/05/11/moving-an-itunes-library/"/>
+    <updated>2011-05-11T15:22:00+02:00</updated>
+    <id>http://naxoc.github.io/blog/2011/05/11/moving-an-itunes-library</id>
+    <content type="html"><![CDATA[<p>If you are moving an iTunes library to a new mac it will go smooth if the user login is the same. So if I move my iTunes library from an old machine where it was located in <code>/Users/ckj/iTunes</code> to a new machine where it is gonna go in <code>/Users/ckj/iTunes</code> &ndash; I have no problems. But if I changed to another username on the new machine &ndash; all the paths in the iTunes Library.xml file will not be correct anymore. I have moved libraries so many times now and I thought I would share a really quick way to fix the iTunes Library.xml file to reflect the correct user directory.</p>
+
+<p>If you use the built-in command line tool called <a href="http://en.wikipedia.org/wiki/Sed">sed</a>, you can type one line in the terminal and be done. Let’s say I was moving from a mac with a user directory called &ldquo;ckj&rdquo; to another machine with a user directory called &ldquo;naxoc&rdquo;. All I would have to do in the terminal would be this:</p>
+
+<ol>
+<li>cd to the iTunes folder in the user directory you are moving to.</li>
+<li>Enter this: <code>sed -i "" -e "s,Users/ckj,Users/naxoc,g" files iTunes\ Library.xml
+Note the funky syntax with the &lt;code&gt;-i ""</code> This is a mac quirck in sed. I found some info on it <a href="http://stackoverflow.com/questions/2320564/variations-of-sed-between-osx-and-gnu-linux">here</a>.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
