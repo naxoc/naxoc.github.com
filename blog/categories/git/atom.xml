@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-08-09T20:48:34+02:00</updated>
+  <updated>2013-08-11T19:48:13+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A git commit hook helps you keep your code clean]]></title>
-    <link href="http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/"/>
+    <link href="http://naxoc.github.io/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/"/>
     <updated>2012-11-26T22:18:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean</id>
+    <id>http://naxoc.github.io/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean</id>
     <content type="html"><![CDATA[<p>I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;<a href="http://xjm.drupalgardens.com/review-guide">spinach in your teeth</a>&rdquo; about whitespace and non-conforming coding standards.</p>
 
 <p>I got (heavily) inspired by Josh The Geek&rsquo;s <a href="http://drupal.org/sandbox/JoshTheGeek/1143338">git pre-commit hook</a>, and made myself a commit hook that will check the code I am about to commit for common errors. In addition to whitespace, I like to make sure that I don&rsquo;t accidentally commit debug code like <code>krumo()</code>. The commit hook also checks for common calls to debug functions.</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[naxoc.net]]></title>
   <link href="http://naxoc.github.io/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-08-09T20:48:34+02:00</updated>
+  <updated>2013-08-11T19:48:13+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A git commit hook helps you keep your code clean]]></title>
-    <link href="http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/"/>
+    <link href="http://naxoc.github.io/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/"/>
     <updated>2012-11-26T22:18:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean</id>
+    <id>http://naxoc.github.io/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean</id>
     <content type="html"><![CDATA[<p>I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;<a href="http://xjm.drupalgardens.com/review-guide">spinach in your teeth</a>&rdquo; about whitespace and non-conforming coding standards.</p>
 
 <p>I got (heavily) inspired by Josh The Geek&rsquo;s <a href="http://drupal.org/sandbox/JoshTheGeek/1143338">git pre-commit hook</a>, and made myself a commit hook that will check the code I am about to commit for common errors. In addition to whitespace, I like to make sure that I don&rsquo;t accidentally commit debug code like <code>krumo()</code>. The commit hook also checks for common calls to debug functions.</p>
@@ -38,9 +38,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using specific versions of formula with Homebrew]]></title>
-    <link href="http://naxoc.github.io/blog/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
+    <link href="http://naxoc.github.io/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
     <updated>2012-06-05T13:54:00+02:00</updated>
-    <id>http://naxoc.github.io/blog/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
+    <id>http://naxoc.github.io/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
     <content type="html"><![CDATA[<p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
 
 <p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:
@@ -73,9 +73,9 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
   
   <entry>
     <title type="html"><![CDATA[What's with the weird name?]]></title>
-    <link href="http://naxoc.github.io/blog/2012/02/05/whats-with-the-weird-name/"/>
+    <link href="http://naxoc.github.io/2012/02/05/whats-with-the-weird-name/"/>
     <updated>2012-02-05T19:09:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2012/02/05/whats-with-the-weird-name</id>
+    <id>http://naxoc.github.io/2012/02/05/whats-with-the-weird-name</id>
     <content type="html"><![CDATA[<p>So, Camilla.. Why is your nick everywhere <em>naxoc</em>?.</p>
 
 <p>Xoc means shark in Yucatec Maya. It might actually be <a href="" title="http://en.wikipedia.org/wiki/Yucatec_Maya_language#English_words_derived_from_Maya">one of the very few words that made it into English</a>. I used to study American Indian Language and Culture at the University of Copenhagen. Those were the days with much nerding over Mayan hieroglyphics. Maya hieroglyphic texts are often about how fantastic the rulers where and one of the more fantastic female rulers was called <a href="" title="http://en.wikipedia.org/wiki/Lady_Xoc">Lady Xoc</a>. I thought she was pretty cool, so I stole the name. The Na- prefix is simply a marker for female. So there is the story of my weird nick.</p>
@@ -86,9 +86,9 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
   
   <entry>
     <title type="html"><![CDATA[Navigating with Krumo]]></title>
-    <link href="http://naxoc.github.io/blog/2011/09/14/navigating-with-krumo/"/>
+    <link href="http://naxoc.github.io/2011/09/14/navigating-with-krumo/"/>
     <updated>2011-09-14T09:13:00+02:00</updated>
-    <id>http://naxoc.github.io/blog/2011/09/14/navigating-with-krumo</id>
+    <id>http://naxoc.github.io/2011/09/14/navigating-with-krumo</id>
     <content type="html"><![CDATA[<p><a href="http://drupal.org/project/devel" title="Devel | drupal.org">The Devel module</a> includes the super helpful <a href="http://krumo.sourceforge.net/">Krumo library</a>. I use <code>dsm()</code> and <code>krumo()</code> all the time. If you are not familiar with Devel, you should try it. Morten Wulff wrote a <a href="https://ratatosk.backpackit.com/pub/1836982-debugging-drupal">demo page for the module</a>.<br/>
 <img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png"><br/>
 Today a client suggested that the Devel module Krumo could display the &ldquo;path&rdquo; to an item in an array by right clicking or otherwise interacting with the nested elements in the output from Krumo. I was really excited about that idea &ndash; I can&rsquo;t count the number of times I have tried and failed to target an item deep in a form array or an item in the node object simply because my human brain can&rsquo;t remember a structure like <code>$form['#node']-&gt;content['links']['comment']['#attributes']['class']</code> for more than 3 seconds.</p>
@@ -104,9 +104,9 @@ Thanks to Niels Fanøe for the inspiration.</p>
   
   <entry>
     <title type="html"><![CDATA[Moving an iTunes Library]]></title>
-    <link href="http://naxoc.github.io/blog/2011/05/11/moving-an-itunes-library/"/>
+    <link href="http://naxoc.github.io/2011/05/11/moving-an-itunes-library/"/>
     <updated>2011-05-11T15:22:00+02:00</updated>
-    <id>http://naxoc.github.io/blog/2011/05/11/moving-an-itunes-library</id>
+    <id>http://naxoc.github.io/2011/05/11/moving-an-itunes-library</id>
     <content type="html"><![CDATA[<p>If you are moving an iTunes library to a new mac it will go smooth if the user login is the same. So if I move my iTunes library from an old machine where it was located in <code>/Users/ckj/iTunes</code> to a new machine where it is gonna go in <code>/Users/ckj/iTunes</code> &ndash; I have no problems. But if I changed to another username on the new machine &ndash; all the paths in the iTunes Library.xml file will not be correct anymore. I have moved libraries so many times now and I thought I would share a really quick way to fix the iTunes Library.xml file to reflect the correct user directory.</p>
 
 <p>If you use the built-in command line tool called <a href="http://en.wikipedia.org/wiki/Sed">sed</a>, you can type one line in the terminal and be done. Let’s say I was moving from a mac with a user directory called &ldquo;ckj&rdquo; to another machine with a user directory called &ldquo;naxoc&rdquo;. All I would have to do in the terminal would be this:</p>
@@ -122,9 +122,9 @@ Note the funky syntax with the &lt;code&gt;-i ""</code> This is a mac quirck in 
   
   <entry>
     <title type="html"><![CDATA[Hot Laptop? Vacuum it!]]></title>
-    <link href="http://naxoc.github.io/blog/2011/04/27/hot-laptop-vacuum-it/"/>
+    <link href="http://naxoc.github.io/2011/04/27/hot-laptop-vacuum-it/"/>
     <updated>2011-04-27T21:48:00+02:00</updated>
-    <id>http://naxoc.github.io/blog/2011/04/27/hot-laptop-vacuum-it</id>
+    <id>http://naxoc.github.io/2011/04/27/hot-laptop-vacuum-it</id>
     <content type="html"><![CDATA[<p>My beloved 3years old Macbook Pro was starting to get really hot when I used it. It had gotten to the point where I would burn my legs if it was on my lap, and since having your <em>lap</em>top on the lap is kinda the point, I felt had to do something about it.</p>
 
 <p>I bought a <a href="%E2%80%9Chttp://www.amazon.com/Logitech-Notebook-Cooling-N100-Gray/dp/B003BEDQYY/ref=sr_1_1?ie=UTF8&amp;qid=1303933766&amp;sr=8-1%E2%80%9D">Logitech Notebook Cooling Pad</a> that actually is very comfortable and does exactly as it says it will, but I was still curious to see if I could get my old healthy Macbook back.</p>
@@ -138,9 +138,9 @@ Note the funky syntax with the &lt;code&gt;-i ""</code> This is a mac quirck in 
   
   <entry>
     <title type="html"><![CDATA[Pet peeve #1 - the comparison operator]]></title>
-    <link href="http://naxoc.github.io/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator/"/>
+    <link href="http://naxoc.github.io/2010/12/10/pet-peeve-number-1-the-comparison-operator/"/>
     <updated>2010-12-10T14:27:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator</id>
+    <id>http://naxoc.github.io/2010/12/10/pet-peeve-number-1-the-comparison-operator</id>
     <content type="html"><![CDATA[<p>I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.</p>
 
 <p>When making comparisons, switch the order of the things you compare like this:</p>
@@ -171,9 +171,9 @@ Note the funky syntax with the &lt;code&gt;-i ""</code> This is a mac quirck in 
   
   <entry>
     <title type="html"><![CDATA[Social media meta]]></title>
-    <link href="http://naxoc.github.io/blog/2010/10/20/social-media-meta/"/>
+    <link href="http://naxoc.github.io/2010/10/20/social-media-meta/"/>
     <updated>2010-10-20T11:33:00+02:00</updated>
-    <id>http://naxoc.github.io/blog/2010/10/20/social-media-meta</id>
+    <id>http://naxoc.github.io/2010/10/20/social-media-meta</id>
     <content type="html"><![CDATA[<p>I am doing some integration with facebook these days. I don&rsquo;t use facebook much and I certainly no not want all kinds of test data on my profile so I made a test profile using names that just came to mind :-P</p>
 
 <p>On the facebook developer pages there is a demonstration of the like button. That you can like&hellip; Gotta love the meta!</p>
@@ -184,9 +184,9 @@ Note the funky syntax with the &lt;code&gt;-i ""</code> This is a mac quirck in 
   
   <entry>
     <title type="html"><![CDATA[Upgraded to Drupal 7]]></title>
-    <link href="http://naxoc.github.io/blog/2010/10/18/upgraded-to-drupal-7/"/>
+    <link href="http://naxoc.github.io/2010/10/18/upgraded-to-drupal-7/"/>
     <updated>2010-10-18T20:53:00+02:00</updated>
-    <id>http://naxoc.github.io/blog/2010/10/18/upgraded-to-drupal-7</id>
+    <id>http://naxoc.github.io/2010/10/18/upgraded-to-drupal-7</id>
     <content type="html"><![CDATA[<p>I updated this website to D7 this weekend. <a href="http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7" title="Relauching my blog on Drupal 7 | Mikkel Høgh">Mikkel</a> upgraded his site and urges others to do so now, so I thought I&rsquo;d give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.</p>
 
 <p>I actually never did an actual core upgrade via the upgrade path before. The sites I have upgraded from D5 to D6 have pretty much all had such a complex data structure that I had to do an upgrade with a data migration. While that is a lot of work (and requires a programmer), I still like the opportunity it gives to clear out a data model that might have grown a little too organically. For this site though, that would be gross overkill. So my approach was simply to read UPGRADE.txt and follow the steps.</p>
@@ -229,9 +229,9 @@ I use <a href="http://illuminex.com/ecto/" title="illumineX :: ecto - blog edito
   
   <entry>
     <title type="html"><![CDATA[Backup and migrate module + Dropbox = peace of mind]]></title>
-    <link href="http://naxoc.github.io/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/"/>
+    <link href="http://naxoc.github.io/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/"/>
     <updated>2009-11-16T21:06:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind</id>
+    <id>http://naxoc.github.io/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind</id>
     <content type="html"><![CDATA[<p>The <a href="http://drupal.org/project/backup_migrate">backup and migrate</a> module is truly sweet. We all know that it is a <em>really</em> good idea to back up data. But if you are like me &ndash; you forgot to do it or just don&rsquo;t do it for some lame reason. So backups should be automated. The backup and migrate module does exactly that &ndash; it can be configured to run every X hours if you have cron (and you should have) running on your site. <br/>
 The module makes a dump of the database and puts it in a folder in the files folder of the site. Even if you use the public <a href="http://drupal.org/node/22240">download method</a>, the security is OK &ndash; a .htacces file put in the folder by the backup and migrate module and dissalows access to the folder&rsquo;s content.</p>
 
@@ -304,9 +304,9 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
   
   <entry>
     <title type="html"><![CDATA[Hide Drupal files with .htaccess]]></title>
-    <link href="http://naxoc.github.io/blog/2009/11/13/hide-drupal-files-with-htaccess/"/>
+    <link href="http://naxoc.github.io/2009/11/13/hide-drupal-files-with-htaccess/"/>
     <updated>2009-11-13T23:50:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2009/11/13/hide-drupal-files-with-htaccess</id>
+    <id>http://naxoc.github.io/2009/11/13/hide-drupal-files-with-htaccess</id>
     <content type="html"><![CDATA[<p>If one goes to somedrupalsite.com/CHANGELOG.txt &ndash; it is normally possible to read the file and see what version of Drupal the site is running. If you don&rsquo;t want everybody to see what version you are running, it is a good idea to cloak the *.txt files in the Drupal install.</p>
 
 <p>Using rewrite rules in .htaccess, the *.txt files in Drupal can be hidden. I use a 403 &ndash; forbidden on these files. That is what the [F] means See the Apache documentation on RewriteRule for more options.</p>

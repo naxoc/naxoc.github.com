@@ -4,7 +4,7 @@
   <title><![CDATA[Category: PHP | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-08-09T20:48:34+02:00</updated>
+  <updated>2013-08-11T19:48:13+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using specific versions of formula with Homebrew]]></title>
-    <link href="http://naxoc.github.io/blog/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
+    <link href="http://naxoc.github.io/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
     <updated>2012-06-05T13:54:00+02:00</updated>
-    <id>http://naxoc.github.io/blog/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
+    <id>http://naxoc.github.io/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
     <content type="html"><![CDATA[<p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
 
 <p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:
@@ -50,9 +50,9 @@ Find and note the version number you want. In my case I wasn't sure, so I just w
   
   <entry>
     <title type="html"><![CDATA[Pet peeve #1 - the comparison operator]]></title>
-    <link href="http://naxoc.github.io/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator/"/>
+    <link href="http://naxoc.github.io/2010/12/10/pet-peeve-number-1-the-comparison-operator/"/>
     <updated>2010-12-10T14:27:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator</id>
+    <id>http://naxoc.github.io/2010/12/10/pet-peeve-number-1-the-comparison-operator</id>
     <content type="html"><![CDATA[<p>I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.</p>
 
 <p>When making comparisons, switch the order of the things you compare like this:

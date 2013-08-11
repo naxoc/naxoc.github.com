@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Drupal Planet | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/drupal-planet/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-08-09T20:48:34+02:00</updated>
+  <updated>2013-08-11T19:48:13+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A git commit hook helps you keep your code clean]]></title>
-    <link href="http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/"/>
+    <link href="http://naxoc.github.io/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/"/>
     <updated>2012-11-26T22:18:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean</id>
+    <id>http://naxoc.github.io/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean</id>
     <content type="html"><![CDATA[<p>I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;<a href="http://xjm.drupalgardens.com/review-guide">spinach in your teeth</a>&rdquo; about whitespace and non-conforming coding standards.</p>
 
 <p>I got (heavily) inspired by Josh The Geek&rsquo;s <a href="http://drupal.org/sandbox/JoshTheGeek/1143338">git pre-commit hook</a>, and made myself a commit hook that will check the code I am about to commit for common errors. In addition to whitespace, I like to make sure that I don&rsquo;t accidentally commit debug code like <code>krumo()</code>. The commit hook also checks for common calls to debug functions.</p>
@@ -35,9 +35,9 @@
   
   <entry>
     <title type="html"><![CDATA[Navigating with Krumo]]></title>
-    <link href="http://naxoc.github.io/blog/2011/09/14/navigating-with-krumo/"/>
+    <link href="http://naxoc.github.io/2011/09/14/navigating-with-krumo/"/>
     <updated>2011-09-14T09:13:00+02:00</updated>
-    <id>http://naxoc.github.io/blog/2011/09/14/navigating-with-krumo</id>
+    <id>http://naxoc.github.io/2011/09/14/navigating-with-krumo</id>
     <content type="html"><![CDATA[<p><a href="http://drupal.org/project/devel" title="Devel | drupal.org">The Devel module</a> includes the super helpful <a href="http://krumo.sourceforge.net/">Krumo library</a>. I use <code>dsm()</code> and <code>krumo()</code> all the time. If you are not familiar with Devel, you should try it. Morten Wulff wrote a <a href="https://ratatosk.backpackit.com/pub/1836982-debugging-drupal">demo page for the module</a>.<br/>
 <img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png</a>"><br/>
 Today a client suggested that the Devel module Krumo could display the &ldquo;path&rdquo; to an item in an array by right clicking or otherwise interacting with the nested elements in the output from Krumo. I was really excited about that idea &ndash; I can&rsquo;t count the number of times I have tried and failed to target an item deep in a form array or an item in the node object simply because my human brain can&rsquo;t remember a structure like <code>$form['#node']-&gt;content['links']['comment']['#attributes']['class']</code> for more than 3 seconds.</p>
@@ -53,9 +53,9 @@ Thanks to Niels Fanøe for the inspiration.</p>
   
   <entry>
     <title type="html"><![CDATA[Pet peeve #1 - the comparison operator]]></title>
-    <link href="http://naxoc.github.io/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator/"/>
+    <link href="http://naxoc.github.io/2010/12/10/pet-peeve-number-1-the-comparison-operator/"/>
     <updated>2010-12-10T14:27:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2010/12/10/pet-peeve-number-1-the-comparison-operator</id>
+    <id>http://naxoc.github.io/2010/12/10/pet-peeve-number-1-the-comparison-operator</id>
     <content type="html"><![CDATA[<p>I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.</p>
 
 <p>When making comparisons, switch the order of the things you compare like this:
@@ -76,9 +76,9 @@ See what happened? I only put one = instead of two. PHP will not complain about 
   
   <entry>
     <title type="html"><![CDATA[Upgraded to Drupal 7]]></title>
-    <link href="http://naxoc.github.io/blog/2010/10/18/upgraded-to-drupal-7/"/>
+    <link href="http://naxoc.github.io/2010/10/18/upgraded-to-drupal-7/"/>
     <updated>2010-10-18T20:53:00+02:00</updated>
-    <id>http://naxoc.github.io/blog/2010/10/18/upgraded-to-drupal-7</id>
+    <id>http://naxoc.github.io/2010/10/18/upgraded-to-drupal-7</id>
     <content type="html"><![CDATA[<p>I updated this website to D7 this weekend. <a href="http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7" title="Relauching my blog on Drupal 7 | Mikkel Høgh">Mikkel</a> upgraded his site and urges others to do so now, so I thought I&rsquo;d give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.</p>
 
 <p>I actually never did an actual core upgrade via the upgrade path before. The sites I have upgraded from D5 to D6 have pretty much all had such a complex data structure that I had to do an upgrade with a data migration. While that is a lot of work (and requires a programmer), I still like the opportunity it gives to clear out a data model that might have grown a little too organically. For this site though, that would be gross overkill. So my approach was simply to read UPGRADE.txt and follow the steps.</p>
@@ -121,9 +121,9 @@ I use <a href="http://illuminex.com/ecto/" title="illumineX :: ecto - blog edito
   
   <entry>
     <title type="html"><![CDATA[Backup and migrate module + Dropbox = peace of mind]]></title>
-    <link href="http://naxoc.github.io/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/"/>
+    <link href="http://naxoc.github.io/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/"/>
     <updated>2009-11-16T21:06:00+01:00</updated>
-    <id>http://naxoc.github.io/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind</id>
+    <id>http://naxoc.github.io/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind</id>
     <content type="html"><![CDATA[<p>The <a href="http://drupal.org/project/backup_migrate">backup and migrate</a> module is truly sweet. We all know that it is a <em>really</em> good idea to back up data. But if you are like me &ndash; you forgot to do it or just don&rsquo;t do it for some lame reason. So backups should be automated. The backup and migrate module does exactly that &ndash; it can be configured to run every X hours if you have cron (and you should have) running on your site. <br/>
 The module makes a dump of the database and puts it in a folder in the files folder of the site. Even if you use the public <a href="http://drupal.org/node/22240">download method</a>, the security is OK &ndash; a .htacces file put in the folder by the backup and migrate module and dissalows access to the folder&rsquo;s content.</p>
 
