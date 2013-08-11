@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | naxoc.net]]></title>
+  <link href="http://naxoc.github.io/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://naxoc.github.io/"/>
+  <updated>2013-08-09T20:48:34+02:00</updated>
+  <id>http://naxoc.github.io/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A git commit hook helps you keep your code clean]]></title>
+    <link href="http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/"/>
+    <updated>2012-11-26T22:18:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean</id>
+    <content type="html"><![CDATA[<p>I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;<a href="http://xjm.drupalgardens.com/review-guide">spinach in your teeth</a>&rdquo; about whitespace and non-conforming coding standards.</p>
+
+<p>I got (heavily) inspired by Josh The Geek&rsquo;s <a href="http://drupal.org/sandbox/JoshTheGeek/1143338">git pre-commit hook</a>, and made myself a commit hook that will check the code I am about to commit for common errors. In addition to whitespace, I like to make sure that I don&rsquo;t accidentally commit debug code like <code>krumo()</code>. The commit hook also checks for common calls to debug functions.</p>
+
+<p>If you want to use it, simply put it in your .git/hooks folder in your git checkout. Make sure the file is executable with <code>chmod +x .git/hooks/pre-commit</code>. This will only effect the git checkout you put the commit hook in, but you can make it apply to all future checkouts by putting it in your git install directory&rsquo;s template folder. Where that folder is will vary, but on my mac it is in /usr/share/git-core/templates/hooks.</p>
+
+<p>The script is not the most clever in the world, so it will be wrong about some things from time to time. You can override it and still commit with the command <code>git commit -n</code></p>
+
+<p>Here is the pre-commit file:
+<div><script src='https://gist.github.com/4150599.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

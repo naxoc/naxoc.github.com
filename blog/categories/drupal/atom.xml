@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: drupal | naxoc.net]]></title>
+  <link href="http://naxoc.github.io/blog/categories/drupal/atom.xml" rel="self"/>
+  <link href="http://naxoc.github.io/"/>
+  <updated>2013-08-09T20:48:34+02:00</updated>
+  <id>http://naxoc.github.io/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A git commit hook helps you keep your code clean]]></title>
+    <link href="http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/"/>
+    <updated>2012-11-26T22:18:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean</id>
+    <content type="html"><![CDATA[<p>I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;<a href="http://xjm.drupalgardens.com/review-guide">spinach in your teeth</a>&rdquo; about whitespace and non-conforming coding standards.</p>
+
+<p>I got (heavily) inspired by Josh The Geek&rsquo;s <a href="http://drupal.org/sandbox/JoshTheGeek/1143338">git pre-commit hook</a>, and made myself a commit hook that will check the code I am about to commit for common errors. In addition to whitespace, I like to make sure that I don&rsquo;t accidentally commit debug code like <code>krumo()</code>. The commit hook also checks for common calls to debug functions.</p>
+
+<p>If you want to use it, simply put it in your .git/hooks folder in your git checkout. Make sure the file is executable with <code>chmod +x .git/hooks/pre-commit</code>. This will only effect the git checkout you put the commit hook in, but you can make it apply to all future checkouts by putting it in your git install directory&rsquo;s template folder. Where that folder is will vary, but on my mac it is in /usr/share/git-core/templates/hooks.</p>
+
+<p>The script is not the most clever in the world, so it will be wrong about some things from time to time. You can override it and still commit with the command <code>git commit -n</code></p>
+
+<p>Here is the pre-commit file:
+<div><script src='https://gist.github.com/4150599.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Navigating with Krumo]]></title>
+    <link href="http://naxoc.github.io/blog/2011/09/14/navigating-with-krumo/"/>
+    <updated>2011-09-14T09:13:00+02:00</updated>
+    <id>http://naxoc.github.io/blog/2011/09/14/navigating-with-krumo</id>
+    <content type="html"><![CDATA[<p><a href="http://drupal.org/project/devel" title="Devel | drupal.org">The Devel module</a> includes the super helpful <a href="http://krumo.sourceforge.net/">Krumo library</a>. I use <code>dsm()</code> and <code>krumo()</code> all the time. If you are not familiar with Devel, you should try it. Morten Wulff wrote a <a href="https://ratatosk.backpackit.com/pub/1836982-debugging-drupal">demo page for the module</a>.<br/>
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png</a>"><br/>
+Today a client suggested that the Devel module Krumo could display the &ldquo;path&rdquo; to an item in an array by right clicking or otherwise interacting with the nested elements in the output from Krumo. I was really excited about that idea &ndash; I can&rsquo;t count the number of times I have tried and failed to target an item deep in a form array or an item in the node object simply because my human brain can&rsquo;t remember a structure like <code>$form['#node']-&gt;content['links']['comment']['#attributes']['class']</code> for more than 3 seconds.</p>
+
+<p>Still very happy with this new idea I went straight home and started to hack away at the Krumo library to make it display the path to a desired item. After looking at the javascript for a while, and saying out loud that Javascript hates me, I realized that the killer feature I was trying to make already exists in Krumo! This is a well hidden gem that I haven&rsquo;t seen before today, so I thought I would share it:
+If you double click an item in the Krumo output it prints the items array &ldquo;path&rdquo; so that you can copy paste it into your code and stop worrying about remembering long array structures.<br/>
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo_path.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo_path.png</a>" title="&lsquo;krumo with array path&rsquo;" >
+Thanks to Niels Fanøe for the inspiration.</p>
+
+<p>EDIT: I was using the dev D7 version, and the feature just went in this August. Thanks to Mark Theunissen for pointing that out. I also feel less stupid for not discovering the feature before now!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Upgraded to Drupal 7]]></title>
+    <link href="http://naxoc.github.io/blog/2010/10/18/upgraded-to-drupal-7/"/>
+    <updated>2010-10-18T20:53:00+02:00</updated>
+    <id>http://naxoc.github.io/blog/2010/10/18/upgraded-to-drupal-7</id>
+    <content type="html"><![CDATA[<p>I updated this website to D7 this weekend. <a href="http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7" title="Relauching my blog on Drupal 7 | Mikkel Høgh">Mikkel</a> upgraded his site and urges others to do so now, so I thought I&rsquo;d give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.</p>
+
+<p>I actually never did an actual core upgrade via the upgrade path before. The sites I have upgraded from D5 to D6 have pretty much all had such a complex data structure that I had to do an upgrade with a data migration. While that is a lot of work (and requires a programmer), I still like the opportunity it gives to clear out a data model that might have grown a little too organically. For this site though, that would be gross overkill. So my approach was simply to read UPGRADE.txt and follow the steps.</p>
+
+<h3>Modules</h3>
+
+<p>I don&rsquo;t use any of the big modules like CCK, views or panels. In fact I ended up with only 3 enabled contrib modules.</p>
+
+<p><ul>
+<li>
+  On D6 I had a tag cloud that the <a href="http://drupal.org/project/tagadelic" title="Tagadelic | drupal.org">tagadelic module</a> made, but I simply removed that because I couldn&rsquo;t see a 7.x branch on d.o. It turns out that there is work in progress to port it, so in <a href="http://drupal.org/node/749440" title="Any plans for a Drupal 7 release / upgrade / version ? | drupal.org">this issue</a> I found that <a href="http://github.com/mscharley/tagadelic/tree/DRUPAL-7--1" title="mscharley">development is going on github</a>. I really like that module so I might take a look and see if I can help.
+</li>
+<li>
+  The <a href="http://drupal.org/project/twitter" title="Twitter | drupal.org">twitter module</a> does not have a 7.x branch either, <a href="http://drupal.org/node/780712" title="Drupal 7 port of Twitter module | drupal.org">but there is work going on</a>. I decided to go for the easy choice so far and just this <a href="http://twitter.com/goodies/widget_profile">twitter-widget</a> and embed the code in a block. In fact for my need that is just fine.
+</li>
+<li>
+  I have always loved the <a href="http://drupal.org/project/admin_menu" title="Administration menu | drupal.org">admin_menu module</a> even though the fancy menu that sits on the side and awaits your click in rubik is nifty, I still like the overview that admin_menu gives me better. Luckily there is a 7.x branch and it also packs a neat integration with the top toolbar that D7 ships with.
+</li>
+<li>
+  <a href="http://drupal.org/project/google_analytics" title="Google Analytics | drupal.org">Google analytics</a> has a 7.x branch and I had no trouble with that other than some problem with actually writing the tracking codes. But it turned out that the theme was not doing that.
+</li>
+<li>
+  The <a href="http://drupal.org/project/mollom" title="Mollom | drupal.org">Mollom module</a> was not working, but I think I upgraded it wrong. As soon as I uninstalled it and installed it again it was fine. It threw errors at me when I enabled it after the core upgrade, so I must have missed something there.
+</li>
+I use <a href="http://illuminex.com/ecto/" title="illumineX :: ecto - blog editor for Mac OS X">ecto</a> as a blogging client for my D6 sites. The <a href="http://drupal.org/project/blogapi" title="Blog API | drupal.org">blog API</a> module was taken out of D7 and now <a href="http://drupal.org/project/blogapi" title="Blog API | drupal.org">lives on its own here</a>. I tried to make it work, but I can see that it will take me some time. I will have to spend more time playing with that.</p>
+
+<h3>Theme</h3>
+
+<p>I really like the <a href="http://drupal.org/project/corolla" title="Corolla | drupal.org">Corolla theme</a>. I knew I wanted to use that so I didn&rsquo;t even browse around for a D7 theme. Configuring color and all that was easy, and the only problem I ran into was the theme <a href="http://drupal.org/node/945124" title="Footer is not output anywhere | drupal.org">not printing the footer</a> with the google analytics tracking codes.</p>
+
+<h3>So what&rsquo;s it like?</h3>
+
+<p>I like D7. A lot. I have been playing around with it for a long time, but always with test data, the standard theme, and not so many contrib modules. It&rsquo;s great to see it all come together. One thing that took me a long time to get used to is the overlay. At first I hated it, but during the last 6 months or so it&rsquo;s grown on me. I am still not sure I would keep it enabled on any site, but it gets a chance on my site for now.</p>
+
+<p>Another thing in D7 that really threw me off during the upgrade was that the core modules are listed first on the modules page. For a while I thought that drupal was just not finding my contrib modules. I would probably put them at the bottom if I was to sort them other than alphabetically.</p>
+
+<p>I am excited to finally run Drupal 7! And I can&rsquo;t wait to play with more contrib modules more and see what cool stuff comes out of all the new opportunities in D7.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Backup and migrate module + Dropbox = peace of mind]]></title>
+    <link href="http://naxoc.github.io/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/"/>
+    <updated>2009-11-16T21:06:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind</id>
+    <content type="html"><![CDATA[<p>The <a href="http://drupal.org/project/backup_migrate">backup and migrate</a> module is truly sweet. We all know that it is a <em>really</em> good idea to back up data. But if you are like me &ndash; you forgot to do it or just don&rsquo;t do it for some lame reason. So backups should be automated. The backup and migrate module does exactly that &ndash; it can be configured to run every X hours if you have cron (and you should have) running on your site. <br/>
+The module makes a dump of the database and puts it in a folder in the files folder of the site. Even if you use the public <a href="http://drupal.org/node/22240">download method</a>, the security is OK &ndash; a .htacces file put in the folder by the backup and migrate module and dissalows access to the folder&rsquo;s content.</p>
+
+<p>In the unlikely event that my server goes up in flames, I like to have some backups that are not physically on the same server as the site. I really like Dropbox, so I thought I would figure out a way to use that for the database dumps. I found this very <a href="http://jaka.kubje.org/software/dropboxuploader/">nice and simple php script</a>, that will upload files to your dropbox. I used that to write a super simple php file that my cronjob will call once a day. I settled with having daily backups a week back in time, so the filenames are day names. That way monday&rsquo;s file will be overwritten next monday.</p>
+
+<p>Here is what I did:</p>
+
+<ol>
+<li>Enable the backup migrate module</li>
+<li>Go to yoursite.com/admin/content/backup_migrate/export and choose gz under compression, put your sitename in <em>Backup file name</em>, and put &ldquo;D&rdquo; for dayname under Timestamp format:<br/>
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png</a>"></li>
+<li>Download and unzip the latest <a href="http://jaka.kubje.org/software/dropboxuploader/">Dropbox uploader</a> (I used the 1.1.5 version)</li>
+<li>Edit the variables capitalized in the php below and save the it to a file called dropbox_backup.php. Put it next to the Dropbox uploader file. The files should be put somewhere outside the drupal installation.</li>
+<li>Put a line that in your crontab that calls the php script. It could look like this one, that will run every night at 1 and report to a log file how it went.
+<code>00 01 * * * php PATH_TO_SCRIPT/dropbox_backup.php &gt;&gt; PATH_TO_SCRIPT/log.txt</code>
+And that&rsquo;s it! Easy backup of your database and easy use of the ample storage space that Dropbox offers.
+``` php
+&lt;?php
+$site_name = &lsquo;SITENAME&rsquo;;
+$backup_dir = &lsquo;WHERE_YOUR_DB_DUMPS_ARE_PUT_BY_BACKUP_MIGRATE&rsquo;;
+$todays_filename = sprintf(&lsquo;%s-%s.sql.gz&rsquo;, $site_name, date(&rsquo;D'));</li>
+</ol>
+
+
+<p>if (file_exists($backup_dir .&lsquo;/&rsquo;. $todays_filename)) {
+  // Get todays file from where backup_migrate module puts it
+  // and drop it in this folder (just to get it out of the &ldquo;files&rdquo;
+  // folder in Drupal).
+  exec(&ldquo;mv $backup_dir/$todays_filename &rdquo; . dirname($_SERVER[&lsquo;SCRIPT_FILENAME&rsquo;]));</p>
+
+<p>  // And upload todays file to the Dropbox.
+  require &lsquo;DropboxUploader.php&rsquo;;
+  try {</p>
+
+<pre><code>$uploader = new DropboxUploader('YOUR_EMAIL', 'YOUR_PASSWORD');
+$uploader-&gt;upload(dirname($_SERVER['SCRIPT_NAME']) .'/'. $todays_filename, 'FOLDER_IN_DROPBOX');
+echo date('m/d Y') . ": Uploaded $todays_filename to Dropbox\n";
+</code></pre>
+
+<p>  }
+  catch (Exception $e) {</p>
+
+<pre><code>echo date('m/d Y') . ": I had a problem uploading $todays_filename to Dropbox\n";
+</code></pre>
+
+<p>  }
+}
+?>
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hide Drupal files with .htaccess]]></title>
+    <link href="http://naxoc.github.io/blog/2009/11/13/hide-drupal-files-with-htaccess/"/>
+    <updated>2009-11-13T23:50:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2009/11/13/hide-drupal-files-with-htaccess</id>
+    <content type="html"><![CDATA[<p>If one goes to somedrupalsite.com/CHANGELOG.txt &ndash; it is normally possible to read the file and see what version of Drupal the site is running. If you don&rsquo;t want everybody to see what version you are running, it is a good idea to cloak the *.txt files in the Drupal install.</p>
+
+<p>Using rewrite rules in .htaccess, the *.txt files in Drupal can be hidden. I use a 403 &ndash; forbidden on these files. That is what the [F] means See the Apache documentation on RewriteRule for more options.
+```</p>
+
+<h1>No need for the common visitor to read these files.</h1>
+
+<h1>They can just go download their own Drupal. It&rsquo;s</h1>
+
+<h1>free and everything.</h1>
+
+<p>RewriteRule ^(.<em>)CHANGELOG.txt$ &ndash; [F]
+RewriteRule ^(.</em>)INSTALL.mysql.txt$ &ndash; [F]
+RewriteRule ^(.<em>)INSTALL.txt$ &ndash; [F]
+RewriteRule ^(.</em>)MAINTAINERS.txt$ &ndash; [F]
+RewriteRule ^(.<em>)INSTALL.pgsql.txt$ &ndash; [F]
+RewriteRule ^(.</em>)LICENSE.txt$ &ndash; [F]
+RewriteRule ^(.<em>)UPGRADE.txt$ &ndash; [F]
+RewriteRule ^(.</em>)README.txt$ &ndash; [F]
+<code>``
+Put these lines in the bottom of the .htaccess file, but before the</code></IfModule>` &ldquo;tag&rdquo;. The .htaccess file lives in the root of your Drupal installation.</p>
+
+<h2>Using version control?</h2>
+
+<p>Metadata folders left by whatever version control system should be hidden too.
+```</p>
+
+<h1>Don&rsquo;t let people pry in version control folders</h1>
+
+<p>RewriteRule (^|/)(CVS|.svn|.git)/ &ndash; [F]
+<code>``
+Put the above snippet inside the</code></IfModule>` in .htaccess as well.</p>
+]]></content>
+  </entry>
+  
+</feed>

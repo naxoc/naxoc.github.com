@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: apache | naxoc.net]]></title>
+  <link href="http://naxoc.github.io/blog/categories/apache/atom.xml" rel="self"/>
+  <link href="http://naxoc.github.io/"/>
+  <updated>2013-08-09T20:48:34+02:00</updated>
+  <id>http://naxoc.github.io/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hide Drupal files with .htaccess]]></title>
+    <link href="http://naxoc.github.io/blog/2009/11/13/hide-drupal-files-with-htaccess/"/>
+    <updated>2009-11-13T23:50:00+01:00</updated>
+    <id>http://naxoc.github.io/blog/2009/11/13/hide-drupal-files-with-htaccess</id>
+    <content type="html"><![CDATA[<p>If one goes to somedrupalsite.com/CHANGELOG.txt &ndash; it is normally possible to read the file and see what version of Drupal the site is running. If you don&rsquo;t want everybody to see what version you are running, it is a good idea to cloak the *.txt files in the Drupal install.</p>
+
+<p>Using rewrite rules in .htaccess, the *.txt files in Drupal can be hidden. I use a 403 &ndash; forbidden on these files. That is what the [F] means See the Apache documentation on RewriteRule for more options.
+```</p>
+
+<h1>No need for the common visitor to read these files.</h1>
+
+<h1>They can just go download their own Drupal. It&rsquo;s</h1>
+
+<h1>free and everything.</h1>
+
+<p>RewriteRule ^(.<em>)CHANGELOG.txt$ &ndash; [F]
+RewriteRule ^(.</em>)INSTALL.mysql.txt$ &ndash; [F]
+RewriteRule ^(.<em>)INSTALL.txt$ &ndash; [F]
+RewriteRule ^(.</em>)MAINTAINERS.txt$ &ndash; [F]
+RewriteRule ^(.<em>)INSTALL.pgsql.txt$ &ndash; [F]
+RewriteRule ^(.</em>)LICENSE.txt$ &ndash; [F]
+RewriteRule ^(.<em>)UPGRADE.txt$ &ndash; [F]
+RewriteRule ^(.</em>)README.txt$ &ndash; [F]
+<code>``
+Put these lines in the bottom of the .htaccess file, but before the</code></IfModule>` &ldquo;tag&rdquo;. The .htaccess file lives in the root of your Drupal installation.</p>
+
+<h2>Using version control?</h2>
+
+<p>Metadata folders left by whatever version control system should be hidden too.
+```</p>
+
+<h1>Don&rsquo;t let people pry in version control folders</h1>
+
+<p>RewriteRule (^|/)(CVS|.svn|.git)/ &ndash; [F]
+<code>``
+Put the above snippet inside the</code></IfModule>` in .htaccess as well.</p>
+]]></content>
+  </entry>
+  
+</feed>
