@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Drupal Planet | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/drupal-planet/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-08-11T19:48:13+02:00</updated>
+  <updated>2013-08-12T07:59:20+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -77,7 +77,7 @@ See what happened? I only put one = instead of two. PHP will not complain about 
   <entry>
     <title type="html"><![CDATA[Upgraded to Drupal 7]]></title>
     <link href="http://naxoc.github.io/2010/10/18/upgraded-to-drupal-7/"/>
-    <updated>2010-10-18T20:53:00+02:00</updated>
+    <updated>2010-10-18T20:58:00+02:00</updated>
     <id>http://naxoc.github.io/2010/10/18/upgraded-to-drupal-7</id>
     <content type="html"><![CDATA[<p>I updated this website to D7 this weekend. <a href="http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7" title="Relauching my blog on Drupal 7 | Mikkel Høgh">Mikkel</a> upgraded his site and urges others to do so now, so I thought I&rsquo;d give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.</p>
 
