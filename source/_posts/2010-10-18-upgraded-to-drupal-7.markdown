@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Upgraded to Drupal 7"
-date: 2010-10-18 20:53
+date: 2010-10-18 20:58
 comments: true
 categories: [drupal, D7, Drupal Planet]
 ---
