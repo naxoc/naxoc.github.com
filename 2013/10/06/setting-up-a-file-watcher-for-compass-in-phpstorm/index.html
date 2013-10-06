@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: funny - naxoc.net</title>
+  <title>Setting up a file watcher for Compass in PHPStorm - naxoc.net</title>
   <meta name="author" content="Camilla Krag Jensen">
 
   
-  <meta name="description" content="Category: funny">
+  <meta name="description" content="I started using PHPStorm about 6 months ago and while it is an extremely awesome and powerful IDE there are just so many things you can set up and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://naxoc.github.ioblog/categories/funny">
+  <link rel="canonical" href="http://naxoc.github.io/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="naxoc.net" type="application/atom+xml">
@@ -77,36 +77,106 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Funny</h1>
+    
+      <h1 class="entry-title">Setting Up a File Watcher for Compass in PHPStorm</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-06T20:55:00+02:00" pubdate data-updated="true">Oct 6<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I started using PHPStorm about 6 months ago and while it is an extremely awesome and powerful IDE there are just so many things you can set up and configure. I have to admit that for the first couple of months I pretty much used PHPStorm just like I did Vim and not using any of the many configurable things except for the debugger. I am slowly venturing into playing around with setting more stuff up, and I thought I would share this one because it took me a while to get right.</p>
 
-  
-  <h2>2010</h2>
+<p>It is super simple to use the <a href="http://compass-style.org/">Compass compiler</a> from the command line and I always have. But PHPStorm can compile your .scss files into .css on the fly so why not take advantage of that.</p>
 
-<article>
-  
-<h1><a href="/2010/10/20/social-media-meta/">Social media meta</a></h1>
-<time datetime="2010-10-20T11:33:00+02:00" pubdate><span class='month'>Oct</span> <span class='day'>20</span> <span class='year'>2010</span></time>
+<p>So here is what I did. The settings assume that you use something that resembles the default settings in a Compass project with a folder for the scss files and the css being output to another folder called something like &ldquo;stylesheets&rdquo; or &ldquo;css&rdquo; (could be anything really). You also need to have <a href="http://compass-style.org/install/">Compass installed on your machine</a>.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/facebook/'>facebook</a>, <a class='category' href='/blog/categories/funny/'>funny</a>, <a class='category' href='/blog/categories/meta/'>meta</a></span>
-</footer>
+<ol>
+<li>In the PHPStorm settings, go to &ldquo;File Watchers&rdquo;.</li>
+<li>Click the plus to add a watcher and choose SCSS.</li>
+<li>Edit the settings to look like the ones on the screenshot. Where Compass is installed on your machine may not be in /usr/bin/compass like it is on mine, but you can use the command <code>whereis compass</code> from your command line to figure out where compass is. The output path is &ldquo;stylesheets&rdquo; for me for this particular project, but you shold edit that to whatever your project has named the css output folder.</li>
+</ol>
 
 
-</article>
+<p><img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/compass-phpstorm.png" title="'Settings in PHPStorm'" ></p>
 
+<p>Note that I have created a &ldquo;scope&rdquo; called Theme. Scopes in PHPStorm are parts of your project that you would like included or excluded in things like searches and settings like this Compass setup. There is no reason for PHPStorm to listen for changes to your module files if your theme folder is where you have your Compass project. So if you click the button with the three dots at the scope field you can setup PHPStorm to only look where it is relevant. I use scopes a lot to cut down on how long searches take, so setting up a few scopes for each project is time well spent.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Camilla Krag Jensen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-06T20:55:00+02:00" pubdate data-updated="true">Oct 6<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>CSS</a>, <a class='category' href='/blog/categories/compass/'>Compass</a>, <a class='category' href='/blog/categories/phpstorm/'>PHPStorm</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/" title="Previous Post: A git commit hook helps you keep your code clean">&laquo; A git commit hook helps you keep your code clean</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -185,7 +255,10 @@
       var disqus_shortname = 'naxocnet';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://naxoc.github.io/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/';
+        var disqus_url = 'http://naxoc.github.io/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

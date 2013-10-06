@@ -4,7 +4,7 @@
   <title><![CDATA[naxoc.net]]></title>
   <link href="http://naxoc.github.io/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-08-12T07:59:20+02:00</updated>
+  <updated>2013-10-06T22:31:35+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up a file watcher for Compass in PHPStorm]]></title>
+    <link href="http://naxoc.github.io/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/"/>
+    <updated>2013-10-06T20:55:00+02:00</updated>
+    <id>http://naxoc.github.io/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm</id>
+    <content type="html"><![CDATA[<p>I started using PHPStorm about 6 months ago and while it is an extremely awesome and powerful IDE there are just so many things you can set up and configure. I have to admit that for the first couple of months I pretty much used PHPStorm just like I did Vim and not using any of the many configurable things except for the debugger. I am slowly venturing into playing around with setting more stuff up, and I thought I would share this one because it took me a while to get right.</p>
+
+<p>It is super simple to use the <a href="http://compass-style.org/">Compass compiler</a> from the command line and I always have. But PHPStorm can compile your .scss files into .css on the fly so why not take advantage of that.</p>
+
+<p>So here is what I did. The settings assume that you use something that resembles the default settings in a Compass project with a folder for the scss files and the css being output to another folder called something like &ldquo;stylesheets&rdquo; or &ldquo;css&rdquo; (could be anything really). You also need to have <a href="http://compass-style.org/install/">Compass installed on your machine</a>.</p>
+
+<ol>
+<li>In the PHPStorm settings, go to &ldquo;File Watchers&rdquo;.</li>
+<li>Click the plus to add a watcher and choose SCSS.</li>
+<li>Edit the settings to look like the ones on the screenshot. Where Compass is installed on your machine may not be in /usr/bin/compass like it is on mine, but you can use the command <code>whereis compass</code> from your command line to figure out where compass is. The output path is &ldquo;stylesheets&rdquo; for me for this particular project, but you shold edit that to whatever your project has named the css output folder.</li>
+</ol>
+
+
+<p><img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/compass-phpstorm.png" title="'Settings in PHPStorm'" ></p>
+
+<p>Note that I have created a &ldquo;scope&rdquo; called Theme. Scopes in PHPStorm are parts of your project that you would like included or excluded in things like searches and settings like this Compass setup. There is no reason for PHPStorm to listen for changes to your module files if your theme folder is where you have your Compass project. So if you click the button with the three dots at the scope field you can setup PHPStorm to only look where it is relevant. I use scopes a lot to cut down on how long searches take, so setting up a few scopes for each project is time well spent.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A git commit hook helps you keep your code clean]]></title>
@@ -29,7 +53,71 @@
 <p>Here is the pre-commit file:</p>
 
 <div><script src='https://gist.github.com/4150599.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
+<noscript><pre><code>#!/usr/bin/php
+&lt;?php
+/**
+ * @file
+ * This is a Git pre-commit hook that informs you when you are
+ * about to commit whitespace or a debug function.
+ */
+
+$red = &quot;\033[1;31m&quot;;
+$red_end = &quot;\033[0m&quot;;
+
+$yellow = &quot;\033[1;33m&quot;;
+$yellow_end = &quot;\033[0m&quot;;
+
+/**
+ * An array of functions to check for.
+ */
+$check = array();
+$check[] = ' dsm(';
+$check[] = ' dpm(';
+$check[] = ' dpr(';
+$check[] = ' dprint_r(';
+$check[] = ' db_queryd(';
+$check[] = ' krumo';
+$check[] = ' kpr(';
+$check[] = ' kprint_r(';
+$check[] = ' var_dump(';
+$check[] = ' dd(';
+$check[] = ' drupal_debug(';
+$check[] = ' dpq(';
+
+$return = 0;
+$diff = array();
+exec('git diff --staged', $diff, $return);
+
+if ($return !== 0) {
+  fwrite(STDOUT, &quot;git diff returned an error. Commit aborted.\n&quot;);
+  exit(1);
+}
+
+foreach ($diff as $lineno =&gt; $line) {
+  if (substr($line, 0, 1) != '+') {
+    // Skip the line if you aren't adding something that may contain a debug
+    // function call.
+    continue;
+  }
+  foreach ($check as $lineno =&gt; $function) {
+    if (strstr($line, $function)) {
+      fwrite(STDOUT, &quot;{$red}Oh, noes! You were about to commit a $function)?{$red_end}\n&quot;);
+      fwrite(STDOUT, $yellow . $line . $yellow_end);
+      fwrite(STDOUT, &quot;\nCommit aborted.\n&quot;);
+      exit(3);
+    }
+  }
+}
+
+$whitespace = shell_exec('git diff --staged --check');
+if (!empty($whitespace)) {
+  fwrite(STDOUT, &quot;{$red}Commit aborted. Fix trailing whitespace.{$red_end}\n&quot;);
+  fwrite(STDOUT, $yellow . $whitespace . $yellow_end);
+  exit(4);
+}
+
+// If this is still running, all is peachy. Let the developer commit.
+exit(0);</code></pre></noscript></div>
 
 
 

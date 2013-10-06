@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: PHPStorm | naxoc.net]]></title>
+  <link href="http://naxoc.github.io/blog/categories/phpstorm/atom.xml" rel="self"/>
+  <link href="http://naxoc.github.io/"/>
+  <updated>2013-10-06T22:31:35+02:00</updated>
+  <id>http://naxoc.github.io/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up a file watcher for Compass in PHPStorm]]></title>
+    <link href="http://naxoc.github.io/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/"/>
+    <updated>2013-10-06T20:55:00+02:00</updated>
+    <id>http://naxoc.github.io/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm</id>
+    <content type="html"><![CDATA[<p>I started using PHPStorm about 6 months ago and while it is an extremely awesome and powerful IDE there are just so many things you can set up and configure. I have to admit that for the first couple of months I pretty much used PHPStorm just like I did Vim and not using any of the many configurable things except for the debugger. I am slowly venturing into playing around with setting more stuff up, and I thought I would share this one because it took me a while to get right.</p>
+
+<p>It is super simple to use the <a href="http://compass-style.org/">Compass compiler</a> from the command line and I always have. But PHPStorm can compile your .scss files into .css on the fly so why not take advantage of that.</p>
+
+<p>So here is what I did. The settings assume that you use something that resembles the default settings in a Compass project with a folder for the scss files and the css being output to another folder called something like &ldquo;stylesheets&rdquo; or &ldquo;css&rdquo; (could be anything really). You also need to have <a href="http://compass-style.org/install/">Compass installed on your machine</a>.</p>
+
+<ol>
+<li>In the PHPStorm settings, go to &ldquo;File Watchers&rdquo;.</li>
+<li>Click the plus to add a watcher and choose SCSS.</li>
+<li>Edit the settings to look like the ones on the screenshot. Where Compass is installed on your machine may not be in /usr/bin/compass like it is on mine, but you can use the command <code>whereis compass</code> from your command line to figure out where compass is. The output path is &ldquo;stylesheets&rdquo; for me for this particular project, but you shold edit that to whatever your project has named the css output folder.</li>
+</ol>
+
+
+<p><img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/compass-phpstorm.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/compass-phpstorm.png</a>" title="&lsquo;Settings in PHPStorm&rsquo;" ></p>
+
+<p>Note that I have created a &ldquo;scope&rdquo; called Theme. Scopes in PHPStorm are parts of your project that you would like included or excluded in things like searches and settings like this Compass setup. There is no reason for PHPStorm to listen for changes to your module files if your theme folder is where you have your Compass project. So if you click the button with the three dots at the scope field you can setup PHPStorm to only look where it is relevant. I use scopes a lot to cut down on how long searches take, so setting up a few scopes for each project is time well spent.</p>
+]]></content>
+  </entry>
+  
+</feed>
