@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nerdy | naxoc.net]]></title>
+  <link href="http://naxoc.github.io/blog/categories/nerdy/atom.xml" rel="self"/>
+  <link href="http://naxoc.github.io/"/>
+  <updated>2013-08-12T07:59:20+02:00</updated>
+  <id>http://naxoc.github.io/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hot Laptop? Vacuum it!]]></title>
+    <link href="http://naxoc.github.io/2011/04/27/hot-laptop-vacuum-it/"/>
+    <updated>2011-04-27T21:48:00+02:00</updated>
+    <id>http://naxoc.github.io/2011/04/27/hot-laptop-vacuum-it</id>
+    <content type="html"><![CDATA[<p>My beloved 3years old Macbook Pro was starting to get really hot when I used it. It had gotten to the point where I would burn my legs if it was on my lap, and since having your <em>lap</em>top on the lap is kinda the point, I felt had to do something about it.</p>
+
+<p>I bought a <a href="%E2%80%9Chttp://www.amazon.com/Logitech-Notebook-Cooling-N100-Gray/dp/B003BEDQYY/ref=sr_1_1?ie=UTF8&amp;qid=1303933766&amp;sr=8-1%E2%80%9D">Logitech Notebook Cooling Pad</a> that actually is very comfortable and does exactly as it says it will, but I was still curious to see if I could get my old healthy Macbook back.</p>
+
+<p>I found <a href="%E2%80%9Chttp://www.andrew.co.za/2008/02/quick-macbook-clean.html%E2%80%9D">this blog post</a> about how to vacuum the laptop and the result is amazing. I was a little worried about the static, so I turned the machine completely off and removed the battery before vacuuming. The happy laptop is now quieter and cooler! Very simple and very recommended.</p>
+
+<p><img class="center <a" src="href="http://naxoc.net/files/naxoc.net/styles/large/public/kitty_vacuum.jpg">http://naxoc.net/files/naxoc.net/styles/large/public/kitty_vacuum.jpg</a>"><br/>
+<em>Image from <a href="http://www.flickr.com/photos/noortje/268437984/"><em>n</em>o<em>o</em>r*</a>.</em></p>
+]]></content>
+  </entry>
+  
+</feed>

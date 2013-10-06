@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hide Drupal files with .htaccess - naxoc.net</title>
+  <meta name="author" content="Camilla Krag Jensen">
+
+  
+  <meta name="description" content="If one goes to somedrupalsite.com/CHANGELOG.txt &ndash; it is normally possible to read the file and see what version of Drupal the site is running. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://naxoc.github.io/2009/11/13/hide-drupal-files-with-htaccess">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="naxoc.net" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15300952-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><img src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/queen.png" />
+<hgroup>
+<h1><a href="/">naxoc.net</a></h1>
+  
+    <h2>Liking the holes in cheese since 1975</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:naxoc.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Hide Drupal Files With .htaccess</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-13T23:50:00+01:00" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>If one goes to somedrupalsite.com/CHANGELOG.txt &ndash; it is normally possible to read the file and see what version of Drupal the site is running. If you don&rsquo;t want everybody to see what version you are running, it is a good idea to cloak the *.txt files in the Drupal install.</p>
+
+<p>Using rewrite rules in .htaccess, the *.txt files in Drupal can be hidden. I use a 403 &ndash; forbidden on these files. That is what the [F] means See the Apache documentation on RewriteRule for more options.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># No need for the common visitor to read these files.
+</span><span class='line'># They can just go download their own Drupal. It's
+</span><span class='line'># free and everything.
+</span><span class='line'>RewriteRule ^(.*)CHANGELOG\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)INSTALL\.mysql\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)INSTALL\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)MAINTAINERS\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)INSTALL\.pgsql\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)LICENSE\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)UPGRADE\.txt$ - [F]
+</span><span class='line'>RewriteRule ^(.*)README\.txt$ - [F]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Put these lines in the bottom of the .htaccess file, but before the <code>&lt;/IfModule&gt;</code> &ldquo;tag&rdquo;. The .htaccess file lives in the root of your Drupal installation.</p>
+
+<h2>Using version control?</h2>
+
+<p>Metadata folders left by whatever version control system should be hidden too.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Don't let people pry in version control folders
+</span><span class='line'>RewriteRule (^|/)(CVS|\.svn|\.git)/ - [F]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Put the above snippet inside the <code>&lt;/IfModule&gt;</code> in .htaccess as well.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Camilla Krag Jensen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-13T23:50:00+01:00" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/drupal-planet/'>Drupal Planet</a>, <a class='category' href='/blog/categories/apache/'>apache</a>, <a class='category' href='/blog/categories/drupal/'>drupal</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/" title="Next Post: Backup and migrate module + Dropbox = peace of mind">Backup and migrate module + Dropbox = peace of mind &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">A Git Commit Hook Helps You Keep Your Code Clean</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using Specific Versions of Formula With Homebrew</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/02/05/whats-with-the-weird-name/">What's With the Weird Name?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/09/14/navigating-with-krumo/">Navigating With Krumo</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/05/11/moving-an-itunes-library/">Moving an iTunes Library</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+  <h1>On Goodreads</h1>
+  <div id="goodreads"></div>
+      <style type="text/css" media="screen">
+        .gr_grid_container {
+          /* customize grid container div here. eg: width: 500px; */
+        }
+
+        .gr_grid_book_container {
+          /* customize book cover container div here */
+          float: left;
+          width: 98px;
+          height: 160px;
+          padding: 0px 0px;
+          overflow: hidden;
+        }
+      </style>
+      <div id="gr_grid_widget_1375689543">
+        <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work -->
+          <div class="gr_grid_container">
+          </div>
+      </div>
+      <script src="http://www.goodreads.com/review/grid_widget/1493819.Camilla's%20bookshelf:%20read?cover_size=medium&hide_link=true&hide_title=true&num_books=20&order=d&shelf=read&sort=date_read&widget_id=1375689543" type="text/javascript" charset="utf-8"></script>
+i
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Camilla Krag Jensen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'naxocnet';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://naxoc.github.io/2009/11/13/hide-drupal-files-with-htaccess/';
+        var disqus_url = 'http://naxoc.github.io/2009/11/13/hide-drupal-files-with-htaccess/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
