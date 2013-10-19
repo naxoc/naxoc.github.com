@@ -10,5 +10,6 @@ If you are moving an iTunes library to a new mac it will go smooth if the user l
 If you use the built-in command line tool called [sed](http://en.wikipedia.org/wiki/Sed), you can type one line in the terminal and be done. Let’s say I was moving from a mac with a user directory called "ckj" to another machine with a user directory called "naxoc". All I would have to do in the terminal would be this:
 
 1.  cd to the iTunes folder in the user directory you are moving to.
-2.  Enter this: `sed -i "" -e "s,Users/ckj,Users/naxoc,g" files iTunes\ Library.xml
-Note the funky syntax with the <code>-i ""` This is a mac quirck in sed. I found some info on it [here](http://stackoverflow.com/questions/2320564/variations-of-sed-between-osx-and-gnu-linux).
+2.  Enter this: `sed -i "" -e "s,Users/ckj,Users/naxoc,g" files iTunes\ Library.xml`
+
+Note the funky syntax with the `-i ""` This is a mac quirck in sed. I found some info on it [here](http://stackoverflow.com/questions/2320564/variations-of-sed-between-osx-and-gnu-linux).
