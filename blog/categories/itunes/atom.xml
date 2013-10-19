@@ -4,7 +4,7 @@
   <title><![CDATA[Category: itunes | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/itunes/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-08T12:47:54+02:00</updated>
+  <updated>2013-10-19T21:36:18+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -24,10 +24,11 @@
 
 <ol>
 <li>cd to the iTunes folder in the user directory you are moving to.</li>
-<li>Enter this: <code>sed -i "" -e "s,Users/ckj,Users/naxoc,g" files iTunes\ Library.xml
-Note the funky syntax with the &lt;code&gt;-i ""</code> This is a mac quirck in sed. I found some info on it <a href="http://stackoverflow.com/questions/2320564/variations-of-sed-between-osx-and-gnu-linux">here</a>.</li>
+<li>Enter this: <code>sed -i "" -e "s,Users/ckj,Users/naxoc,g" files iTunes\ Library.xml</code></li>
 </ol>
 
+
+<p>Note the funky syntax with the <code>-i ""</code> This is a mac quirck in sed. I found some info on it <a href="http://stackoverflow.com/questions/2320564/variations-of-sed-between-osx-and-gnu-linux">here</a>.</p>
 ]]></content>
   </entry>
   
