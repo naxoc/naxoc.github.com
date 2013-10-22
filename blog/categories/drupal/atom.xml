@@ -4,7 +4,7 @@
   <title><![CDATA[Category: drupal | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/drupal/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-19T21:36:18+02:00</updated>
+  <updated>2013-10-22T21:36:19+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -27,73 +27,7 @@
 <p>The script is not the most clever in the world, so it will be wrong about some things from time to time. You can override it and still commit with the command <code>git commit -n</code></p>
 
 <p>Here is the pre-commit file:
-<div><script src='https://gist.github.com/4150599.js'></script>
-<noscript><pre><code>#!/usr/bin/php
-&lt;?php
-/**
- * @file
- * This is a Git pre-commit hook that informs you when you are
- * about to commit whitespace or a debug function.
- */
-
-$red = &quot;\033[1;31m&quot;;
-$red_end = &quot;\033[0m&quot;;
-
-$yellow = &quot;\033[1;33m&quot;;
-$yellow_end = &quot;\033[0m&quot;;
-
-/**
- * An array of functions to check for.
- */
-$check = array();
-$check[] = ' dsm(';
-$check[] = ' dpm(';
-$check[] = ' dpr(';
-$check[] = ' dprint_r(';
-$check[] = ' db_queryd(';
-$check[] = ' krumo';
-$check[] = ' kpr(';
-$check[] = ' kprint_r(';
-$check[] = ' var_dump(';
-$check[] = ' dd(';
-$check[] = ' drupal_debug(';
-$check[] = ' dpq(';
-
-$return = 0;
-$diff = array();
-exec('git diff --staged', $diff, $return);
-
-if ($return !== 0) {
-  fwrite(STDOUT, &quot;git diff returned an error. Commit aborted.\n&quot;);
-  exit(1);
-}
-
-foreach ($diff as $lineno =&gt; $line) {
-  if (substr($line, 0, 1) != '+') {
-    // Skip the line if you aren't adding something that may contain a debug
-    // function call.
-    continue;
-  }
-  foreach ($check as $lineno =&gt; $function) {
-    if (strstr($line, $function)) {
-      fwrite(STDOUT, &quot;{$red}Oh, noes! You were about to commit a $function)?{$red_end}\n&quot;);
-      fwrite(STDOUT, $yellow . $line . $yellow_end);
-      fwrite(STDOUT, &quot;\nCommit aborted.\n&quot;);
-      exit(3);
-    }
-  }
-}
-
-$whitespace = shell_exec('git diff --staged --check');
-if (!empty($whitespace)) {
-  fwrite(STDOUT, &quot;{$red}Commit aborted. Fix trailing whitespace.{$red_end}\n&quot;);
-  fwrite(STDOUT, $yellow . $whitespace . $yellow_end);
-  exit(4);
-}
-
-// If this is still running, all is peachy. Let the developer commit.
-exit(0);</code></pre></noscript></div>
-</p>
+{% gist 4150599 %}</p>
 ]]></content>
   </entry>
   
@@ -103,12 +37,12 @@ exit(0);</code></pre></noscript></div>
     <updated>2011-09-14T09:13:00+02:00</updated>
     <id>http://naxoc.github.io/2011/09/14/navigating-with-krumo</id>
     <content type="html"><![CDATA[<p><a href="http://drupal.org/project/devel" title="Devel | drupal.org">The Devel module</a> includes the super helpful <a href="http://krumo.sourceforge.net/">Krumo library</a>. I use <code>dsm()</code> and <code>krumo()</code> all the time. If you are not familiar with Devel, you should try it. Morten Wulff wrote a <a href="https://ratatosk.backpackit.com/pub/1836982-debugging-drupal">demo page for the module</a>.<br/>
-<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png</a>"><br/>
+{% img center <a href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png</a> %}<br/>
 Today a client suggested that the Devel module Krumo could display the &ldquo;path&rdquo; to an item in an array by right clicking or otherwise interacting with the nested elements in the output from Krumo. I was really excited about that idea &ndash; I can&rsquo;t count the number of times I have tried and failed to target an item deep in a form array or an item in the node object simply because my human brain can&rsquo;t remember a structure like <code>$form['#node']-&gt;content['links']['comment']['#attributes']['class']</code> for more than 3 seconds.</p>
 
 <p>Still very happy with this new idea I went straight home and started to hack away at the Krumo library to make it display the path to a desired item. After looking at the javascript for a while, and saying out loud that Javascript hates me, I realized that the killer feature I was trying to make already exists in Krumo! This is a well hidden gem that I haven&rsquo;t seen before today, so I thought I would share it:
 If you double click an item in the Krumo output it prints the items array &ldquo;path&rdquo; so that you can copy paste it into your code and stop worrying about remembering long array structures.<br/>
-<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo_path.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo_path.png</a>" title="&lsquo;krumo with array path&rsquo;" >
+{% img center <a href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo_path.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo_path.png</a> &lsquo;krumo with array path&rsquo;%}
 Thanks to Niels Fanøe for the inspiration.</p>
 
 <p>EDIT: I was using the dev D7 version, and the feature just went in this August. Thanks to Mark Theunissen for pointing that out. I also feel less stupid for not discovering the feature before now!</p>
@@ -175,7 +109,7 @@ The module makes a dump of the database and puts it in a folder in the files fol
 <ol>
 <li>Enable the backup migrate module</li>
 <li>Go to yoursite.com/admin/content/backup_migrate/export and choose gz under compression, put your sitename in <em>Backup file name</em>, and put &ldquo;D&rdquo; for dayname under Timestamp format:<br/>
-<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png</a>"></li>
+{% img center <a href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png</a> %}</li>
 <li>Download and unzip the latest <a href="http://jaka.kubje.org/software/dropboxuploader/">Dropbox uploader</a> (I used the 1.1.5 version)</li>
 <li>Edit the variables capitalized in the php below and save the it to a file called dropbox_backup.php. Put it next to the Dropbox uploader file. The files should be put somewhere outside the drupal installation.</li>
 <li>Put a line that in your crontab that calls the php script. It could look like this one, that will run every night at 1 and report to a log file how it went.

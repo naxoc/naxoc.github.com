@@ -4,7 +4,7 @@
   <title><![CDATA[Category: laptop | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/laptop/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-19T21:36:18+02:00</updated>
+  <updated>2013-10-22T21:36:19+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -24,7 +24,7 @@
 
 <p>I found <a href="%E2%80%9Chttp://www.andrew.co.za/2008/02/quick-macbook-clean.html%E2%80%9D">this blog post</a> about how to vacuum the laptop and the result is amazing. I was a little worried about the static, so I turned the machine completely off and removed the battery before vacuuming. The happy laptop is now quieter and cooler! Very simple and very recommended.</p>
 
-<p><img class="center <a" src="href="http://naxoc.net/files/naxoc.net/styles/large/public/kitty_vacuum.jpg">http://naxoc.net/files/naxoc.net/styles/large/public/kitty_vacuum.jpg</a>"><br/>
+<p>{% img center <a href="http://naxoc.net/files/naxoc.net/styles/large/public/kitty_vacuum.jpg">http://naxoc.net/files/naxoc.net/styles/large/public/kitty_vacuum.jpg</a> %}<br/>
 <em>Image from <a href="http://www.flickr.com/photos/noortje/268437984/"><em>n</em>o<em>o</em>r*</a>.</em></p>
 ]]></content>
   </entry>

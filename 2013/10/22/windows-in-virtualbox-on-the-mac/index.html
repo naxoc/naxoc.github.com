@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Windows in VirtualBox on the Mac - naxoc.net</title>
+  <meta name="author" content="Camilla Krag Jensen">
+
+  
+  <meta name="description" content="I have been doing more CSS and front-end stuff lately. I am having a lot of fun learning more about these things that I have somehow avoided doing &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://naxoc.github.io/2013/10/22/windows-in-virtualbox-on-the-mac">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="naxoc.net" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15300952-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><img src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/queen.png" />
+<hgroup>
+<h1><a href="/">naxoc.net</a></h1>
+  
+    <h2>Liking the holes in cheese since 1975</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:naxoc.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Windows in VirtualBox on the Mac</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-22T21:06:00+02:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I have been doing more CSS and front-end stuff lately. I am having a lot of fun learning more about these things that I have somehow avoided doing for the last many years.</p>
+
+<p>Today I realized that I don&rsquo;t have to own a MS Windows license to run a setup in a VM for browser-testing. While I don&rsquo;t hate Microsoft (anymore) I would really rather not buy a license for a product that I think is horrible. Anyway &ndash; I had no idea that it is super simple to set up a VM running whatever version of IE you want on Windows.</p>
+
+<p>Installing the disk image was easy and I was up and running in very short time. I did however struggle a little with getting Windows to recognize the localhost (my Mac) and the vhosts I have on my local machine. I do all my development on my localhost, so I really needed Windows to understand my vhosts. Here is a writeup of what I did:</p>
+
+<p>Note that I installed Win7 &ndash; the instructions for editing the hosts file might be different on other versions of Windows.</p>
+
+<h2>Install VirtualBox</h2>
+
+<p>First you need to install VirtualBox if you don&rsquo;t have it. Go grab an installer from the <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Downloads page</a> and install it.</p>
+
+<h2>Install the Windows image</h2>
+
+<p>Now go to <a href="http://www.modern.ie/en-us/virtualization-tools">modern.ie&rsquo;s download page</a> and download a virtual machine in the IE version you would like to test stuff on. For this writeup I got an IE9 on Win7. Note that instead of downloading a lot of rar-files, you can just grab a cUrl command at the bottom of the downloadboxes and paste that into your terminal.</p>
+
+<p>This part takes a good while, so be patient.</p>
+
+<h2>Configure networking in VirtualBox</h2>
+
+<p>Before you start Windows, you need to configure networking in VirtualBox. So go to VirtualBox and choose &lsquo;Preferences&rsquo; from the menu (or go Command-,). In the settings window &ndash; click &ldquo;Network&rdquo; and choose the &ldquo;Host-only Networks&rdquo; tab. On that tab there is a plus that you just click and accept. I didn&rsquo;t have to configure anything &ndash; I just got a configuration called <em>vboxnet0</em>. Go ahead and close preferences &ndash; this is a onetime setup thing. All images you install will be able to use these settings (if you want).
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/vbox-networks.png" title="'Host-only Networks'" ></p>
+
+<h2>Boot up Windows</h2>
+
+<p> Now you can double click the image in VirtualBox&rsquo;s main window to start up Windows. Yup &ndash; you get the Windows sound.</p>
+
+<h2>Find the Gateway</h2>
+
+<p>Once Windows has booted up we need to configure the image to talk to our localhost. Click the start button or whatever it&rsquo;s called and type &lsquo;cmd&rsquo; in the textfield to get a &ldquo;terminal&rdquo;. Type <code>ipconfig</code> at the prompt and find the part in the output where it says &ldquo;Default Gateway&rdquo; under the &ldquo;Ethernet adapter Local Area Connection&rdquo;. Note that IP. It should be something like 10.0.x.x. Mine is 10.0.2.2.</p>
+
+<h2>Set file permissions on the hosts file</h2>
+
+<p>Now we need to edit Windows&#8217; hosts-file so that the vhosts we have on our Mac can be used. But first we have to change the file rights on the file. To open the Finder thingy, type <code>explorer C:\Windows\System32\drivers\etc</code> in at the prompt. That gives you the folder with the hosts-file. Now right click on that and select &ldquo;Properties&rdquo;. In the window you get, click the &ldquo;Security&rdquo; tab and then click the &ldquo;Edit button&rdquo;.
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-1.png" title="'File permissions'" >
+ Select the &ldquo;Users&rdquo; group/user and tick the &ldquo;Full control&rdquo; box.
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-2.png">
+All this probably is a horrible idea securitywise, but I don&rsquo;t really care &ndash; I&rsquo;ll use this Windows install very little. Click save and you&rsquo;re good.</p>
+
+<h2>Edit the hosts file</h2>
+
+<p>Now we can edit the hosts file. Double click on the hosts file and choose Notepad in the &ldquo;Open with dialog&rdquo;. Now you can add the urls that you have set up as vhosts on your Mac. Use the 10.0.x.x IP address from the <code>ipconfig</code> command like this for example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>10.0.2.2 d7.dev 
+</span><span class='line'>10.0.2.2 d8.dev </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Save the file and you&rsquo;re done! I made a desktop shortcut to the file because I feel like I&rsquo;ll be back for more vhost-editing soon.</p>
+
+<h2>Use IE!</h2>
+
+<p>Now you can see your Mac&rsquo;s webserver&rsquo;s pages from your VM. So open up IE(!) and go to whatever url you put in the hosts file. I just want to point out one last thing: There is a Firebug Lite to be found in (this) IE if you click the gear in the upper right corner.
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/firebug-lite.png"></p>
+
+<p>Hope you found this very verbose walktrough helpful.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Camilla Krag Jensen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-22T21:06:00+02:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ie/'>IE</a>, <a class='category' href='/blog/categories/vms/'>VMs</a>, <a class='category' href='/blog/categories/virtualbox/'>VirtualBox</a>, <a class='category' href='/blog/categories/localhost/'>localhost</a>, <a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/vhosts/'>vhosts</a>, <a class='category' href='/blog/categories/windows/'>windows</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/" title="Previous Post: Setting up a file watcher for Compass in PHPStorm">&laquo; Setting up a file watcher for Compass in PHPStorm</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/">Setting Up a File Watcher for Compass in PHPStorm</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">A Git Commit Hook Helps You Keep Your Code Clean</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using Specific Versions of Formula With Homebrew</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/02/05/whats-with-the-weird-name/">What's With the Weird Name?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+  <h1>On Goodreads</h1>
+  <div id="goodreads"></div>
+      <style type="text/css" media="screen">
+        .gr_grid_container {
+          /* customize grid container div here. eg: width: 500px; */
+        }
+
+        .gr_grid_book_container {
+          /* customize book cover container div here */
+          float: left;
+          width: 98px;
+          height: 160px;
+          padding: 0px 0px;
+          overflow: hidden;
+        }
+      </style>
+      <div id="gr_grid_widget_1375689543">
+        <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work -->
+          <div class="gr_grid_container">
+          </div>
+      </div>
+      <script src="http://www.goodreads.com/review/grid_widget/1493819.Camilla's%20bookshelf:%20read?cover_size=medium&hide_link=true&hide_title=true&num_books=20&order=d&shelf=read&sort=date_read&widget_id=1375689543" type="text/javascript" charset="utf-8"></script>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Camilla Krag Jensen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'naxocnet';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://naxoc.github.io/2013/10/22/windows-in-virtualbox-on-the-mac/';
+        var disqus_url = 'http://naxoc.github.io/2013/10/22/windows-in-virtualbox-on-the-mac/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
