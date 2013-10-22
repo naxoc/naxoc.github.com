@@ -41,7 +41,7 @@ All this probably is a horrible idea securitywise, but I don't really care - I'l
 
 ## Edit the hosts file
 Now we can edit the hosts file. Double click on the hosts file and choose Notepad in the "Open with dialog". Now you can add the urls that you have set up as vhosts on your Mac. Use the 10.0.x.x IP address from the `ipconfig` command like this for example:
-``` linenos:false
+```
 10.0.2.2 d7.dev 
 10.0.2.2 d8.dev 
 ```
