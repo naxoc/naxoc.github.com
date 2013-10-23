@@ -13,5 +13,71 @@ If you want to use it, simply put it in your .git/hooks folder in your git check
 
 The script is not the most clever in the world, so it will be wrong about some things from time to time. You can override it and still commit with the command `git commit -n`
 
-Here is the pre-commit file:
-{% gist 4150599 %}
+Here is the pre-commit file: [Gist is here](https://gist.github.com/naxoc/4150599) - I find that the gist plugin for Octopress is horribly broken.
+``` php
+#!/usr/bin/php
+<?php
+/**
+ * @file
+ * This is a Git pre-commit hook that informs you when you are
+ * about to commit whitespace or a debug function.
+ */
+
+$red = "\033[1;31m";
+$red_end = "\033[0m";
+
+$yellow = "\033[1;33m";
+$yellow_end = "\033[0m";
+
+/**
+ * An array of functions to check for.
+ */
+$check = array();
+$check[] = ' dsm(';
+$check[] = ' dpm(';
+$check[] = ' dpr(';
+$check[] = ' dprint_r(';
+$check[] = ' db_queryd(';
+$check[] = ' krumo';
+$check[] = ' kpr(';
+$check[] = ' kprint_r(';
+$check[] = ' var_dump(';
+$check[] = ' dd(';
+$check[] = ' drupal_debug(';
+$check[] = ' dpq(';
+
+$return = 0;
+$diff = array();
+exec('git diff --staged', $diff, $return);
+
+if ($return !== 0) {
+  fwrite(STDOUT, "git diff returned an error. Commit aborted.\n");
+  exit(1);
+}
+
+foreach ($diff as $lineno => $line) {
+  if (substr($line, 0, 1) != '+') {
+    // Skip the line if you aren't adding something that may contain a debug
+    // function call.
+    continue;
+  }
+  foreach ($check as $lineno => $function) {
+    if (strstr($line, $function)) {
+      fwrite(STDOUT, "{$red}Oh, noes! You were about to commit a $function)?{$red_end}\n");
+      fwrite(STDOUT, $yellow . $line . $yellow_end);
+      fwrite(STDOUT, "\nCommit aborted.\n");
+      exit(3);
+    }
+  }
+}
+
+$whitespace = shell_exec('git diff --staged --check');
+if (!empty($whitespace)) {
+  fwrite(STDOUT, "{$red}Commit aborted. Fix trailing whitespace.{$red_end}\n");
+  fwrite(STDOUT, $yellow . $whitespace . $yellow_end);
+  exit(4);
+}
+
+// If this is still running, all is peachy. Let the developer commit.
+exit(0);
+```
