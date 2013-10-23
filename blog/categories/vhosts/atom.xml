@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vhosts | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/vhosts/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-22T21:36:19+02:00</updated>
+  <updated>2013-10-23T23:30:14+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -39,7 +39,7 @@
 <h2>Configure networking in VirtualBox</h2>
 
 <p>Before you start Windows, you need to configure networking in VirtualBox. So go to VirtualBox and choose &lsquo;Preferences&rsquo; from the menu (or go Command-,). In the settings window &ndash; click &ldquo;Network&rdquo; and choose the &ldquo;Host-only Networks&rdquo; tab. On that tab there is a plus that you just click and accept. I didn&rsquo;t have to configure anything &ndash; I just got a configuration called <em>vboxnet0</em>. Go ahead and close preferences &ndash; this is a onetime setup thing. All images you install will be able to use these settings (if you want).
-{% img center <a href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/vbox-networks.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/vbox-networks.png</a> &lsquo;Host-only Networks&rsquo; %}</p>
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/vbox-networks.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/vbox-networks.png</a>" title="&lsquo;Host-only Networks&rsquo;" ></p>
 
 <h2>Boot up Windows</h2>
 
@@ -52,15 +52,15 @@
 <h2>Set file permissions on the hosts file</h2>
 
 <p>Now we need to edit Windows' hosts-file so that the vhosts we have on our Mac can be used. But first we have to change the file rights on the file. To open the Finder thingy, type <code>explorer C:\Windows\System32\drivers\etc</code> in at the prompt. That gives you the folder with the hosts-file. Now right click on that and select &ldquo;Properties&rdquo;. In the window you get, click the &ldquo;Security&rdquo; tab and then click the &ldquo;Edit button&rdquo;.
-{% img center <a href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-1.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-1.png</a> &lsquo;File permissions&rsquo; %}
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-1.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-1.png</a>" title="&lsquo;File permissions&rsquo;" >
  Select the &ldquo;Users&rdquo; group/user and tick the &ldquo;Full control&rdquo; box.
-{% img center <a href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-2.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-2.png</a> %}
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-2.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-2.png</a>">
 All this probably is a horrible idea securitywise, but I don&rsquo;t really care &ndash; I&rsquo;ll use this Windows install very little. Click save and you&rsquo;re good.</p>
 
 <h2>Edit the hosts file</h2>
 
 <p>Now we can edit the hosts file. Double click on the hosts file and choose Notepad in the &ldquo;Open with dialog&rdquo;. Now you can add the urls that you have set up as vhosts on your Mac. Use the 10.0.x.x IP address from the <code>ipconfig</code> command like this for example:
-<code>linenos:false
+<code>
 10.0.2.2 d7.dev
 10.0.2.2 d8.dev
 </code>
@@ -69,7 +69,7 @@ Save the file and you&rsquo;re done! I made a desktop shortcut to the file becau
 <h2>Use IE!</h2>
 
 <p>Now you can see your Mac&rsquo;s webserver&rsquo;s pages from your VM. So open up IE(!) and go to whatever url you put in the hosts file. I just want to point out one last thing: There is a Firebug Lite to be found in (this) IE if you click the gear in the upper right corner.
-{% img center <a href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/firebug-lite.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/firebug-lite.png</a> %}</p>
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/firebug-lite.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/firebug-lite.png</a>"></p>
 
 <p>Hope you found this very verbose walktrough helpful.</p>
 ]]></content>

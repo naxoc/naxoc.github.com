@@ -4,7 +4,7 @@
   <title><![CDATA[naxoc.net]]></title>
   <link href="http://naxoc.github.io/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-22T21:36:07+02:00</updated>
+  <updated>2013-10-23T23:30:14+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -61,7 +61,7 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
 
 <p>Now we can edit the hosts file. Double click on the hosts file and choose Notepad in the &ldquo;Open with dialog&rdquo;. Now you can add the urls that you have set up as vhosts on your Mac. Use the 10.0.x.x IP address from the <code>ipconfig</code> command like this for example:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>10.0.2.2 d7.dev 
 </span><span class='line'>10.0.2.2 d8.dev </span></code></pre></td></tr></table></div></figure>
@@ -120,6 +120,7 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
 <p>Here is the pre-commit file:</p>
 
 <div><script src='https://gist.github.com/4150599.js'></script>
+<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code>#!/usr/bin/php
 &lt;?php
 /**

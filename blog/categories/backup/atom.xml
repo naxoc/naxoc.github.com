@@ -4,7 +4,7 @@
   <title><![CDATA[Category: backup | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/backup/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-22T21:36:19+02:00</updated>
+  <updated>2013-10-23T23:30:14+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -28,7 +28,7 @@ The module makes a dump of the database and puts it in a folder in the files fol
 <ol>
 <li>Enable the backup migrate module</li>
 <li>Go to yoursite.com/admin/content/backup_migrate/export and choose gz under compression, put your sitename in <em>Backup file name</em>, and put &ldquo;D&rdquo; for dayname under Timestamp format:<br/>
-{% img center <a href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png</a> %}</li>
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png</a>"></li>
 <li>Download and unzip the latest <a href="http://jaka.kubje.org/software/dropboxuploader/">Dropbox uploader</a> (I used the 1.1.5 version)</li>
 <li>Edit the variables capitalized in the php below and save the it to a file called dropbox_backup.php. Put it next to the Dropbox uploader file. The files should be put somewhere outside the drupal installation.</li>
 <li>Put a line that in your crontab that calls the php script. It could look like this one, that will run every night at 1 and report to a log file how it went.
