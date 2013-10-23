@@ -266,77 +266,139 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
 
 <p>The script is not the most clever in the world, so it will be wrong about some things from time to time. You can override it and still commit with the command <code>git commit -n</code></p>
 
-<p>Here is the pre-commit file:</p>
+<p>Here is the pre-commit file: <a href="https://gist.github.com/naxoc/4150599">Gist is here</a> &ndash; I find that the gist plugin for Octopress is horribly broken.</p>
 
-<div><script src='https://gist.github.com/4150599.js'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
-<noscript><pre><code>#!/usr/bin/php
-&lt;?php
-/**
- * @file
- * This is a Git pre-commit hook that informs you when you are
- * about to commit whitespace or a debug function.
- */
-
-$red = &quot;\033[1;31m&quot;;
-$red_end = &quot;\033[0m&quot;;
-
-$yellow = &quot;\033[1;33m&quot;;
-$yellow_end = &quot;\033[0m&quot;;
-
-/**
- * An array of functions to check for.
- */
-$check = array();
-$check[] = ' dsm(';
-$check[] = ' dpm(';
-$check[] = ' dpr(';
-$check[] = ' dprint_r(';
-$check[] = ' db_queryd(';
-$check[] = ' krumo';
-$check[] = ' kpr(';
-$check[] = ' kprint_r(';
-$check[] = ' var_dump(';
-$check[] = ' dd(';
-$check[] = ' drupal_debug(';
-$check[] = ' dpq(';
-
-$return = 0;
-$diff = array();
-exec('git diff --staged', $diff, $return);
-
-if ($return !== 0) {
-  fwrite(STDOUT, &quot;git diff returned an error. Commit aborted.\n&quot;);
-  exit(1);
-}
-
-foreach ($diff as $lineno =&gt; $line) {
-  if (substr($line, 0, 1) != '+') {
-    // Skip the line if you aren't adding something that may contain a debug
-    // function call.
-    continue;
-  }
-  foreach ($check as $lineno =&gt; $function) {
-    if (strstr($line, $function)) {
-      fwrite(STDOUT, &quot;{$red}Oh, noes! You were about to commit a $function)?{$red_end}\n&quot;);
-      fwrite(STDOUT, $yellow . $line . $yellow_end);
-      fwrite(STDOUT, &quot;\nCommit aborted.\n&quot;);
-      exit(3);
-    }
-  }
-}
-
-$whitespace = shell_exec('git diff --staged --check');
-if (!empty($whitespace)) {
-  fwrite(STDOUT, &quot;{$red}Commit aborted. Fix trailing whitespace.{$red_end}\n&quot;);
-  fwrite(STDOUT, $yellow . $whitespace . $yellow_end);
-  exit(4);
-}
-
-// If this is still running, all is peachy. Let the developer commit.
-exit(0);</code></pre></noscript></div>
-
-
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="c1">#!/usr/bin/php</span>
+</span><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'><span class="sd">/**</span>
+</span><span class='line'><span class="sd"> * @file</span>
+</span><span class='line'><span class="sd"> * This is a Git pre-commit hook that informs you when you are</span>
+</span><span class='line'><span class="sd"> * about to commit whitespace or a debug function.</span>
+</span><span class='line'><span class="sd"> */</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$red</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1;31m&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$red_end</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$yellow</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1;33m&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$yellow_end</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sd">/**</span>
+</span><span class='line'><span class="sd"> * An array of functions to check for.</span>
+</span><span class='line'><span class="sd"> */</span>
+</span><span class='line'><span class="nv">$check</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; dsm(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; dpm(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; dpr(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; dprint_r(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; db_queryd(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; krumo&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; kpr(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; kprint_r(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; var_dump(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; dd(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; drupal_debug(&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$check</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39; dpq(&#39;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$return</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$diff</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+</span><span class='line'><span class="nb">exec</span><span class="p">(</span><span class="s1">&#39;git diff --staged&#39;</span><span class="p">,</span> <span class="nv">$diff</span><span class="p">,</span> <span class="nv">$return</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nv">$return</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nb">fwrite</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&quot;git diff returned an error. Commit aborted.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">foreach</span> <span class="p">(</span><span class="nv">$diff</span> <span class="k">as</span> <span class="nv">$lineno</span> <span class="o">=&gt;</span> <span class="nv">$line</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">substr</span><span class="p">(</span><span class="nv">$line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Skip the line if you aren&#39;t adding something that may contain a debug</span>
+</span><span class='line'>    <span class="c1">// function call.</span>
+</span><span class='line'>    <span class="k">continue</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">foreach</span> <span class="p">(</span><span class="nv">$check</span> <span class="k">as</span> <span class="nv">$lineno</span> <span class="o">=&gt;</span> <span class="nv">$function</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">strstr</span><span class="p">(</span><span class="nv">$line</span><span class="p">,</span> <span class="nv">$function</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nb">fwrite</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{</span><span class="nv">$red</span><span class="si">}</span><span class="s2">Oh, noes! You were about to commit a </span><span class="si">$function</span><span class="s2">)?</span><span class="si">{</span><span class="nv">$red_end</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nb">fwrite</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="nv">$yellow</span> <span class="o">.</span> <span class="nv">$line</span> <span class="o">.</span> <span class="nv">$yellow_end</span><span class="p">);</span>
+</span><span class='line'>      <span class="nb">fwrite</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Commit aborted.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">exit</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$whitespace</span> <span class="o">=</span> <span class="nb">shell_exec</span><span class="p">(</span><span class="s1">&#39;git diff --staged --check&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$whitespace</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nb">fwrite</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{</span><span class="nv">$red</span><span class="si">}</span><span class="s2">Commit aborted. Fix trailing whitespace.</span><span class="si">{</span><span class="nv">$red_end</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nb">fwrite</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="nv">$yellow</span> <span class="o">.</span> <span class="nv">$whitespace</span> <span class="o">.</span> <span class="nv">$yellow_end</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">exit</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// If this is still running, all is peachy. Let the developer commit.</span>
+</span><span class='line'><span class="k">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 </div>
   

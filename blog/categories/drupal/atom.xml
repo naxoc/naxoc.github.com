@@ -4,7 +4,7 @@
   <title><![CDATA[Category: drupal | naxoc.net]]></title>
   <link href="http://naxoc.github.io/blog/categories/drupal/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-23T23:30:14+02:00</updated>
+  <updated>2013-10-23T23:41:29+02:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -26,75 +26,82 @@
 
 <p>The script is not the most clever in the world, so it will be wrong about some things from time to time. You can override it and still commit with the command <code>git commit -n</code></p>
 
-<p>Here is the pre-commit file:
-<div><script src='https://gist.github.com/4150599.js'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
-<noscript><pre><code>#!/usr/bin/php
-&lt;?php
-/**
+<p>Here is the pre-commit file: <a href="https://gist.github.com/naxoc/4150599">Gist is here</a> &ndash; I find that the gist plugin for Octopress is horribly broken.
+``` php</p>
+
+<h1>!/usr/bin/php</h1>
+
+<p>&lt;?php
+/<em>*
  * @file
  * This is a Git pre-commit hook that informs you when you are
  * about to commit whitespace or a debug function.
- */
+ </em>/</p>
 
-$red = &quot;\033[1;31m&quot;;
-$red_end = &quot;\033[0m&quot;;
+<p>$red = &ldquo;\033[1;31m&rdquo;;
+$red_end = &ldquo;\033[0m&rdquo;;</p>
 
-$yellow = &quot;\033[1;33m&quot;;
-$yellow_end = &quot;\033[0m&quot;;
+<p>$yellow = &ldquo;\033[1;33m&rdquo;;
+$yellow_end = &ldquo;\033[0m&rdquo;;</p>
 
-/**
+<p>/<em>*
  * An array of functions to check for.
- */
+ </em>/
 $check = array();
-$check[] = ' dsm(';
-$check[] = ' dpm(';
-$check[] = ' dpr(';
-$check[] = ' dprint_r(';
-$check[] = ' db_queryd(';
-$check[] = ' krumo';
-$check[] = ' kpr(';
-$check[] = ' kprint_r(';
-$check[] = ' var_dump(';
-$check[] = ' dd(';
-$check[] = ' drupal_debug(';
-$check[] = ' dpq(';
+$check[] = &lsquo; dsm(&rsquo;;
+$check[] = &lsquo; dpm(&rsquo;;
+$check[] = &lsquo; dpr(&rsquo;;
+$check[] = &lsquo; dprint_r(&rsquo;;
+$check[] = &lsquo; db_queryd(&rsquo;;
+$check[] = &lsquo; krumo&rsquo;;
+$check[] = &lsquo; kpr(&rsquo;;
+$check[] = &lsquo; kprint_r(&rsquo;;
+$check[] = &lsquo; var_dump(&rsquo;;
+$check[] = &lsquo; dd(&rsquo;;
+$check[] = &lsquo; drupal_debug(&rsquo;;
+$check[] = &lsquo; dpq(&rsquo;;</p>
 
-$return = 0;
+<p>$return = 0;
 $diff = array();
-exec('git diff --staged', $diff, $return);
+exec(&lsquo;git diff &mdash;staged&rsquo;, $diff, $return);</p>
 
-if ($return !== 0) {
-  fwrite(STDOUT, &quot;git diff returned an error. Commit aborted.\n&quot;);
+<p>if ($return !== 0) {
+  fwrite(STDOUT, &ldquo;git diff returned an error. Commit aborted.\n&rdquo;);
   exit(1);
-}
+}</p>
 
-foreach ($diff as $lineno =&gt; $line) {
-  if (substr($line, 0, 1) != '+') {
-    // Skip the line if you aren't adding something that may contain a debug
-    // function call.
-    continue;
-  }
-  foreach ($check as $lineno =&gt; $function) {
-    if (strstr($line, $function)) {
-      fwrite(STDOUT, &quot;{$red}Oh, noes! You were about to commit a $function)?{$red_end}\n&quot;);
-      fwrite(STDOUT, $yellow . $line . $yellow_end);
-      fwrite(STDOUT, &quot;\nCommit aborted.\n&quot;);
-      exit(3);
-    }
-  }
-}
+<p>foreach ($diff as $lineno => $line) {
+  if (substr($line, 0, 1) != &lsquo;+&rsquo;) {</p>
 
-$whitespace = shell_exec('git diff --staged --check');
+<pre><code>// Skip the line if you aren't adding something that may contain a debug
+// function call.
+continue;
+</code></pre>
+
+<p>  }
+  foreach ($check as $lineno => $function) {</p>
+
+<pre><code>if (strstr($line, $function)) {
+  fwrite(STDOUT, "{$red}Oh, noes! You were about to commit a $function)?{$red_end}\n");
+  fwrite(STDOUT, $yellow . $line . $yellow_end);
+  fwrite(STDOUT, "\nCommit aborted.\n");
+  exit(3);
+}
+</code></pre>
+
+<p>  }
+}</p>
+
+<p>$whitespace = shell_exec(&lsquo;git diff &mdash;staged &mdash;check&rsquo;);
 if (!empty($whitespace)) {
-  fwrite(STDOUT, &quot;{$red}Commit aborted. Fix trailing whitespace.{$red_end}\n&quot;);
+  fwrite(STDOUT, &ldquo;{$red}Commit aborted. Fix trailing whitespace.{$red_end}\n&rdquo;);
   fwrite(STDOUT, $yellow . $whitespace . $yellow_end);
   exit(4);
-}
+}</p>
 
-// If this is still running, all is peachy. Let the developer commit.
-exit(0);</code></pre></noscript></div>
-</p>
+<p>// If this is still running, all is peachy. Let the developer commit.
+exit(0);
+```</p>
 ]]></content>
   </entry>
   
