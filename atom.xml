@@ -4,7 +4,7 @@
   <title><![CDATA[naxoc.net]]></title>
   <link href="http://naxoc.github.io/atom.xml" rel="self"/>
   <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-23T23:41:29+02:00</updated>
+  <updated>2013-10-28T22:04:47+01:00</updated>
   <id>http://naxoc.github.io/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -12,6 +12,101 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Finding unused images in your website code]]></title>
+    <link href="http://naxoc.github.io/2013/10/28/finding-unused-images-in-your-website-code/"/>
+    <updated>2013-10-28T21:45:00+01:00</updated>
+    <id>http://naxoc.github.io/2013/10/28/finding-unused-images-in-your-website-code</id>
+    <content type="html"><![CDATA[<p>I was doing a lot of changes to CSS files today &ndash; mainly deleting a whole lot of stuff. I wanted to see if there were image files that were referenced by CSS that were no longer in use, so I wrote this naïve little script that loops through all image files it finds in the dir you give it to see if there are references to the image files.</p>
+
+<p>If you have <a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a> (ag) installed the script is much faster. Without Silver Searcher the script uses grep. If you don&rsquo;t know Silver Searcher go check it out &ndash; it is super fast.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'><span class="nv">DIR</span><span class="o">=</span>.
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;$1&quot;</span> <span class="o">]</span>
+</span><span class='line'><span class="k">then</span>
+</span><span class='line'><span class="k">  </span><span class="nv">DIR</span><span class="o">=</span><span class="nv">$1</span>
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Find image files in.</span>
+</span><span class='line'><span class="nv">FILES</span><span class="o">=</span><span class="sb">`</span>find <span class="nv">$DIR</span> -type f | grep <span class="s2">&quot;.*\.\(jpg\|gif\|png\|jpeg\)&quot;</span><span class="sb">`</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Default searcher is grep. If Silver Searcher is installed, use that.</span>
+</span><span class='line'><span class="nv">SEARCHER</span><span class="o">=</span><span class="s1">&#39;grep -r -l &#39;</span>
+</span><span class='line'><span class="k">if </span><span class="nb">command</span> -v ag
+</span><span class='line'><span class="k">then</span>
+</span><span class='line'>  <span class="c"># Sweet! Let&#39;s use Silver Searcher.</span>
+</span><span class='line'>  <span class="nv">SEARCHER</span><span class="o">=</span><span class="s1">&#39;ag -l &#39;</span>
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Loop over image files.</span>
+</span><span class='line'><span class="k">for </span>f in <span class="nv">$FILES</span>
+</span><span class='line'><span class="k">do</span>
+</span><span class='line'><span class="k">  if</span> <span class="o">[[</span> -f <span class="nv">$f</span> <span class="o">]]</span>
+</span><span class='line'>  <span class="k">then</span>
+</span><span class='line'><span class="k">    </span><span class="nv">name</span><span class="o">=</span><span class="k">$(</span>basename <span class="nv">$f</span><span class="k">)</span>
+</span><span class='line'>    <span class="nv">found</span><span class="o">=</span><span class="k">$(</span><span class="nv">$SEARCHER</span> <span class="nv">$name</span> <span class="nv">$DIR</span><span class="k">)</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$found</span> <span class="o">]]</span>
+</span><span class='line'>    <span class="k">then</span>
+</span><span class='line'><span class="k">      </span><span class="nb">echo</span> <span class="nv">$f</span>
+</span><span class='line'>    <span class="k">fi</span>
+</span><span class='line'><span class="k">  fi</span>
+</span><span class='line'><span class="k">done</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="https://gist.github.com/naxoc/7203765">Gist is here</a> &ndash; I find that the gist plugin for Octopress is  broken.</p>
+
+<h2>How to use the script</h2>
+
+<ol>
+<li>Don&rsquo;t use windows.</li>
+<li>Download the gist and put it somewhere in your project.</li>
+<li>cd to the script in your command line and go <code>chmod u+x unused-images.sh</code></li>
+<li>Run the script by going <code>sh unused-images.sh</code> or <code>/.unused-images.sh</code>. If you pass a directory as an argument you will search in that dir only. If you don&rsquo;t pass an argument the script will search in the dir it is in, so be a little bit careful with doing that in a directory that contains thousands of files.</li>
+</ol>
+
+
+<p>The script outputs the images that have no references. So if you feel courageous you can delete the unused image files by piping the output to xargs and delete:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>./unused-images.sh themes | xargs rm
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Windows in VirtualBox on the Mac]]></title>

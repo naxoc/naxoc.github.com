@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: code | naxoc.net]]></title>
+  <link href="http://naxoc.github.io/blog/categories/code/atom.xml" rel="self"/>
+  <link href="http://naxoc.github.io/"/>
+  <updated>2013-10-28T22:04:47+01:00</updated>
+  <id>http://naxoc.github.io/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Finding unused images in your website code]]></title>
+    <link href="http://naxoc.github.io/2013/10/28/finding-unused-images-in-your-website-code/"/>
+    <updated>2013-10-28T21:45:00+01:00</updated>
+    <id>http://naxoc.github.io/2013/10/28/finding-unused-images-in-your-website-code</id>
+    <content type="html"><![CDATA[<p>I was doing a lot of changes to CSS files today &ndash; mainly deleting a whole lot of stuff. I wanted to see if there were image files that were referenced by CSS that were no longer in use, so I wrote this naïve little script that loops through all image files it finds in the dir you give it to see if there are references to the image files.</p>
+
+<p>If you have <a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a> (ag) installed the script is much faster. Without Silver Searcher the script uses grep. If you don&rsquo;t know Silver Searcher go check it out &ndash; it is super fast.</p>
+
+<p>``` sh</p>
+
+<h1>!/bin/bash</h1>
+
+<p>DIR=.
+if [ -n &ldquo;$1&rdquo; ]
+then
+  DIR=$1
+fi</p>
+
+<h1>Find image files in.</h1>
+
+<p>FILES=<code>find $DIR -type f | grep ".*\.\(jpg\|gif\|png\|jpeg\)"</code></p>
+
+<h1>Default searcher is grep. If Silver Searcher is installed, use that.</h1>
+
+<p>SEARCHER=&lsquo;grep -r -l &rsquo;
+if command -v ag
+then
+  # Sweet! Let&rsquo;s use Silver Searcher.
+  SEARCHER=&lsquo;ag -l &rsquo;
+fi</p>
+
+<h1>Loop over image files.</h1>
+
+<p>for f in $FILES
+do
+  if [[ -f $f ]]
+  then</p>
+
+<pre><code>name=$(basename $f)
+found=$($SEARCHER $name $DIR)
+if [[ -z $found ]]
+then
+  echo $f
+fi
+</code></pre>
+
+<p>  fi
+done
+```
+<a href="https://gist.github.com/naxoc/7203765">Gist is here</a> &ndash; I find that the gist plugin for Octopress is  broken.</p>
+
+<h2>How to use the script</h2>
+
+<ol>
+<li>Don&rsquo;t use windows.</li>
+<li>Download the gist and put it somewhere in your project.</li>
+<li>cd to the script in your command line and go <code>chmod u+x unused-images.sh</code></li>
+<li>Run the script by going <code>sh unused-images.sh</code> or <code>/.unused-images.sh</code>. If you pass a directory as an argument you will search in that dir only. If you don&rsquo;t pass an argument the script will search in the dir it is in, so be a little bit careful with doing that in a directory that contains thousands of files.</li>
+</ol>
+
+
+<p>The script outputs the images that have no references. So if you feel courageous you can delete the unused image files by piping the output to xargs and delete:
+<code>
+./unused-images.sh themes | xargs rm
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
