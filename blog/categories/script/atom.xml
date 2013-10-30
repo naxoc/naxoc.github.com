@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: script | naxoc.net]]></title>
-  <link href="http://naxoc.github.io/blog/categories/script/atom.xml" rel="self"/>
-  <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-28T22:04:47+01:00</updated>
-  <id>http://naxoc.github.io/</id>
+  <link href="http://naxoc.net/blog/categories/script/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-10-30T21:45:16+01:00</updated>
+  <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Finding unused images in your website code]]></title>
-    <link href="http://naxoc.github.io/2013/10/28/finding-unused-images-in-your-website-code/"/>
+    <link href="http://naxoc.net/2013/10/28/finding-unused-images-in-your-website-code/"/>
     <updated>2013-10-28T21:45:00+01:00</updated>
-    <id>http://naxoc.github.io/2013/10/28/finding-unused-images-in-your-website-code</id>
+    <id>http://naxoc.net/2013/10/28/finding-unused-images-in-your-website-code</id>
     <content type="html"><![CDATA[<p>I was doing a lot of changes to CSS files today &ndash; mainly deleting a whole lot of stuff. I wanted to see if there were image files that were referenced by CSS that were no longer in use, so I wrote this naïve little script that loops through all image files it finds in the dir you give it to see if there are references to the image files.</p>
 
 <p>If you have <a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a> (ag) installed the script is much faster. Without Silver Searcher the script uses grep. If you don&rsquo;t know Silver Searcher go check it out &ndash; it is super fast.</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: apache | naxoc.net]]></title>
-  <link href="http://naxoc.github.io/blog/categories/apache/atom.xml" rel="self"/>
-  <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-28T22:04:47+01:00</updated>
-  <id>http://naxoc.github.io/</id>
+  <link href="http://naxoc.net/blog/categories/apache/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-10-30T21:45:16+01:00</updated>
+  <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hide Drupal files with .htaccess]]></title>
-    <link href="http://naxoc.github.io/2009/11/13/hide-drupal-files-with-htaccess/"/>
+    <link href="http://naxoc.net/2009/11/13/hide-drupal-files-with-htaccess/"/>
     <updated>2009-11-13T23:50:00+01:00</updated>
-    <id>http://naxoc.github.io/2009/11/13/hide-drupal-files-with-htaccess</id>
+    <id>http://naxoc.net/2009/11/13/hide-drupal-files-with-htaccess</id>
     <content type="html"><![CDATA[<p>If one goes to somedrupalsite.com/CHANGELOG.txt &ndash; it is normally possible to read the file and see what version of Drupal the site is running. If you don&rsquo;t want everybody to see what version you are running, it is a good idea to cloak the *.txt files in the Drupal install.</p>
 
 <p>Using rewrite rules in .htaccess, the *.txt files in Drupal can be hidden. I use a 403 &ndash; forbidden on these files. That is what the [F] means See the Apache documentation on RewriteRule for more options.

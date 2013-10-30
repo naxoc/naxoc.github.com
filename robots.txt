@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://naxoc.github.io/sitemap.xml 
+Sitemap: http://naxoc.net/sitemap.xml 

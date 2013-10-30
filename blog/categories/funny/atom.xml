@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: funny | naxoc.net]]></title>
-  <link href="http://naxoc.github.io/blog/categories/funny/atom.xml" rel="self"/>
-  <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-28T22:04:47+01:00</updated>
-  <id>http://naxoc.github.io/</id>
+  <link href="http://naxoc.net/blog/categories/funny/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-10-30T21:45:16+01:00</updated>
+  <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Social media meta]]></title>
-    <link href="http://naxoc.github.io/2010/10/20/social-media-meta/"/>
+    <link href="http://naxoc.net/2010/10/20/social-media-meta/"/>
     <updated>2010-10-20T11:33:00+02:00</updated>
-    <id>http://naxoc.github.io/2010/10/20/social-media-meta</id>
+    <id>http://naxoc.net/2010/10/20/social-media-meta</id>
     <content type="html"><![CDATA[<p>I am doing some integration with facebook these days. I don&rsquo;t use facebook much and I certainly no not want all kinds of test data on my profile so I made a test profile using names that just came to mind :-P</p>
 
 <p>On the facebook developer pages there is a demonstration of the like button. That you can like&hellip; Gotta love the meta!</p>

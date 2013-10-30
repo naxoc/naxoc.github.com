@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tools | naxoc.net]]></title>
-  <link href="http://naxoc.github.io/blog/categories/tools/atom.xml" rel="self"/>
-  <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-28T22:04:47+01:00</updated>
-  <id>http://naxoc.github.io/</id>
+  <link href="http://naxoc.net/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-10-30T21:45:16+01:00</updated>
+  <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using specific versions of formula with Homebrew]]></title>
-    <link href="http://naxoc.github.io/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
+    <link href="http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
     <updated>2012-06-05T13:54:00+02:00</updated>
-    <id>http://naxoc.github.io/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
+    <id>http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
     <content type="html"><![CDATA[<p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
 
 <p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:
@@ -50,9 +50,9 @@ Find and note the version number you want. In my case I wasn't sure, so I just w
   
   <entry>
     <title type="html"><![CDATA[Navigating with Krumo]]></title>
-    <link href="http://naxoc.github.io/2011/09/14/navigating-with-krumo/"/>
+    <link href="http://naxoc.net/2011/09/14/navigating-with-krumo/"/>
     <updated>2011-09-14T09:13:00+02:00</updated>
-    <id>http://naxoc.github.io/2011/09/14/navigating-with-krumo</id>
+    <id>http://naxoc.net/2011/09/14/navigating-with-krumo</id>
     <content type="html"><![CDATA[<p><a href="http://drupal.org/project/devel" title="Devel | drupal.org">The Devel module</a> includes the super helpful <a href="http://krumo.sourceforge.net/">Krumo library</a>. I use <code>dsm()</code> and <code>krumo()</code> all the time. If you are not familiar with Devel, you should try it. Morten Wulff wrote a <a href="https://ratatosk.backpackit.com/pub/1836982-debugging-drupal">demo page for the module</a>.<br/>
 <img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png</a>"><br/>
 Today a client suggested that the Devel module Krumo could display the &ldquo;path&rdquo; to an item in an array by right clicking or otherwise interacting with the nested elements in the output from Krumo. I was really excited about that idea &ndash; I can&rsquo;t count the number of times I have tried and failed to target an item deep in a form array or an item in the node object simply because my human brain can&rsquo;t remember a structure like <code>$form['#node']-&gt;content['links']['comment']['#attributes']['class']</code> for more than 3 seconds.</p>

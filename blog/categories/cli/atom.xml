@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: cli | naxoc.net]]></title>
-  <link href="http://naxoc.github.io/blog/categories/cli/atom.xml" rel="self"/>
-  <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-28T22:04:47+01:00</updated>
-  <id>http://naxoc.github.io/</id>
+  <link href="http://naxoc.net/blog/categories/cli/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-10-30T21:45:16+01:00</updated>
+  <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using specific versions of formula with Homebrew]]></title>
-    <link href="http://naxoc.github.io/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
+    <link href="http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
     <updated>2012-06-05T13:54:00+02:00</updated>
-    <id>http://naxoc.github.io/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
+    <id>http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
     <content type="html"><![CDATA[<p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
 
 <p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:
@@ -50,9 +50,9 @@ Find and note the version number you want. In my case I wasn't sure, so I just w
   
   <entry>
     <title type="html"><![CDATA[Moving an iTunes Library]]></title>
-    <link href="http://naxoc.github.io/2011/05/11/moving-an-itunes-library/"/>
+    <link href="http://naxoc.net/2011/05/11/moving-an-itunes-library/"/>
     <updated>2011-05-11T15:22:00+02:00</updated>
-    <id>http://naxoc.github.io/2011/05/11/moving-an-itunes-library</id>
+    <id>http://naxoc.net/2011/05/11/moving-an-itunes-library</id>
     <content type="html"><![CDATA[<p>If you are moving an iTunes library to a new mac it will go smooth if the user login is the same. So if I move my iTunes library from an old machine where it was located in <code>/Users/ckj/iTunes</code> to a new machine where it is gonna go in <code>/Users/ckj/iTunes</code> &ndash; I have no problems. But if I changed to another username on the new machine &ndash; all the paths in the iTunes Library.xml file will not be correct anymore. I have moved libraries so many times now and I thought I would share a really quick way to fix the iTunes Library.xml file to reflect the correct user directory.</p>
 
 <p>If you use the built-in command line tool called <a href="http://en.wikipedia.org/wiki/Sed">sed</a>, you can type one line in the terminal and be done. Let’s say I was moving from a mac with a user directory called &ldquo;ckj&rdquo; to another machine with a user directory called &ldquo;naxoc&rdquo;. All I would have to do in the terminal would be this:</p>

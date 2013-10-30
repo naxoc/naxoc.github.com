@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: VirtualBox | naxoc.net]]></title>
-  <link href="http://naxoc.github.io/blog/categories/virtualbox/atom.xml" rel="self"/>
-  <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-28T22:04:47+01:00</updated>
-  <id>http://naxoc.github.io/</id>
+  <link href="http://naxoc.net/blog/categories/virtualbox/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-10-30T21:45:16+01:00</updated>
+  <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Windows in VirtualBox on the Mac]]></title>
-    <link href="http://naxoc.github.io/2013/10/22/windows-in-virtualbox-on-the-mac/"/>
+    <link href="http://naxoc.net/2013/10/22/windows-in-virtualbox-on-the-mac/"/>
     <updated>2013-10-22T21:06:00+02:00</updated>
-    <id>http://naxoc.github.io/2013/10/22/windows-in-virtualbox-on-the-mac</id>
+    <id>http://naxoc.net/2013/10/22/windows-in-virtualbox-on-the-mac</id>
     <content type="html"><![CDATA[<p>I have been doing more CSS and front-end stuff lately. I am having a lot of fun learning more about these things that I have somehow avoided doing for the last many years.</p>
 
 <p>Today I realized that I don&rsquo;t have to own a MS Windows license to run a setup in a VM for browser-testing. While I don&rsquo;t hate Microsoft (anymore) I would really rather not buy a license for a product that I think is horrible. Anyway &ndash; I had no idea that it is super simple to set up a VM running whatever version of IE you want on Windows.</p>

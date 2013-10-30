@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: backup | naxoc.net]]></title>
-  <link href="http://naxoc.github.io/blog/categories/backup/atom.xml" rel="self"/>
-  <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-28T22:04:47+01:00</updated>
-  <id>http://naxoc.github.io/</id>
+  <link href="http://naxoc.net/blog/categories/backup/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-10-30T21:45:16+01:00</updated>
+  <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Backup and migrate module + Dropbox = peace of mind]]></title>
-    <link href="http://naxoc.github.io/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/"/>
+    <link href="http://naxoc.net/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/"/>
     <updated>2009-11-16T21:06:00+01:00</updated>
-    <id>http://naxoc.github.io/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind</id>
+    <id>http://naxoc.net/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind</id>
     <content type="html"><![CDATA[<p>The <a href="http://drupal.org/project/backup_migrate">backup and migrate</a> module is truly sweet. We all know that it is a <em>really</em> good idea to back up data. But if you are like me &ndash; you forgot to do it or just don&rsquo;t do it for some lame reason. So backups should be automated. The backup and migrate module does exactly that &ndash; it can be configured to run every X hours if you have cron (and you should have) running on your site. <br/>
 The module makes a dump of the database and puts it in a folder in the files folder of the site. Even if you use the public <a href="http://drupal.org/node/22240">download method</a>, the security is OK &ndash; a .htacces file put in the folder by the backup and migrate module and dissalows access to the folder&rsquo;s content.</p>
 

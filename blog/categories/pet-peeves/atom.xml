@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: pet peeves | naxoc.net]]></title>
-  <link href="http://naxoc.github.io/blog/categories/pet-peeves/atom.xml" rel="self"/>
-  <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-28T22:04:47+01:00</updated>
-  <id>http://naxoc.github.io/</id>
+  <link href="http://naxoc.net/blog/categories/pet-peeves/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-10-30T21:45:16+01:00</updated>
+  <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Pet peeve #1 - the comparison operator]]></title>
-    <link href="http://naxoc.github.io/2010/12/10/pet-peeve-number-1-the-comparison-operator/"/>
+    <link href="http://naxoc.net/2010/12/10/pet-peeve-number-1-the-comparison-operator/"/>
     <updated>2010-12-10T14:27:00+01:00</updated>
-    <id>http://naxoc.github.io/2010/12/10/pet-peeve-number-1-the-comparison-operator</id>
+    <id>http://naxoc.net/2010/12/10/pet-peeve-number-1-the-comparison-operator</id>
     <content type="html"><![CDATA[<p>I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.</p>
 
 <p>When making comparisons, switch the order of the things you compare like this:

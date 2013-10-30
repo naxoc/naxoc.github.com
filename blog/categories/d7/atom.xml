@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: D7 | naxoc.net]]></title>
-  <link href="http://naxoc.github.io/blog/categories/d7/atom.xml" rel="self"/>
-  <link href="http://naxoc.github.io/"/>
-  <updated>2013-10-28T22:04:47+01:00</updated>
-  <id>http://naxoc.github.io/</id>
+  <link href="http://naxoc.net/blog/categories/d7/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-10-30T21:45:16+01:00</updated>
+  <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Upgraded to Drupal 7]]></title>
-    <link href="http://naxoc.github.io/2010/10/18/upgraded-to-drupal-7/"/>
+    <link href="http://naxoc.net/2010/10/18/upgraded-to-drupal-7/"/>
     <updated>2010-10-18T20:58:00+02:00</updated>
-    <id>http://naxoc.github.io/2010/10/18/upgraded-to-drupal-7</id>
+    <id>http://naxoc.net/2010/10/18/upgraded-to-drupal-7</id>
     <content type="html"><![CDATA[<p>I updated this website to D7 this weekend. <a href="http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7" title="Relauching my blog on Drupal 7 | Mikkel Høgh">Mikkel</a> upgraded his site and urges others to do so now, so I thought I&rsquo;d give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.</p>
 
 <p>I actually never did an actual core upgrade via the upgrade path before. The sites I have upgraded from D5 to D6 have pretty much all had such a complex data structure that I had to do an upgrade with a data migration. While that is a lot of work (and requires a programmer), I still like the opportunity it gives to clear out a data model that might have grown a little too organically. For this site though, that would be gross overkill. So my approach was simply to read UPGRADE.txt and follow the steps.</p>
