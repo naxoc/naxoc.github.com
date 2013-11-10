@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | naxoc.net]]></title>
+  <link href="http://naxoc.net/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-11-10T15:05:00+01:00</updated>
+  <id>http://naxoc.net/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Color schemes and productivity]]></title>
+    <link href="http://naxoc.net/2013/11/10/color-schemes-and-productivity/"/>
+    <updated>2013-11-10T13:45:00+01:00</updated>
+    <id>http://naxoc.net/2013/11/10/color-schemes-and-productivity</id>
+    <content type="html"><![CDATA[<p>Almost all programmers have a color scheme or theme in their terminal and their code editor. Some people actually turns syntax highlighting off, but I will never understand that. To me &ndash; code is something that lives on a black or dark background and has syntax colors. I have only ever used a white background color scheme back when I was using Eclipse 8 years ago. And probably because I couldn&rsquo;t figure out how to set another color scheme than the one that comes with Eclipse.</p>
+
+<p>Lately I have been really bothered by reflections in my glossy screen om my MBP and my Apple Cinema Display (I know &ndash; first world problem). In the afternoon all I could really see was me &ndash; like I was looking in a mirror. While that is very enjoyable it is not the way to get work done, so I set out to find a color scheme that would make it easier to see what I am working on and not myself so much. In that process I found out that I am super sensitive to changes in my editor work setup. Change the colors a little and I have a hard time reading through code fast. It is weird and a little bit stupid that it is so, but I can&rsquo;t help it. It takes me about 2 weeks to get reasonably comfortable with changes to a color scheme.</p>
+
+<p>This blog post is really just a listing and some screen shots of the color schemes I like. And let me tell you right now: there is no dark background color scheme that solves the glare problem &ndash; I tried tons of them and none of them are magic. Moving your chair or source of light solves some of the glare problems, but if Apple would just go back to offering a non-glare version it would be a lot easier.</p>
+
+<h2>The ones I like</h2>
+
+<h3>Desert theme</h3>
+
+<p>I really like the &ldquo;Desert&rdquo; color scheme that comes with Vim as one of the default color schemes.
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/vim-desert.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/vim-desert.png</a>" title="&lsquo;Vim desert color scheme&rsquo;" >
+The only thing I find a little annoying is the hysterically yellow line numbers. I have put this line in my .gvimrc to tone down line numbers after the color scheme is applied:
+<code>vim
+hi LineNr guifg=grey50 guibg=grey20
+</code>
+That is better:
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/desert-grey-numbers.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/desert-grey-numbers.png</a>" title="&lsquo;Vim desert theme with grey line numbers&rsquo;" >
+I haven&rsquo;t found a desert color scheme for PHPStorm yet. I also don&rsquo;t really like to use it in the terminal, so I guess the desert theme is a Vim thing for me.</p>
+
+<h3>Tomorrow</h3>
+
+<p>In both the terminal and PHPStorm I use the <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow theme</a>. It comes with support for a ton of different applications and is really well thought out. I started using this one because it has a white background version too. So much like the popular <a href="http://ethanschoonover.com/solarized">Solarized</a> theme it can use the same colors on light and dark background.
+In the terminal I mainly use Tomorrow Night Eighties and in PHPStorm I switch between Tomorrow Night Eighties and just plain Tomorrow.</p>
+
+<p>Here is the dark version (Tomorrow Night Eighties).
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/tomorrow-night-eighties-phpstorm.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/tomorrow-night-eighties-phpstorm.png</a>" title="&lsquo;Tomorrow Night Eighties in PHPStorm&rsquo;" >
+And here is the light version (Tomorrow).
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/tomorrow-phpstorm.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/tomorrow-phpstorm.png</a>" title="&lsquo;Tomorrow theme in PHPStorm&rsquo;" ></p>
+
+<p>I still mostly use the dark version, but when glare becomes too much I can pretty comfortably switch to the light version and still get stuff done. It is crazy how sensitive I am to having the colors be recognizable.</p>
+
+<h2>Darcula</h2>
+
+<p>This is the color scheme that comes with the look and feel for PHPStorm called Darcula. I think it is really good looking and I can use it &ndash; but only if there is not too much light. It is a little on the low contrast side.
+<img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/darcula.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/darcula.png</a>" title="&lsquo;Darcula theme&rsquo;" ></p>
+
+<h2>The one I don&rsquo;t like so much</h2>
+
+<h3>Solarized</h3>
+
+<p>I realize that all code snippets on my blog use solarized. It is mainly because I haven&rsquo;t taken the time to change it. It really is not as simple as you would think in Octopress. Ironically &ndash; on the documentation site for Octopress solarized is not used. I haven&rsquo;t figured out what theme it using. Maybe it is solarized without the yellow background and just plain white.</p>
+
+<p>Anyway. No reason the hate on solarized. So many people use it and love it. I just happen to think that the dark version has almost zero contrast and the yellow version makes me want to pee.</p>
+]]></content>
+  </entry>
+  
+</feed>

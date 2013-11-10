@@ -9,7 +9,7 @@
   <meta name="author" content="Camilla Krag Jensen">
 
   
-  <meta name="description" content="I was doing a lot of changes to CSS files today &ndash; mainly deleting a whole lot of stuff. I wanted to see if there were image files that were &hellip;">
+  <meta name="description" content="Almost all programmers have a color scheme or theme in their terminal and their code editor. Some people actually turns syntax highlighting off, but &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,90 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/11/10/color-schemes-and-productivity/">Color Schemes and Productivity</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-10T13:45:00+01:00" pubdate data-updated="true">Nov 10<span>th</span>, 2013</time>
+        
+         | <a href="/2013/11/10/color-schemes-and-productivity/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Almost all programmers have a color scheme or theme in their terminal and their code editor. Some people actually turns syntax highlighting off, but I will never understand that. To me &ndash; code is something that lives on a black or dark background and has syntax colors. I have only ever used a white background color scheme back when I was using Eclipse 8 years ago. And probably because I couldn&rsquo;t figure out how to set another color scheme than the one that comes with Eclipse.</p>
+
+<p>Lately I have been really bothered by reflections in my glossy screen om my MBP and my Apple Cinema Display (I know &ndash; first world problem). In the afternoon all I could really see was me &ndash; like I was looking in a mirror. While that is very enjoyable it is not the way to get work done, so I set out to find a color scheme that would make it easier to see what I am working on and not myself so much. In that process I found out that I am super sensitive to changes in my editor work setup. Change the colors a little and I have a hard time reading through code fast. It is weird and a little bit stupid that it is so, but I can&rsquo;t help it. It takes me about 2 weeks to get reasonably comfortable with changes to a color scheme.</p>
+
+<p>This blog post is really just a listing and some screen shots of the color schemes I like. And let me tell you right now: there is no dark background color scheme that solves the glare problem &ndash; I tried tons of them and none of them are magic. Moving your chair or source of light solves some of the glare problems, but if Apple would just go back to offering a non-glare version it would be a lot easier.</p>
+
+<h2>The ones I like</h2>
+
+<h3>Desert theme</h3>
+
+<p>I really like the &ldquo;Desert&rdquo; color scheme that comes with Vim as one of the default color schemes.
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/vim-desert.png" title="'Vim desert color scheme'" >
+The only thing I find a little annoying is the hysterically yellow line numbers. I have put this line in my .gvimrc to tone down line numbers after the color scheme is applied:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="k">hi</span> LineNr guifg<span class="p">=</span>grey50 guibg<span class="p">=</span>grey20
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That is better:
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/desert-grey-numbers.png" title="'Vim desert theme with grey line numbers'" >
+I haven&rsquo;t found a desert color scheme for PHPStorm yet. I also don&rsquo;t really like to use it in the terminal, so I guess the desert theme is a Vim thing for me.</p>
+
+<h3>Tomorrow</h3>
+
+<p>In both the terminal and PHPStorm I use the <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow theme</a>. It comes with support for a ton of different applications and is really well thought out. I started using this one because it has a white background version too. So much like the popular <a href="http://ethanschoonover.com/solarized">Solarized</a> theme it can use the same colors on light and dark background.
+In the terminal I mainly use Tomorrow Night Eighties and in PHPStorm I switch between Tomorrow Night Eighties and just plain Tomorrow.</p>
+
+<p>Here is the dark version (Tomorrow Night Eighties).
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/tomorrow-night-eighties-phpstorm.png" title="'Tomorrow Night Eighties in PHPStorm'" >
+And here is the light version (Tomorrow).
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/tomorrow-phpstorm.png" title="'Tomorrow theme in PHPStorm'" ></p>
+
+<p>I still mostly use the dark version, but when glare becomes too much I can pretty comfortably switch to the light version and still get stuff done. It is crazy how sensitive I am to having the colors be recognizable.</p>
+
+<h2>Darcula</h2>
+
+<p>This is the color scheme that comes with the look and feel for PHPStorm called Darcula. I think it is really good looking and I can use it &ndash; but only if there is not too much light. It is a little on the low contrast side.
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/color-scheme/darcula.png" title="'Darcula theme'" ></p>
+
+<h2>The one I don&rsquo;t like so much</h2>
+
+<h3>Solarized</h3>
+
+<p>I realize that all code snippets on my blog use solarized. It is mainly because I haven&rsquo;t taken the time to change it. It really is not as simple as you would think in Octopress. Ironically &ndash; on the documentation site for Octopress solarized is not used. I haven&rsquo;t figured out what theme it using. Maybe it is solarized without the yellow background and just plain white.</p>
+
+<p>Anyway. No reason the hate on solarized. So many people use it and love it. I just happen to think that the dark version has almost zero contrast and the yellow version makes me want to pee.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -777,68 +861,6 @@ Thanks to Niels Fanøe for the inspiration.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2010/12/10/pet-peeve-number-1-the-comparison-operator/">Pet Peeve #1 - the Comparison Operator</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-10T14:27:00+01:00" pubdate data-updated="true">Dec 10<span>th</span>, 2010</time>
-        
-         | <a href="/2010/12/10/pet-peeve-number-1-the-comparison-operator/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.</p>
-
-<p>When making comparisons, switch the order of the things you compare like this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;book&#39;</span> <span class="o">==</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">type</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'><span class="c1">// Stuff happens.</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You might think why? And that looks weird! Yes, it does look a little weird. But I do this to not accidentially assign the $node->type the value I am comparing it with. It is hell to find an error like this when debugging:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nv">$node</span><span class="o">-&gt;</span><span class="na">type</span> <span class="o">=</span> <span class="s1">&#39;book&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'><span class="c1">// Stuff happens whether you like it or not.</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>See what happened? I only put one = instead of two. PHP will not complain about this, I will just not get what I expect. If I had switched the items, PHP would have complained as I tried to assign an object to a non-variable.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -854,6 +876,10 @@ Thanks to Niels Fanøe for the inspiration.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/11/10/color-schemes-and-productivity/">Color schemes and productivity</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding unused images in your website code</a>
       </li>
     
@@ -867,10 +893,6 @@ Thanks to Niels Fanøe for the inspiration.</p>
     
       <li class="post">
         <a href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">A git commit hook helps you keep your code clean</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using specific versions of formula with Homebrew</a>
       </li>
     
   </ul>

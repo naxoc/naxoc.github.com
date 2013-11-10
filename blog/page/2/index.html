@@ -9,7 +9,7 @@
   <meta name="author" content="Camilla Krag Jensen">
 
   
-  <meta name="description" content="I am doing some integration with facebook these days. I don&rsquo;t use facebook much and I certainly no not want all kinds of test data on my &hellip;">
+  <meta name="description" content="I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,68 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/12/10/pet-peeve-number-1-the-comparison-operator/">Pet Peeve #1 - the Comparison Operator</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-10T14:27:00+01:00" pubdate data-updated="true">Dec 10<span>th</span>, 2010</time>
+        
+         | <a href="/2010/12/10/pet-peeve-number-1-the-comparison-operator/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.</p>
+
+<p>When making comparisons, switch the order of the things you compare like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;book&#39;</span> <span class="o">==</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">type</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'><span class="c1">// Stuff happens.</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You might think why? And that looks weird! Yes, it does look a little weird. But I do this to not accidentially assign the $node->type the value I am comparing it with. It is hell to find an error like this when debugging:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nv">$node</span><span class="o">-&gt;</span><span class="na">type</span> <span class="o">=</span> <span class="s1">&#39;book&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'><span class="c1">// Stuff happens whether you like it or not.</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>See what happened? I only put one = instead of two. PHP will not complain about this, I will just not get what I expect. If I had switched the items, PHP would have complained as I tried to assign an object to a non-variable.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -392,6 +454,10 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/11/10/color-schemes-and-productivity/">Color schemes and productivity</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding unused images in your website code</a>
       </li>
     
@@ -405,10 +471,6 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
     
       <li class="post">
         <a href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">A git commit hook helps you keep your code clean</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using specific versions of formula with Homebrew</a>
       </li>
     
   </ul>
