@@ -9,7 +9,8 @@
   <meta name="author" content="Camilla Krag Jensen">
 
   
-  <meta name="description" content="Almost all programmers have a color scheme or theme in their terminal and their code editor. Some people actually turns syntax highlighting off, but &hellip;">
+  <meta name="description" content="Here is a short simple tip to read json output from curl in a neat formatted way: Pipe the output to Python like this: 1
+curl "http://url.to.call? &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +79,54 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/11/22/format-json-output-from-curl-neatly/">Format Json Output From cUrl Neatly</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-22T14:27:00+01:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2013</time>
+        
+         | <a href="/2013/11/22/format-json-output-from-curl-neatly/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here is a short simple tip to read json output from curl in a neat formatted way:</p>
+
+<p>Pipe the output to Python like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl "http://url.to.call?args=hi" | python -mjson.tool</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will prettify the output and make json much more readable when testing webservices. It also validates the json, so if it contains errors you will get a warning.</p>
+
+<p>It works with Python 2.6 and higher and you can find more info at the <a href="http://docs.python.org/2/library/json.html">Python docs page</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -816,51 +865,6 @@ Thanks to Niels Fanøe for the inspiration.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2011/04/27/hot-laptop-vacuum-it/">Hot Laptop? Vacuum It!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-27T21:48:00+02:00" pubdate data-updated="true">Apr 27<span>th</span>, 2011</time>
-        
-         | <a href="/2011/04/27/hot-laptop-vacuum-it/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My beloved 3years old Macbook Pro was starting to get really hot when I used it. It had gotten to the point where I would burn my legs if it was on my lap, and since having your <em>lap</em>top on the lap is kinda the point, I felt had to do something about it.</p>
-
-<p>I bought a <a href="%E2%80%9Chttp://www.amazon.com/Logitech-Notebook-Cooling-N100-Gray/dp/B003BEDQYY/ref=sr_1_1?ie=UTF8&amp;qid=1303933766&amp;sr=8-1%E2%80%9D">Logitech Notebook Cooling Pad</a> that actually is very comfortable and does exactly as it says it will, but I was still curious to see if I could get my old healthy Macbook back.</p>
-
-<p>I found <a href="%E2%80%9Chttp://www.andrew.co.za/2008/02/quick-macbook-clean.html%E2%80%9D">this blog post</a> about how to vacuum the laptop and the result is amazing. I was a little worried about the static, so I turned the machine completely off and removed the battery before vacuuming. The happy laptop is now quieter and cooler! Very simple and very recommended.</p>
-
-<p><img class="center" src="http://naxoc.net/files/naxoc.net/styles/large/public/kitty_vacuum.jpg"><br/>
-<em>Image from <a href="http://www.flickr.com/photos/noortje/268437984/"><em>n</em>o<em>o</em>r*</a>.</em></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -876,6 +880,10 @@ Thanks to Niels Fanøe for the inspiration.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/11/22/format-json-output-from-curl-neatly/">Format json output from cUrl neatly</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/11/10/color-schemes-and-productivity/">Color schemes and productivity</a>
       </li>
     
@@ -889,10 +897,6 @@ Thanks to Niels Fanøe for the inspiration.</p>
     
       <li class="post">
         <a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/">Setting up a file watcher for Compass in PHPStorm</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">A git commit hook helps you keep your code clean</a>
       </li>
     
   </ul>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: curl | naxoc.net]]></title>
+  <link href="http://naxoc.net/blog/categories/curl/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2013-11-22T14:47:33+01:00</updated>
+  <id>http://naxoc.net/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Format json output from cUrl neatly]]></title>
+    <link href="http://naxoc.net/2013/11/22/format-json-output-from-curl-neatly/"/>
+    <updated>2013-11-22T14:27:00+01:00</updated>
+    <id>http://naxoc.net/2013/11/22/format-json-output-from-curl-neatly</id>
+    <content type="html"><![CDATA[<p>Here is a short simple tip to read json output from curl in a neat formatted way:</p>
+
+<p>Pipe the output to Python like this:
+<code>
+curl "http://url.to.call?args=hi" | python -mjson.tool
+</code></p>
+
+<p>This will prettify the output and make json much more readable when testing webservices. It also validates the json, so if it contains errors you will get a warning.</p>
+
+<p>It works with Python 2.6 and higher and you can find more info at the <a href="http://docs.python.org/2/library/json.html">Python docs page</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
