@@ -4,7 +4,7 @@
   <title><![CDATA[naxoc.net]]></title>
   <link href="http://naxoc.net/atom.xml" rel="self"/>
   <link href="http://naxoc.net/"/>
-  <updated>2014-01-15T14:08:48+01:00</updated>
+  <updated>2014-01-15T14:15:36+01:00</updated>
   <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -37,16 +37,16 @@
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.some-div</span> <span class="p">{</span>
-</span><span class='line'>  <span class="o">.</span><span class="n">special</span><span class="o">-</span><span class="n">list</span> <span class="err">{</span>
-</span><span class='line'>    <span class="o">.</span><span class="n">extra</span><span class="o">-</span><span class="n">special</span><span class="o">-</span><span class="n">link</span> <span class="err">{</span>
-</span><span class='line'>      <span class="o">@</span><span class="n">include</span> <span class="k">background</span><span class="p">(</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">)</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">30</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">70</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">))</span><span class="o">,</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="nc">.some-div</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nc">.special-list</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nc">.extra-special-link</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">@include</span><span class="nd"> background</span><span class="p">(</span><span class="nf">linear-gradient</span><span class="p">(</span><span class="no">left</span><span class="o">,</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">,</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">30</span><span class="kt">%</span><span class="o">,</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">70</span><span class="kt">%</span><span class="o">,</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">,</span>
 </span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="err">}</span>
-</span><span class='line'><span class="err">}</span>
-</span><span class='line'><span class="o">//</span> <span class="nt">Also</span> <span class="nt">support</span> <span class="nt">archaic</span> <span class="nt">browsers</span> <span class="nt">for</span> <span class="nt">the</span> <span class="nt">extra</span> <span class="nt">special</span> <span class="nt">link</span> <span class="o">(</span><span class="nt">see</span> <span class="nt">above</span><span class="o">).</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c1">// Also support archaic browsers for the extra special link (see above).</span>
 </span><span class='line'><span class="nc">.no-cssgradients</span> <span class="nc">.some-div</span> <span class="nc">.special-list</span> <span class="nc">.extra-special-link</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+</span><span class='line'>  <span class="na">background</span><span class="o">:</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -63,16 +63,16 @@
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.some-div</span> <span class="p">{</span>
-</span><span class='line'>  <span class="o">.</span><span class="n">special</span><span class="o">-</span><span class="n">list</span> <span class="err">{</span>
-</span><span class='line'>    <span class="o">.</span><span class="n">extra</span><span class="o">-</span><span class="n">special</span><span class="o">-</span><span class="n">link</span> <span class="err">{</span>
-</span><span class='line'>      <span class="o">@</span><span class="n">include</span> <span class="k">background</span><span class="p">(</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">)</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">30</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">70</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">))</span><span class="o">,</span>
-</span><span class='line'>      <span class="o">.</span><span class="n">no</span><span class="o">-</span><span class="n">cssgradients</span> <span class="o">&amp;</span> <span class="err">{</span>
-</span><span class='line'>        <span class="k">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="nc">.some-div</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nc">.special-list</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nc">.extra-special-link</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">@include</span><span class="nd"> background</span><span class="p">(</span><span class="nf">linear-gradient</span><span class="p">(</span><span class="no">left</span><span class="o">,</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">,</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">30</span><span class="kt">%</span><span class="o">,</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">70</span><span class="kt">%</span><span class="o">,</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">,</span>
+</span><span class='line'>      <span class="o">.</span><span class="n">no-cssgradients</span> <span class="o">&amp;</span> <span class="p">{</span>
+</span><span class='line'>        <span class="na">background</span><span class="o">:</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">242</span><span class="o">,</span> <span class="mi">156</span><span class="o">,</span> <span class="mi">45</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
 </span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>    <span class="err">}</span>
-</span><span class='line'>  <span class="err">}</span>
-</span><span class='line'><span class="err">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
