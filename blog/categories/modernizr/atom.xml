@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: modernizr | naxoc.net]]></title>
+  <link href="http://naxoc.net/blog/categories/modernizr/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2014-01-15T13:28:42+01:00</updated>
+  <id>http://naxoc.net/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Organizing code when using Modernizr and SASS]]></title>
+    <link href="http://naxoc.net/2014/01/15/organizing-code-when-using-modernizr-and-scss/"/>
+    <updated>2014-01-15T12:45:00+01:00</updated>
+    <id>http://naxoc.net/2014/01/15/organizing-code-when-using-modernizr-and-scss</id>
+    <content type="html"><![CDATA[<p>The JS library <a href="http://modernizr.com">Modernizr</a> makes it really easy to write CSS with support for older browsers. What it does is put classes in the <code>&lt;body&gt;</code> tag that will tell you what the browser doesn&rsquo;t support. For instance IE9 in the screenshot does not support CSS gradients:</p>
+
+<p><img class="center <a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/modernizr_body_tag_classes.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/modernizr_body_tag_classes.png</a>"></p>
+
+<p>I was going trough with IE9 on a rather large site that uses some spiffy CSS3 tricks to achieve awesome. It has been a pleasure to work with <a href="http://compass-style.org/">Compass</a> and SASS to build the site, but when it came to making it look decent in IE9 there was some work to be done.</p>
+
+<p>I started work but I quickly got frustrated with the organization of the SCSS. Where should I put the IE-fallbacks? In a ie9.css style sheet? Well, that really keeps the code scattered everywhere. I wanted to keep the fallbacks as close to the original CSS3 tricks as I could so I started putting code like this as close to the &ldquo;real&rdquo; selector as I could:
+``` css
+.some-div {
+  .special-list {</p>
+
+<pre><code>.extra-special-link {
+  @include background(linear-gradient(left, rgba(242, 156, 45, 0), rgba(242, 156, 45, 1) 30%, rgba(242, 156, 45, 1) 70%, rgba(242, 156, 45, 0)),
+}
+</code></pre>
+
+<p>  }
+}
+// Also support archaic browsers for the extra special link (see above).
+.no-cssgradients .some-div .special-list .extra-special-link {
+  background: rgba(242, 156, 45, 0);
+}
+<code>
+While this works, it becomes hard to find out what the targets are, because the whole structure needs to be prefixed with the `no-cssgradients` class. I would much rather have the fallbacks in the code right next to the 'actual' CSS. I did some googling for best practices for structuring the code and found [this post](http://neilcarpenter.com/2013/05/graceful-degradation-workflow-using-feature-detection-and-css-preprocessors/) on Neil Carpenter's blog that showed me that the '&amp;' ampersand used _behind_ the selector will do exactly what I wanted! THis may be really trivial, but I had no idea the ampersand could be used like that in SASS. So the above code can be simplified to:
+</code> css
+.some-div {
+  .special-list {</p>
+
+<pre><code>.extra-special-link {
+  @include background(linear-gradient(left, rgba(242, 156, 45, 0), rgba(242, 156, 45, 1) 30%, rgba(242, 156, 45, 1) 70%, rgba(242, 156, 45, 0)),
+  .no-cssgradients &amp; {
+    background: rgba(242, 156, 45, 0);
+  }
+}
+</code></pre>
+
+<p>  }
+}
+```
+Yay! I can now keep my fallbacks together with the actual CSS and never worry about ie9.css or other tricks that separate the fallbacks from reality.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[naxoc.net]]></title>
   <link href="http://naxoc.net/atom.xml" rel="self"/>
   <link href="http://naxoc.net/"/>
-  <updated>2013-11-22T14:47:33+01:00</updated>
+  <updated>2014-01-15T13:28:42+01:00</updated>
   <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -12,6 +12,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Organizing code when using Modernizr and SASS]]></title>
+    <link href="http://naxoc.net/2014/01/15/organizing-code-when-using-modernizr-and-scss/"/>
+    <updated>2014-01-15T12:45:00+01:00</updated>
+    <id>http://naxoc.net/2014/01/15/organizing-code-when-using-modernizr-and-scss</id>
+    <content type="html"><![CDATA[<p>The JS library <a href="http://modernizr.com">Modernizr</a> makes it really easy to write CSS with support for older browsers. What it does is put classes in the <code>&lt;body&gt;</code> tag that will tell you what the browser doesn&rsquo;t support. For instance IE9 in the screenshot does not support CSS gradients:</p>
+
+<p><img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/modernizr_body_tag_classes.png"></p>
+
+<p>I was going trough with IE9 on a rather large site that uses some spiffy CSS3 tricks to achieve awesome. It has been a pleasure to work with <a href="http://compass-style.org/">Compass</a> and SASS to build the site, but when it came to making it look decent in IE9 there was some work to be done.</p>
+
+<p>I started work but I quickly got frustrated with the organization of the SCSS. Where should I put the IE-fallbacks? In a ie9.css style sheet? Well, that really keeps the code scattered everywhere. I wanted to keep the fallbacks as close to the original CSS3 tricks as I could so I started putting code like this as close to the &ldquo;real&rdquo; selector as I could:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.some-div</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">.</span><span class="n">special</span><span class="o">-</span><span class="n">list</span> <span class="err">{</span>
+</span><span class='line'>    <span class="o">.</span><span class="n">extra</span><span class="o">-</span><span class="n">special</span><span class="o">-</span><span class="n">link</span> <span class="err">{</span>
+</span><span class='line'>      <span class="o">@</span><span class="n">include</span> <span class="k">background</span><span class="p">(</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">)</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">30</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">70</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">))</span><span class="o">,</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'><span class="o">//</span> <span class="nt">Also</span> <span class="nt">support</span> <span class="nt">archaic</span> <span class="nt">browsers</span> <span class="nt">for</span> <span class="nt">the</span> <span class="nt">extra</span> <span class="nt">special</span> <span class="nt">link</span> <span class="o">(</span><span class="nt">see</span> <span class="nt">above</span><span class="o">).</span>
+</span><span class='line'><span class="nc">.no-cssgradients</span> <span class="nc">.some-div</span> <span class="nc">.special-list</span> <span class="nc">.extra-special-link</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>While this works, it becomes hard to find out what the targets are, because the whole structure needs to be prefixed with the <code>no-cssgradients</code> class. I would much rather have the fallbacks in the code right next to the &lsquo;actual&rsquo; CSS. I did some googling for best practices for structuring the code and found <a href="http://neilcarpenter.com/2013/05/graceful-degradation-workflow-using-feature-detection-and-css-preprocessors/">this post</a> on Neil Carpenter&rsquo;s blog that showed me that the &lsquo;&amp;&rsquo; ampersand used <em>behind</em> the selector will do exactly what I wanted! THis may be really trivial, but I had no idea the ampersand could be used like that in SASS. So the above code can be simplified to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.some-div</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">.</span><span class="n">special</span><span class="o">-</span><span class="n">list</span> <span class="err">{</span>
+</span><span class='line'>    <span class="o">.</span><span class="n">extra</span><span class="o">-</span><span class="n">special</span><span class="o">-</span><span class="n">link</span> <span class="err">{</span>
+</span><span class='line'>      <span class="o">@</span><span class="n">include</span> <span class="k">background</span><span class="p">(</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">)</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">30</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">70</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">))</span><span class="o">,</span>
+</span><span class='line'>      <span class="o">.</span><span class="n">no</span><span class="o">-</span><span class="n">cssgradients</span> <span class="o">&amp;</span> <span class="err">{</span>
+</span><span class='line'>        <span class="k">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="err">}</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yay! I can now keep my fallbacks together with the actual CSS and never worry about ie9.css or other tricks that separate the fallbacks from reality.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Format json output from cUrl neatly]]></title>

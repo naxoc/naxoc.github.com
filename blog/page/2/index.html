@@ -9,7 +9,7 @@
   <meta name="author" content="Camilla Krag Jensen">
 
   
-  <meta name="description" content="My beloved 3years old Macbook Pro was starting to get really hot when I used it. It had gotten to the point where I would burn my legs if it was on &hellip;">
+  <meta name="description" content="If you are moving an iTunes library to a new mac it will go smooth if the user login is the same. So if I move my iTunes library from an old machine &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,54 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/05/11/moving-an-itunes-library/">Moving an iTunes Library</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-11T15:22:00+02:00" pubdate data-updated="true">May 11<span>th</span>, 2011</time>
+        
+         | <a href="/2011/05/11/moving-an-itunes-library/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you are moving an iTunes library to a new mac it will go smooth if the user login is the same. So if I move my iTunes library from an old machine where it was located in <code>/Users/ckj/iTunes</code> to a new machine where it is gonna go in <code>/Users/ckj/iTunes</code> &ndash; I have no problems. But if I changed to another username on the new machine &ndash; all the paths in the iTunes Library.xml file will not be correct anymore. I have moved libraries so many times now and I thought I would share a really quick way to fix the iTunes Library.xml file to reflect the correct user directory.</p>
+
+<p>If you use the built-in command line tool called <a href="http://en.wikipedia.org/wiki/Sed">sed</a>, you can type one line in the terminal and be done. Let’s say I was moving from a mac with a user directory called &ldquo;ckj&rdquo; to another machine with a user directory called &ldquo;naxoc&rdquo;. All I would have to do in the terminal would be this:</p>
+
+<ol>
+<li>cd to the iTunes folder in the user directory you are moving to.</li>
+<li>Enter this: <code>sed -i "" -e "s,Users/ckj,Users/naxoc,g" files iTunes\ Library.xml</code></li>
+</ol>
+
+
+<p>Note the funky syntax with the <code>-i ""</code> This is a mac quirck in sed. I found some info on it <a href="http://stackoverflow.com/questions/2320564/variations-of-sed-between-osx-and-gnu-linux">here</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -499,6 +547,10 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing code when using Modernizr and SASS</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/11/22/format-json-output-from-curl-neatly/">Format json output from cUrl neatly</a>
       </li>
     
@@ -514,10 +566,6 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
         <a href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a>
       </li>
     
-      <li class="post">
-        <a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/">Setting up a file watcher for Compass in PHPStorm</a>
-      </li>
-    
   </ul>
 </section>
 <section class="drupal-association">
@@ -528,6 +576,8 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
       <style type="text/css" media="screen">
         .gr_grid_container {
           /* customize grid container div here. eg: width: 500px; */
+          padding-left: 35px;
+          padding-top: 15px;
         }
 
         .gr_grid_book_container {
@@ -553,7 +603,7 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Camilla Krag Jensen -
+  Copyright &copy; 2014 - Camilla Krag Jensen -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Organizing code when using Modernizr and SASS - naxoc.net</title>
+  <meta name="author" content="Camilla Krag Jensen">
+
+  
+  <meta name="description" content="The JS library Modernizr makes it really easy to write CSS with support for older browsers. What it does is put classes in the &lt;body&gt; tag that &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://naxoc.net/2014/01/15/organizing-code-when-using-modernizr-and-scss/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="naxoc.net" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15300952-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:naxoc.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="site-title">
+            naxoc.net
+        </span>
+       
+           <span class="site-subtitle">
+             Liking the holes in cheese since 1975
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About me</a></li>
+</ul>
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Organizing Code When Using Modernizr and SASS</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-15T12:45:00+01:00" pubdate data-updated="true">Jan 15<span>th</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The JS library <a href="http://modernizr.com">Modernizr</a> makes it really easy to write CSS with support for older browsers. What it does is put classes in the <code>&lt;body&gt;</code> tag that will tell you what the browser doesn&rsquo;t support. For instance IE9 in the screenshot does not support CSS gradients:</p>
+
+<p><img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/modernizr_body_tag_classes.png"></p>
+
+<p>I was going trough with IE9 on a rather large site that uses some spiffy CSS3 tricks to achieve awesome. It has been a pleasure to work with <a href="http://compass-style.org/">Compass</a> and SASS to build the site, but when it came to making it look decent in IE9 there was some work to be done.</p>
+
+<p>I started work but I quickly got frustrated with the organization of the SCSS. Where should I put the IE-fallbacks? In a ie9.css style sheet? Well, that really keeps the code scattered everywhere. I wanted to keep the fallbacks as close to the original CSS3 tricks as I could so I started putting code like this as close to the &ldquo;real&rdquo; selector as I could:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.some-div</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">.</span><span class="n">special</span><span class="o">-</span><span class="n">list</span> <span class="err">{</span>
+</span><span class='line'>    <span class="o">.</span><span class="n">extra</span><span class="o">-</span><span class="n">special</span><span class="o">-</span><span class="n">link</span> <span class="err">{</span>
+</span><span class='line'>      <span class="o">@</span><span class="n">include</span> <span class="k">background</span><span class="p">(</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">)</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">30</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">70</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">))</span><span class="o">,</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'><span class="o">//</span> <span class="nt">Also</span> <span class="nt">support</span> <span class="nt">archaic</span> <span class="nt">browsers</span> <span class="nt">for</span> <span class="nt">the</span> <span class="nt">extra</span> <span class="nt">special</span> <span class="nt">link</span> <span class="o">(</span><span class="nt">see</span> <span class="nt">above</span><span class="o">).</span>
+</span><span class='line'><span class="nc">.no-cssgradients</span> <span class="nc">.some-div</span> <span class="nc">.special-list</span> <span class="nc">.extra-special-link</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>While this works, it becomes hard to find out what the targets are, because the whole structure needs to be prefixed with the <code>no-cssgradients</code> class. I would much rather have the fallbacks in the code right next to the &lsquo;actual&rsquo; CSS. I did some googling for best practices for structuring the code and found <a href="http://neilcarpenter.com/2013/05/graceful-degradation-workflow-using-feature-detection-and-css-preprocessors/">this post</a> on Neil Carpenter&rsquo;s blog that showed me that the &lsquo;&amp;&rsquo; ampersand used <em>behind</em> the selector will do exactly what I wanted! THis may be really trivial, but I had no idea the ampersand could be used like that in SASS. So the above code can be simplified to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.some-div</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">.</span><span class="n">special</span><span class="o">-</span><span class="n">list</span> <span class="err">{</span>
+</span><span class='line'>    <span class="o">.</span><span class="n">extra</span><span class="o">-</span><span class="n">special</span><span class="o">-</span><span class="n">link</span> <span class="err">{</span>
+</span><span class='line'>      <span class="o">@</span><span class="n">include</span> <span class="k">background</span><span class="p">(</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">)</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">30</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">70</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">))</span><span class="o">,</span>
+</span><span class='line'>      <span class="o">.</span><span class="n">no</span><span class="o">-</span><span class="n">cssgradients</span> <span class="o">&amp;</span> <span class="err">{</span>
+</span><span class='line'>        <span class="k">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">242</span><span class="o">,</span> <span class="m">156</span><span class="o">,</span> <span class="m">45</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="err">}</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yay! I can now keep my fallbacks together with the actual CSS and never worry about ie9.css or other tricks that separate the fallbacks from reality.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Camilla Krag Jensen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-15T12:45:00+01:00" pubdate data-updated="true">Jan 15<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>CSS</a>, <a class='category' href='/blog/categories/sass/'>SASS</a>, <a class='category' href='/blog/categories/scss/'>SCSS</a>, <a class='category' href='/blog/categories/browser-support/'>browser support</a>, <a class='category' href='/blog/categories/modernizr/'>modernizr</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2013/11/22/format-json-output-from-curl-neatly/" title="Previous Post: Format json output from cUrl neatly">&laquo; Format json output from cUrl neatly</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing code when using Modernizr and SASS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/22/format-json-output-from-curl-neatly/">Format json output from cUrl neatly</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/10/color-schemes-and-productivity/">Color schemes and productivity</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding unused images in your website code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="drupal-association">
+<img src="http://drupal.org/files/images/DA-individual-80.png" />
+</section><section>
+  <h1>On Goodreads</h1>
+  <div id="goodreads"></div>
+      <style type="text/css" media="screen">
+        .gr_grid_container {
+          /* customize grid container div here. eg: width: 500px; */
+          padding-left: 35px;
+          padding-top: 15px;
+        }
+
+        .gr_grid_book_container {
+          /* customize book cover container div here */
+          float: left;
+          width: 98px;
+          height: 160px;
+          padding: 0px 0px;
+          overflow: hidden;
+        }
+      </style>
+      <div id="gr_grid_widget_1375689543">
+        <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work -->
+          <div class="gr_grid_container">
+          </div>
+      </div>
+      <script src="http://www.goodreads.com/review/grid_widget/1493819.Camilla's%20bookshelf:%20read?cover_size=medium&hide_link=true&hide_title=true&num_books=20&order=d&shelf=read&sort=date_read&widget_id=1375689543" type="text/javascript" charset="utf-8"></script>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Camilla Krag Jensen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'naxocnet';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://naxoc.net/2014/01/15/organizing-code-when-using-modernizr-and-scss/';
+        var disqus_url = 'http://naxoc.net/2014/01/15/organizing-code-when-using-modernizr-and-scss/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
