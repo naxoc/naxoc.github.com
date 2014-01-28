@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CSS | naxoc.net]]></title>
   <link href="http://naxoc.net/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://naxoc.net/"/>
-  <updated>2014-01-15T14:15:36+01:00</updated>
+  <updated>2014-01-28T21:35:44+01:00</updated>
   <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -12,6 +12,141 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Placeholder selectors in SASS]]></title>
+    <link href="http://naxoc.net/2014/01/28/placeholder-selectors-in-sass/"/>
+    <updated>2014-01-28T19:45:00+01:00</updated>
+    <id>http://naxoc.net/2014/01/28/placeholder-selectors-in-sass</id>
+    <content type="html"><![CDATA[<p>When I found that you can &lsquo;@extend&rsquo; classes in SASS to reuse code and compile to neater CSS I was pretty excited. Here is an example of &lsquo;inheriting&rsquo; code with @extend:
+```scss
+.speak {
+  font-family: Courier New, monospace;
+  max-width: 400px;
+  clear: both;
+  span {</p>
+
+<pre><code>font-weight: bold;
+display: block;
+</code></pre>
+
+<p>  }
+}
+.voice-1 {
+  @extend .speak;
+  span {</p>
+
+<pre><code>color: magenta;
+</code></pre>
+
+<p>  }
+}
+.voice-2 {
+  @extend .speak;
+  float: right;</p>
+
+<pre><code>span {
+  color: green;
+</code></pre>
+
+<p>  }
+}
+```
+That will compile to:</p>
+
+<p><code>css
+.speak, .voice-1, .voice-2 {
+  font-family: Courier New, monospace;
+  max-width: 400px;
+  clear: both;
+}
+.speak span, .voice-1 span, .voice-2 span {
+  font-weight: bold;
+  display: block;
+}
+.voice-1 span {
+  color: magenta;
+}
+.voice-2 {
+  float: right;
+}
+.voice-2 span {
+  color: green;
+}
+</code>
+So <code>voice-1</code> and <code>voice-2</code> get the same properties as the <code>speak</code> class and the code is reused. All is good, but I don&rsquo;t really have a class called <code>speak</code>. And more importantly &ndash; I want to be able to define my <code>speak</code> selector in a base file that is included in lots of other .scss files so that it becomes truly reusable. But here I run into the problem that every time I include the _base.scss file, the selector gets written to the file including the file. That becomes a mess of repeated code really fast.</p>
+
+<p>I found out about SASS placeholder selectors recently and once again my mind was blown. So a placeholder selector is a selector just like <code>.speak</code>, but instead of a dot (for class) it is prefixed with a percent sign. Selectors prefixed with <code>%</code> don&rsquo;t get rendered to CSS, so I don&rsquo;t have to worry about duplicated code or not actually having a class somewhere called <code>speak</code>. Now I can define the selector in a base file and extend it over and over in included files.</p>
+
+<p>So:
+```scss
+%speak {
+  font-family: Courier New, monospace;
+  max-width: 400px;
+  clear: both;
+  span {</p>
+
+<pre><code>font-weight: bold;
+display: block;
+</code></pre>
+
+<p>  }
+}
+.voice-1 {
+  @extend %speak;
+  span {</p>
+
+<pre><code>color: magenta;
+</code></pre>
+
+<p>  }
+}
+.voice-2 {
+  @extend %speak;
+  float: right;</p>
+
+<pre><code>span {
+  color: green;
+</code></pre>
+
+<p>  }
+}
+```
+Becomes:</p>
+
+<p><code>css
+.voice-1, .voice-2 {
+  font-family: Courier New, monospace;
+  max-width: 400px;
+  clear: both;
+}
+.voice-1 span, .voice-2 span {
+  font-weight: bold;
+  display: block;
+}
+.voice-1 span {
+  color: magenta;
+}
+.voice-2 {
+  float: right;
+}
+.voice-2 span {
+  color: green;
+}
+</code></p>
+
+<!-- more -->
+
+
+<p>Here is a Codepen with the placeholder selectors (and some Monty Python). If you want to play around with it, take note of the &ldquo;view compiled&rdquo; link in the lower right corner when you are on the SCSS tab.</p>
+
+<p data-height="339" data-theme-id="0" data-slug-hash="idqFC" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/naxoc/pen/idqFC'>SASS placeholder selectors example</a> by Camilla Krag Jensen (<a href='http://codepen.io/naxoc'>@naxoc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+<script async src="http://naxoc.net//codepen.io/assets/embed/ei.js"></script>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Organizing code when using Modernizr and SASS]]></title>

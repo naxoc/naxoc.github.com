@@ -4,7 +4,7 @@
   <title><![CDATA[naxoc.net]]></title>
   <link href="http://naxoc.net/atom.xml" rel="self"/>
   <link href="http://naxoc.net/"/>
-  <updated>2014-01-15T14:15:36+01:00</updated>
+  <updated>2014-01-28T21:35:44+01:00</updated>
   <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -12,6 +12,208 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Placeholder selectors in SASS]]></title>
+    <link href="http://naxoc.net/2014/01/28/placeholder-selectors-in-sass/"/>
+    <updated>2014-01-28T19:45:00+01:00</updated>
+    <id>http://naxoc.net/2014/01/28/placeholder-selectors-in-sass</id>
+    <content type="html"><![CDATA[<p>When I found that you can &lsquo;@extend&rsquo; classes in SASS to reuse code and compile to neater CSS I was pretty excited. Here is an example of &lsquo;inheriting&rsquo; code with @extend:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="nc">.speak</span> <span class="p">{</span>
+</span><span class='line'>  <span class="na">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="no">monospace</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">max-width</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">clear</span><span class="o">:</span> <span class="no">both</span><span class="p">;</span>
+</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span><span class="p">;</span>
+</span><span class='line'>    <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="nc">.speak</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">color</span><span class="o">:</span> <span class="ni">magenta</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="nc">.speak</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">float</span><span class="nd">:</span> <span class="nt">right</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>      <span class="na">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That will compile to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.speak</span><span class="o">,</span> <span class="nc">.voice-1</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="k">monospace</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">max-width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.speak</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.voice-1</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">magenta</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So <code>voice-1</code> and <code>voice-2</code> get the same properties as the <code>speak</code> class and the code is reused. All is good, but I don&rsquo;t really have a class called <code>speak</code>. And more importantly &ndash; I want to be able to define my <code>speak</code> selector in a base file that is included in lots of other .scss files so that it becomes truly reusable. But here I run into the problem that every time I include the _base.scss file, the selector gets written to the file including the file. That becomes a mess of repeated code really fast.</p>
+
+<p>I found out about SASS placeholder selectors recently and once again my mind was blown. So a placeholder selector is a selector just like <code>.speak</code>, but instead of a dot (for class) it is prefixed with a percent sign. Selectors prefixed with <code>%</code> don&rsquo;t get rendered to CSS, so I don&rsquo;t have to worry about duplicated code or not actually having a class somewhere called <code>speak</code>. Now I can define the selector in a base file and extend it over and over in included files.</p>
+
+<p>So:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="err">%</span><span class="nt">speak</span> <span class="p">{</span>
+</span><span class='line'>  <span class="na">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="no">monospace</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">max-width</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">clear</span><span class="o">:</span> <span class="no">both</span><span class="p">;</span>
+</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span><span class="p">;</span>
+</span><span class='line'>    <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="err">%</span><span class="nt">speak</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">color</span><span class="o">:</span> <span class="ni">magenta</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="err">%</span><span class="nt">speak</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">float</span><span class="nd">:</span> <span class="nt">right</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>      <span class="na">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Becomes:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.voice-1</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="k">monospace</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">max-width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">magenta</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
+
+
+<p>Here is a Codepen with the placeholder selectors (and some Monty Python). If you want to play around with it, take note of the &ldquo;view compiled&rdquo; link in the lower right corner when you are on the SCSS tab.</p>
+
+<p data-height="339" data-theme-id="0" data-slug-hash="idqFC" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/naxoc/pen/idqFC'>SASS placeholder selectors example</a> by Camilla Krag Jensen (<a href='http://codepen.io/naxoc'>@naxoc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+<script async src="http://naxoc.net//codepen.io/assets/embed/ei.js"></script>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Organizing code when using Modernizr and SASS]]></title>
