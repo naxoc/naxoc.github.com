@@ -1,12 +1,13 @@
 ---
 layout: page
-title: "about"
+title: "About"
 date: 2013-10-30 20:10
 comments: false
 sharing: true
 footer: false
 ---
-#About me
+
+{% img left https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/naxoc.png 'naxoc avatar' %}
 
 Hi! I'm Camilla. I live in Copenhagen, Denmark and enjoy that very much. I am a Drupal developer and I work for [Reload!](http://reload.dk) where we develop large and complex drupal sites.
 
