@@ -75,3 +75,15 @@ $colHighlight   : #ffbbbc;
         background-color: $bgHighlight; }}}
 }
 // Navbar end.
+
+.entry-content {
+  font-family: 'PT Serif', serif;
+  font-size: 18px;
+}
+
+.navbar-brand span {
+  display: none;
+  @media (min-width: 992px) {
+    display: inline;
+  }
+}
