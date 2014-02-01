@@ -4,6 +4,8 @@ title: "Moving an iTunes Library"
 date: 2011-05-11 15:22
 comments: true
 categories: [itunes, cli]
+redirects:
+- moving-itunes-library
 ---
 If you are moving an iTunes library to a new mac it will go smooth if the user login is the same. So if I move my iTunes library from an old machine where it was located in `/Users/ckj/iTunes` to a new machine where it is gonna go in `/Users/ckj/iTunes` - I have no problems. But if I changed to another username on the new machine - all the paths in the iTunes Library.xml file will not be correct anymore. I have moved libraries so many times now and I thought I would share a really quick way to fix the iTunes Library.xml file to reflect the correct user directory.
 
