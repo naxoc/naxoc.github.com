@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
@@ -9,7 +8,6 @@
   <meta name="author" content="Camilla Krag Jensen">
 
   
-  <meta name="description" content="When I found that you can &lsquo;@extend&rsquo; classes in SASS to reuse code and compile to neater CSS I was pretty excited. Here is an example of & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,17 +16,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://naxoc.net/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link rel="canonical" href="http://naxoc.net">
+  <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="naxoc.net" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+  <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+ <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+
+  <script src="/javascripts/libs/jquery/jquery-2.0.3.min.js"></script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -45,49 +44,68 @@
 
 </head>
 
-<body   >
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:naxoc.net" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-    <li><a href="/">
-        <span class="site-title">
-            naxoc.net
-        </span>
-       
-           <span class="site-subtitle">
-             Liking the holes in cheese since 1975
-           </span>
-       
-    </a></li>
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About me</a></li>
-</ul>
+  <body   >
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">naxoc.net <span> | Liking the holes in cheese since 1975</span></a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/about">About</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="search navbar-form navbar-right" action="http://google.com/search" method="GET">
+                    <input type="hidden" name="q" value="site:naxoc.net">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
+
+
+      </header>
+      <div id="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9">
+    <div class="blog-index">
       
-  <header>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder Selectors in SASS</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -97,19 +115,24 @@
 
 
 
-  
 
 
-<time datetime="2014-01-28T19:45:00+01:00" pubdate data-updated="true">Jan 28<span>th</span>, 2014</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-28T19:45:00+01:00" pubdate data-updated="true">Jan 28<span>th</span>, 2014</time>
         
-         | <a href="/2014/01/28/placeholder-selectors-in-sass/#disqus_thread">Comments</a>
+           | <a href="/2014/01/28/placeholder-selectors-in-sass/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2014/01/28/placeholder-selectors-in-sass/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder Selectors in SASS</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>When I found that you can &lsquo;@extend&rsquo; classes in SASS to reuse code and compile to neater CSS I was pretty excited. Here is an example of &lsquo;inheriting&rsquo; code with @extend:</p>
+  <div class="entry-content clearfix"><p>When I found that you can &lsquo;@extend&rsquo; classes in SASS to reuse code and compile to neater CSS I was pretty excited. Here is an example of &lsquo;inheriting&rsquo; code with @extend:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -297,22 +320,19 @@
   
   
     <footer>
-      <a rel="full-article" href="/2014/01/28/placeholder-selectors-in-sass/">Read on &rarr;</a>
+      <a class="btn btn-default" rel="full-article" href="/2014/01/28/placeholder-selectors-in-sass/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing Code When Using Modernizr and SASS</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -322,19 +342,24 @@
 
 
 
-  
 
 
-<time datetime="2014-01-15T12:45:00+01:00" pubdate data-updated="true">Jan 15<span>th</span>, 2014</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-15T12:45:00+01:00" pubdate data-updated="true">Jan 15<span>th</span>, 2014</time>
         
-         | <a href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/#disqus_thread">Comments</a>
+           | <a href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing Code When Using Modernizr and SASS</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>The JS library <a href="http://modernizr.com">Modernizr</a> makes it really easy to write CSS with support for older browsers. What it does is put classes in the <code>&lt;body&gt;</code> tag that will tell you what the browser doesn&rsquo;t support. For instance IE9 in the screenshot does not support CSS gradients:</p>
+  <div class="entry-content clearfix"><p>The JS library <a href="http://modernizr.com">Modernizr</a> makes it really easy to write CSS with support for older browsers. What it does is put classes in the <code>&lt;body&gt;</code> tag that will tell you what the browser doesn&rsquo;t support. For instance IE9 in the screenshot does not support CSS gradients:</p>
 
 <p><img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/modernizr_body_tag_classes.png"></p>
 
@@ -398,17 +423,14 @@
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2013/11/22/format-json-output-from-curl-neatly/">Format Json Output From cUrl Neatly</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -418,19 +440,24 @@
 
 
 
-  
 
 
-<time datetime="2013-11-22T14:27:00+01:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2013</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-22T14:27:00+01:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2013</time>
         
-         | <a href="/2013/11/22/format-json-output-from-curl-neatly/#disqus_thread">Comments</a>
+           | <a href="/2013/11/22/format-json-output-from-curl-neatly/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2013/11/22/format-json-output-from-curl-neatly/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2013/11/22/format-json-output-from-curl-neatly/">Format Json Output From cUrl Neatly</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>Here is a short simple tip to read json output from curl in a neat formatted way:</p>
+  <div class="entry-content clearfix"><p>Here is a short simple tip to read json output from curl in a neat formatted way:</p>
 
 <p>Pipe the output to Python like this:</p>
 
@@ -446,17 +473,14 @@
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2013/11/10/color-schemes-and-productivity/">Color Schemes and Productivity</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -466,19 +490,24 @@
 
 
 
-  
 
 
-<time datetime="2013-11-10T13:45:00+01:00" pubdate data-updated="true">Nov 10<span>th</span>, 2013</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-10T13:45:00+01:00" pubdate data-updated="true">Nov 10<span>th</span>, 2013</time>
         
-         | <a href="/2013/11/10/color-schemes-and-productivity/#disqus_thread">Comments</a>
+           | <a href="/2013/11/10/color-schemes-and-productivity/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2013/11/10/color-schemes-and-productivity/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2013/11/10/color-schemes-and-productivity/">Color Schemes and Productivity</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>Almost all programmers have a color scheme or theme in their terminal and their code editor. Some people actually turns syntax highlighting off, but I will never understand that. To me &ndash; code is something that lives on a black or dark background and has syntax colors. I have only ever used a white background color scheme back when I was using Eclipse 8 years ago. And probably because I couldn&rsquo;t figure out how to set another color scheme than the one that comes with Eclipse.</p>
+  <div class="entry-content clearfix"><p>Almost all programmers have a color scheme or theme in their terminal and their code editor. Some people actually turns syntax highlighting off, but I will never understand that. To me &ndash; code is something that lives on a black or dark background and has syntax colors. I have only ever used a white background color scheme back when I was using Eclipse 8 years ago. And probably because I couldn&rsquo;t figure out how to set another color scheme than the one that comes with Eclipse.</p>
 
 <p>Lately I have been really bothered by reflections in my glossy screen om my MBP and my Apple Cinema Display (I know &ndash; first world problem). In the afternoon all I could really see was me &ndash; like I was looking in a mirror. While that is very enjoyable it is not the way to get work done, so I set out to find a color scheme that would make it easier to see what I am working on and not myself so much. In that process I found out that I am super sensitive to changes in my editor work setup. Change the colors a little and I have a hard time reading through code fast. It is weird and a little bit stupid that it is so, but I can&rsquo;t help it. It takes me about 2 weeks to get reasonably comfortable with changes to a color scheme.</p>
 
@@ -530,17 +559,14 @@ And here is the light version (Tomorrow).
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding Unused Images in Your Website Code</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -550,19 +576,24 @@ And here is the light version (Tomorrow).
 
 
 
-  
 
 
-<time datetime="2013-10-28T21:45:00+01:00" pubdate data-updated="true">Oct 28<span>th</span>, 2013</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-10-28T21:45:00+01:00" pubdate data-updated="true">Oct 28<span>th</span>, 2013</time>
         
-         | <a href="/2013/10/28/finding-unused-images-in-your-website-code/#disqus_thread">Comments</a>
+           | <a href="/2013/10/28/finding-unused-images-in-your-website-code/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2013/10/28/finding-unused-images-in-your-website-code/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding Unused Images in Your Website Code</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>I was doing a lot of changes to CSS files today &ndash; mainly deleting a whole lot of stuff. I wanted to see if there were image files that were referenced by CSS that were no longer in use, so I wrote this naïve little script that loops through all image files it finds in the dir you give it to see if there are references to the image files.</p>
+  <div class="entry-content clearfix"><p>I was doing a lot of changes to CSS files today &ndash; mainly deleting a whole lot of stuff. I wanted to see if there were image files that were referenced by CSS that were no longer in use, so I wrote this naïve little script that loops through all image files it finds in the dir you give it to see if there are references to the image files.</p>
 
 <p>If you have <a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a> (ag) installed the script is much faster. Without Silver Searcher the script uses grep. If you don&rsquo;t know Silver Searcher go check it out &ndash; it is super fast.</p>
 
@@ -654,17 +685,14 @@ And here is the light version (Tomorrow).
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -674,19 +702,24 @@ And here is the light version (Tomorrow).
 
 
 
-  
 
 
-<time datetime="2013-10-22T21:06:00+02:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2013</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-10-22T21:06:00+02:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2013</time>
         
-         | <a href="/2013/10/22/windows-in-virtualbox-on-the-mac/#disqus_thread">Comments</a>
+           | <a href="/2013/10/22/windows-in-virtualbox-on-the-mac/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2013/10/22/windows-in-virtualbox-on-the-mac/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>I have been doing more CSS and front-end stuff lately. I am having a lot of fun learning more about these things that I have somehow avoided doing for the last many years.</p>
+  <div class="entry-content clearfix"><p>I have been doing more CSS and front-end stuff lately. I am having a lot of fun learning more about these things that I have somehow avoided doing for the last many years.</p>
 
 <p>Today I realized that I don&rsquo;t have to own a MS Windows license to run a setup in a VM for browser-testing. While I don&rsquo;t hate Microsoft (anymore) I would really rather not buy a license for a product that I think is horrible. Anyway &ndash; I had no idea that it is super simple to set up a VM running whatever version of IE you want on Windows.</p>
 
@@ -748,17 +781,14 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/">Setting Up a File Watcher for Compass in PHPStorm</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -768,19 +798,24 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
 
 
 
-  
 
 
-<time datetime="2013-10-06T20:55:00+02:00" pubdate data-updated="true">Oct 6<span>th</span>, 2013</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-10-06T20:55:00+02:00" pubdate data-updated="true">Oct 6<span>th</span>, 2013</time>
         
-         | <a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/#disqus_thread">Comments</a>
+           | <a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/">Setting Up a File Watcher for Compass in PHPStorm</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>EDIT: <em>It seems that the version 7 early access now has a file watcher preset for Compass &ndash; nice work JetBrains! The part about scope from this blog post is still useful to you if you are on PHPStorm 7 though.</em></p>
+  <div class="entry-content clearfix"><p>EDIT: <em>It seems that the version 7 early access now has a file watcher preset for Compass &ndash; nice work JetBrains! The part about scope from this blog post is still useful to you if you are on PHPStorm 7 though.</em></p>
 
 <p>I started using PHPStorm about 6 months ago and while it is an extremely awesome and powerful IDE there are just so many things you can set up and configure. I have to admit that for the first couple of months I pretty much used PHPStorm just like I did Vim and not using any of the many configurable things except for the debugger. I am slowly venturing into playing around with setting more stuff up, and I thought I would share this one because it took me a while to get right.</p>
 
@@ -803,17 +838,14 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">A Git Commit Hook Helps You Keep Your Code Clean</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -823,19 +855,24 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
 
 
 
-  
 
 
-<time datetime="2012-11-26T22:18:00+01:00" pubdate data-updated="true">Nov 26<span>th</span>, 2012</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-11-26T22:18:00+01:00" pubdate data-updated="true">Nov 26<span>th</span>, 2012</time>
         
-         | <a href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/#disqus_thread">Comments</a>
+           | <a href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/">A Git Commit Hook Helps You Keep Your Code Clean</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;<a href="http://xjm.drupalgardens.com/review-guide">spinach in your teeth</a>&rdquo; about whitespace and non-conforming coding standards.</p>
+  <div class="entry-content clearfix"><p>I like to keep my code free of trailing whitespace. I feel what xjm describes as &ldquo;<a href="http://xjm.drupalgardens.com/review-guide">spinach in your teeth</a>&rdquo; about whitespace and non-conforming coding standards.</p>
 
 <p>I got (heavily) inspired by Josh The Geek&rsquo;s <a href="http://drupal.org/sandbox/JoshTheGeek/1143338">git pre-commit hook</a>, and made myself a commit hook that will check the code I am about to commit for common errors. In addition to whitespace, I like to make sure that I don&rsquo;t accidentally commit debug code like <code>krumo()</code>. The commit hook also checks for common calls to debug functions.</p>
 
@@ -982,17 +1019,14 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using Specific Versions of Formula With Homebrew</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -1002,19 +1036,24 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
 
 
 
-  
 
 
-<time datetime="2012-06-05T13:54:00+02:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-06-05T13:54:00+02:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
         
-         | <a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/#disqus_thread">Comments</a>
+           | <a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using Specific Versions of Formula With Homebrew</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
+  <div class="entry-content clearfix"><p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
 
 <p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:
 <code>
@@ -1046,17 +1085,14 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/2012/02/05/whats-with-the-weird-name/">What&#8217;s With the Weird Name?</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -1066,19 +1102,24 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
 
 
 
-  
 
 
-<time datetime="2012-02-05T19:09:00+01:00" pubdate data-updated="true">Feb 5<span>th</span>, 2012</time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-02-05T19:09:00+01:00" pubdate data-updated="true">Feb 5<span>th</span>, 2012</time>
         
-         | <a href="/2012/02/05/whats-with-the-weird-name/#disqus_thread">Comments</a>
+           | <a href="/2012/02/05/whats-with-the-weird-name/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2012/02/05/whats-with-the-weird-name/">Comments</a>
         
       </p>
+    
+    
+      <h1 class="entry-title"><a href="/2012/02/05/whats-with-the-weird-name/">What&#8217;s With the Weird Name?</a></h1>
     
   </header>
 
 
-  <div class="entry-content"><p>So, Camilla.. Why is your nick everywhere <em>naxoc</em>?.</p>
+  <div class="entry-content clearfix"><p>So, Camilla.. Why is your nick everywhere <em>naxoc</em>?.</p>
 
 <p>Xoc means shark in Yucatec Maya. It might actually be <a href="" title="http://en.wikipedia.org/wiki/Yucatec_Maya_language#English_words_derived_from_Maya">one of the very few words that made it into English</a>. I used to study American Indian Language and Culture at the University of Copenhagen. Those were the days with much nerding over Mayan hieroglyphics. Maya hieroglyphic texts are often about how fantastic the rulers where and one of the more fantastic female rulers was called <a href="" title="http://en.wikipedia.org/wiki/Lady_Xoc">Lady Xoc</a>. I thought she was pretty cool, so I stole the name. The Na- prefix is simply a marker for female. So there is the story of my weird nick.</p>
 
@@ -1088,43 +1129,42 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
   
 
 
-    </article>
+        </article>
+      
+    </div>
+
+    <ul class="pager">
+      
+        <li class="previous"><a href="/blog/page/2/">&larr;&nbsp;Older</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+        <li class="next disabled"><a href="#">Newer&nbsp;&rarr;</a></li>
+      
+    </ul>
+  </div>
+
   
-  <div class="pagination">
+    <aside class="sidebar col-md-3">
+      
+        <section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
+  </div>
+  
+  <div id="recent_posts" class="list-group">
     
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    <a class="list-group-item " href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder Selectors in SASS</a>
     
-    <a href="/blog/archives">Blog Archives</a>
+    <a class="list-group-item " href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing Code When Using Modernizr and SASS</a>
+    
+    <a class="list-group-item " href="/2013/11/22/format-json-output-from-curl-neatly/">Format Json Output From cUrl Neatly</a>
+    
+    <a class="list-group-item " href="/2013/11/10/color-schemes-and-productivity/">Color Schemes and Productivity</a>
+    
+    <a class="list-group-item " href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding Unused Images in Your Website Code</a>
     
   </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder selectors in SASS</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing code when using Modernizr and SASS</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/11/22/format-json-output-from-curl-neatly/">Format json output from cUrl neatly</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/11/10/color-schemes-and-productivity/">Color schemes and productivity</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding unused images in your website code</a>
-      </li>
-    
-  </ul>
 </section>
 <section class="drupal-association">
 <img src="http://drupal.org/files/images/DA-individual-80.png" />
@@ -1155,18 +1195,28 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
       <script src="http://www.goodreads.com/review/grid_widget/1493819.Camilla's%20bookshelf:%20read?cover_size=medium&hide_link=true&hide_title=true&num_books=20&order=d&shelf=read&sort=date_read&widget_id=1375689543" type="text/javascript" charset="utf-8"></script>
 </section>
 
+      
+    </aside>
   
-</aside>
+</div>
 
+        </div>
+      </div>
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Camilla Krag Jensen -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2014 - Camilla Krag Jensen<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
 </p>
 
+</div>
 </footer>
-  
+    <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr-2.0.js"></script>
+
 
 <script type="text/javascript">
       var disqus_shortname = 'naxocnet';
@@ -1176,7 +1226,7 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -1191,5 +1241,5 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
 
 
 
-</body>
+  </body>
 </html>
