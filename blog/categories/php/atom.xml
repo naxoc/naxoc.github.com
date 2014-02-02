@@ -4,7 +4,7 @@
   <title><![CDATA[Category: PHP | naxoc.net]]></title>
   <link href="http://naxoc.net/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://naxoc.net/"/>
-  <updated>2014-02-02T13:00:08+01:00</updated>
+  <updated>2014-02-02T13:33:42+01:00</updated>
   <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -22,7 +22,7 @@
 
 <p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:
 <code>
-PHP Warning:  PHP Startup: Unable to load dynamic library &lsquo;/usr/local/Cellar/memcached-php/2.0.1/memcached.so&rsquo; &ndash; dlopen(/usr/local/Cellar/memcached-php/2.0.1/memcached.so, 9): Library not loaded: /usr/local/lib/libmemcached.9.dylib
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/Cellar/memcached-php/2.0.1/memcached.so' - dlopen(/usr/local/Cellar/memcached-php/2.0.1/memcached.so, 9): Library not loaded: /usr/local/lib/libmemcached.9.dylib
   Referenced from: /usr/local/Cellar/memcached-php/2.0.1/memcached.so
   Reason: image not found in Unknown on line 0
 </code></p>
