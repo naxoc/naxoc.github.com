@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: oh-my-zsh | naxoc.net]]></title>
+  <link href="http://naxoc.net/blog/categories/oh-my-zsh/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2014-02-02T14:24:57+01:00</updated>
+  <id>http://naxoc.net/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Syntax highlighting commands with Zsh]]></title>
+    <link href="http://naxoc.net/2014/02/02/syntax-highlighting-commands-with-zsh/"/>
+    <updated>2014-02-02T13:48:19+01:00</updated>
+    <id>http://naxoc.net/2014/02/02/syntax-highlighting-commands-with-zsh</id>
+    <content type="html"><![CDATA[<p>I started using zsh about a year ago after having resisted it with a passion.
+My main worry was that I would &ldquo;forget how to bash&rdquo; and be lost on various servers I log in to. While there are some nifty things I have gotten a little too used to in zsh, I don&rsquo;t think it has been a big problem.</p>
+
+<p>One thing that visually tells me that I am in zsh and not bash is that my zsh terminal syntax highlights as I type. Yes, you read that correctly. If you are not familiar with the <a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a> prepare to have your mind blown.</p>
+
+<p>When you are typing a command you get a yellow color:</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/zsh/zsh-syntax-1.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/zsh/zsh-syntax-1.png</a>"></p>
+
+<p>Then when you have typed something that actually is a command you get green:</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/zsh/zsh-syntax-2.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/zsh/zsh-syntax-2.png</a>"></p>
+
+<p>When you make a typo you get red:</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/zsh/zsh-syntax-3.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/zsh/zsh-syntax-3.png</a>"></p>
+
+<p>It also makes correctly quoted strings yellow. I find that a nice help too:</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/zsh/zsh-syntax-4.png">https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/zsh/zsh-syntax-4.png</a>"></p>
+
+<p>On the <a href="https://github.com/zsh-users/zsh-syntax-highlighting">Github project</a> readme there are instructions for installing the plugin.</p>
+]]></content>
+  </entry>
+  
+</feed>
