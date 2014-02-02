@@ -4,6 +4,9 @@ title: "Upgraded to Drupal 7"
 date: 2010-10-18 20:58
 comments: true
 categories: [drupal, D7, Drupal Planet]
+redirects:
+- upgraded-to-drupal-7
+- blog/2010/10/18/upgraded-to-drupal-7
 ---
 I updated this website to D7 this weekend. [Mikkel](http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7 "Relauching my blog on Drupal 7 | Mikkel Høgh") upgraded his site and urges others to do so now, so I thought I'd give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.
 
@@ -20,7 +23,7 @@ I don't use any of the big modules like CCK, views or panels. In fact I ended up
   The [twitter module](http://drupal.org/project/twitter "Twitter | drupal.org") does not have a 7.x branch either, [but there is work going on](http://drupal.org/node/780712 "Drupal 7 port of Twitter module | drupal.org"). I decided to go for the easy choice so far and just this [twitter-widget](http://twitter.com/goodies/widget_profile) and embed the code in a block. In fact for my need that is just fine.
 </li>
 <li>
-  I have always loved the [admin_menu module](http://drupal.org/project/admin_menu "Administration menu | drupal.org") even though the fancy menu that sits on the side and awaits your click in rubik is nifty, I still like the overview that admin_menu gives me better. Luckily there is a 7.x branch and it also packs a neat integration with the top toolbar that D7 ships with. 
+  I have always loved the [admin_menu module](http://drupal.org/project/admin_menu "Administration menu | drupal.org") even though the fancy menu that sits on the side and awaits your click in rubik is nifty, I still like the overview that admin_menu gives me better. Luckily there is a 7.x branch and it also packs a neat integration with the top toolbar that D7 ships with.
 </li>
 <li>
   [Google analytics](http://drupal.org/project/google_analytics "Google Analytics | drupal.org") has a 7.x branch and I had no trouble with that other than some problem with actually writing the tracking codes. But it turned out that the theme was not doing that.

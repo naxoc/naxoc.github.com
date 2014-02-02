@@ -4,6 +4,8 @@ title: "Hide Drupal files with .htaccess"
 date: 2009-11-13 23:50
 comments: true
 categories: [apache, drupal,Drupal Planet]
+redirects:
+- hide-drupal-files-htaccess
 ---
 If one goes to somedrupalsite.com/CHANGELOG.txt - it is normally possible to read the file and see what version of Drupal the site is running. If you don't want everybody to see what version you are running, it is a good idea to cloak the *.txt files in the Drupal install.
 

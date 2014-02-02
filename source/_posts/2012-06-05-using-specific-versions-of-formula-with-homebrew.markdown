@@ -4,6 +4,9 @@ title: "Using specific versions of formula with Homebrew"
 date: 2012-06-05 13:54
 comments: true
 categories: [cli, PHP, tools]
+redirects:
+- brew-switch
+- blog/2012/06/05/using-specific-versions-of-formula-with-homebrew
 ---
 I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.
 

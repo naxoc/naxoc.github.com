@@ -6,6 +6,7 @@ comments: true
 categories: [laptop, nerdy]
 redirects:
 - hot-laptop
+- blog/2011/04/27/hot-laptop-vacuum-it
 ---
 My beloved 3years old Macbook Pro was starting to get really hot when I used it. It had gotten to the point where I would burn my legs if it was on my lap, and since having your *lap*top on the lap is kinda the point, I felt had to do something about it.
 

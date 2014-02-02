@@ -4,6 +4,8 @@ title: "Pet peeve #1 - the comparison operator"
 date: 2010-12-10 14:27
 comments: true
 categories: [pet peeves, PHP, Drupal Planet]
+redirects:
+- pet-peeve-1-comparison-operator
 ---
 I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.
 
