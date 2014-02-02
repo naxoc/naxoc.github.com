@@ -2,49 +2,49 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://naxoc.net/2009/11/13/hide-drupal-files-with-htaccess/</loc>
-        <lastmod>2014-02-01T17:49:59+01:00</lastmod>
+        <lastmod>2014-02-02T12:32:19+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://naxoc.net/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/
         </loc>
-        <lastmod>2014-02-01T17:49:59+01:00</lastmod>
+        <lastmod>2014-02-02T12:51:49+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2010/10/18/upgraded-to-drupal-7/</loc>
-        <lastmod>2014-02-01T17:49:59+01:00</lastmod>
+        <lastmod>2014-02-02T12:52:33+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2010/10/20/social-media-meta/</loc>
-        <lastmod>2014-02-01T17:49:59+01:00</lastmod>
+        <lastmod>2014-02-02T12:52:06+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2010/12/10/pet-peeve-number-1-the-comparison-operator/</loc>
-        <lastmod>2014-02-01T17:49:59+01:00</lastmod>
+        <lastmod>2014-02-02T12:49:23+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2011/04/27/hot-laptop-vacuum-it/</loc>
-        <lastmod>2014-02-01T17:58:12+01:00</lastmod>
+        <lastmod>2014-02-02T12:51:22+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2011/05/11/moving-an-itunes-library/</loc>
-        <lastmod>2014-02-01T17:57:53+01:00</lastmod>
+        <lastmod>2014-02-02T12:51:33+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2011/09/14/navigating-with-krumo/</loc>
-        <lastmod>2014-02-01T17:49:59+01:00</lastmod>
+        <lastmod>2014-02-02T12:51:08+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2012/02/05/whats-with-the-weird-name/</loc>
-        <lastmod>2014-02-01T17:49:59+01:00</lastmod>
+        <lastmod>2014-02-02T12:52:21+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew/</loc>
-        <lastmod>2014-02-01T17:49:59+01:00</lastmod>
+        <lastmod>2014-02-02T12:50:49+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2012/11/26/a-git-commit-hook-helps-you-keep-your-code-clean/</loc>
-        <lastmod>2014-02-01T17:49:59+01:00</lastmod>
+        <lastmod>2014-02-02T12:50:36+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/</loc>
@@ -100,7 +100,7 @@
     </url>
     <url>
         <loc>http://naxoc.net/assets/bootstrap/</loc>
-        <lastmod>2014-02-01T17:58:12+01:00</lastmod>
+        <lastmod>2014-02-02T12:52:33+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/assets/bootstrap/javascript.html</loc>
@@ -108,11 +108,11 @@
     </url>
     <url>
         <loc>http://naxoc.net/blog/archives/</loc>
-        <lastmod>2014-02-01T17:58:12+01:00</lastmod>
+        <lastmod>2014-02-02T12:52:33+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/</loc>
-        <lastmod>2014-02-01T17:58:12+01:00</lastmod>
+        <lastmod>2014-02-02T12:52:33+01:00</lastmod>
     </url>
     <url>
         <loc>http://naxoc.net/robots.txt</loc>
