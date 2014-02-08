@@ -119,6 +119,75 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-06-05T13:54:00+02:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+        
+           | <a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using Specific Versions of Formula With Homebrew</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
+
+<p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/Cellar/memcached-php/2.0.1/memcached.so' - dlopen(/usr/local/Cellar/memcached-php/2.0.1/memcached.so, 9): Library not loaded: /usr/local/lib/libmemcached.9.dylib
+</span><span class='line'>  Referenced from: /usr/local/Cellar/memcached-php/2.0.1/memcached.so
+</span><span class='line'>  Reason: image not found in Unknown on line 0</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I poked around in my php.ini to see if the wrong file was being included or something like that, but it turned out that I had upgraded to a newer version of libmemcached than the one memcached was using. So I needed to downgrade libmemcached. Here is how to switch to any version available with Homebrew:</p>
+
+<ol>
+<li>
+<code>brew versions libmemcached</code>
+</li>
+<li>
+Find and note the version number you want. In my case I wasn&#8217;t sure, so I just went with the second newest and that worked.
+</li>
+<li>
+<code>brew switch libmemcached 1.0.4</code>
+</li>
+</ol>
+
+
+<p>Change the version number and the formula above to whatever makes sense for what you are doing.</p>
+
+<p>The example above is using a command that is an <a href="https://github.com/mxcl/homebrew/wiki/External-Commands">external command</a> for Homebrew. It works super fast and is easy to use.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-02-05T19:09:00+01:00" pubdate data-updated="true">Feb 5<span>th</span>, 2012</time>
         
            | <a href="/2012/02/05/whats-with-the-weird-name/#disqus_thread"
@@ -683,6 +752,8 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/2014/02/08/keyboard-shortcuts-in-phpstorm/">Keyboard Shortcuts in PHPStorm</a>
+    
     <a class="list-group-item " href="/2014/02/02/syntax-highlighting-commands-with-zsh/">Syntax Highlighting Commands With Zsh</a>
     
     <a class="list-group-item " href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder Selectors in SASS</a>
@@ -690,8 +761,6 @@ And that&rsquo;s it! Easy backup of your database and easy use of the ample stor
     <a class="list-group-item " href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing Code When Using Modernizr and SASS</a>
     
     <a class="list-group-item " href="/2013/11/22/format-json-output-from-curl-neatly/">Format Json Output From cUrl Neatly</a>
-    
-    <a class="list-group-item " href="/2013/11/10/color-schemes-and-productivity/">Color Schemes and Productivity</a>
     
   </div>
 </section>

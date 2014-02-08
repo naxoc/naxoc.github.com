@@ -119,6 +119,82 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-02-08T13:27:35+01:00" pubdate data-updated="true">Feb 8<span>th</span>, 2014</time>
+        
+           | <a href="/2014/02/08/keyboard-shortcuts-in-phpstorm/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2014/02/08/keyboard-shortcuts-in-phpstorm/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2014/02/08/keyboard-shortcuts-in-phpstorm/">Keyboard Shortcuts in PHPStorm</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>Coming from Vim to PHPStorm I use the mouse a whole lot more than I did before. Vim is amazing once you learn it and the mouse can take long naps when you do everything with keyboard commands. PHPStorm is a great IDE, so I switched because I felt like I got so much more good stuff like the debugger, easy refactoring, structural overview, and so on. In the beginning I used the IdeaVim plugin in PHPStorm so editing seemed more like Vim, but I ended up abandoning that because I found it buggy.</p>
+
+<p>Anyway. I slowly learned new keyboard shortcuts for PHPStorm and I wanted to share some of my favorites. Jetbrains has a <a href="http://www.jetbrains.com/phpstorm/webhelp/keyboard-shortcuts-you-cannot-miss.html">a list of keyboard shortcuts you cannot miss</a> too, but most of the ones I find to be super useful are not on that list.</p>
+
+<p>It should be said that I am on a Mac using the &ldquo;Mac OS X 10.5&rdquo; <a href="https://www.jetbrains.com/phpstorm/webhelp/keymap.html">keymap in PHPstorm</a>.</p>
+
+<h2>Navigating</h2>
+
+<ul>
+<li><code>command+[</code> and <code>command+]</code> to go back to the place in the code where you just were or forward respectively.</li>
+<li><code>command+shift+delete</code> go back to the last place in code you edited.</li>
+<li><code>cmd+F12</code> bring up a quick window with all functions/classes in the current file. Type to filter and go to. I use this one all the time. I realise that I could also just use <code>option+command+o</code>, but this one is much faster and narrowing down is easier.</li>
+</ul>
+
+
+<h2>Tools</h2>
+
+<ul>
+<li><code>command+1</code> toggles the project pane that shows the file tree. For extra usefulness, do this one time setting: Click the gear in the menu and choose &ldquo;autoscroll from source&rdquo;. Now the tree always shows you where you are in the file structure.</li>
+<li><code>command+3</code> toggles the &ldquo;find&rdquo; pane. Useful for going back to see a global search done with <code>command+shift+f</code>. To navigate between search results use <code>command+option+arrow-up/down</code></li>
+<li><code>commmand+5</code> toggles the debugger pane.</li>
+<li><code>command+7</code> toggles the PHP structure pane.</li>
+<li><code>command+9</code> toggles the version control pane. I don&rsquo;t use this a whole lot&mdash;-I prefer the command line for Git, but there are some nice features in the VCS tools in PHPStorm. My favorite VCS keyboard shortcut (actually this one is kind of a sequence) is <code>ctrl+v</code> and then hit 5 to get a Git blame panel.</li>
+</ul>
+
+
+<h2>In the debugger</h2>
+
+<ul>
+<li><code>option+command+r</code> will resume.</li>
+<li><code>command+f2</code> will stop (kill).</li>
+<li><code>F8</code> will step.</li>
+<li><code>shift+command+F8</code> will show you a list of all your breakpoints.</li>
+</ul>
+
+
+<p>These are some of my favorites. Comment and share yours!</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-02-02T13:48:19+01:00" pubdate data-updated="true">Feb 2<span>nd</span>, 2014</time>
         
            | <a href="/2014/02/02/syntax-highlighting-commands-with-zsh/#disqus_thread"
@@ -1082,75 +1158,6 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
 
         </article>
       
-      
-        <article class="post">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-06-05T13:54:00+02:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
-        
-           | <a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/#disqus_thread"
-             data-disqus-identifier="http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/2012/06/05/using-specific-versions-of-formula-with-homebrew/">Using Specific Versions of Formula With Homebrew</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix"><p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
-
-<p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/Cellar/memcached-php/2.0.1/memcached.so' - dlopen(/usr/local/Cellar/memcached-php/2.0.1/memcached.so, 9): Library not loaded: /usr/local/lib/libmemcached.9.dylib
-</span><span class='line'>  Referenced from: /usr/local/Cellar/memcached-php/2.0.1/memcached.so
-</span><span class='line'>  Reason: image not found in Unknown on line 0</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I poked around in my php.ini to see if the wrong file was being included or something like that, but it turned out that I had upgraded to a newer version of libmemcached than the one memcached was using. So I needed to downgrade libmemcached. Here is how to switch to any version available with Homebrew:</p>
-
-<ol>
-<li>
-<code>brew versions libmemcached</code>
-</li>
-<li>
-Find and note the version number you want. In my case I wasn&#8217;t sure, so I just went with the second newest and that worked.
-</li>
-<li>
-<code>brew switch libmemcached 1.0.4</code>
-</li>
-</ol>
-
-
-<p>Change the version number and the formula above to whatever makes sense for what you are doing.</p>
-
-<p>The example above is using a command that is an <a href="https://github.com/mxcl/homebrew/wiki/External-Commands">external command</a> for Homebrew. It works super fast and is easy to use.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -1174,6 +1181,8 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/2014/02/08/keyboard-shortcuts-in-phpstorm/">Keyboard Shortcuts in PHPStorm</a>
+    
     <a class="list-group-item " href="/2014/02/02/syntax-highlighting-commands-with-zsh/">Syntax Highlighting Commands With Zsh</a>
     
     <a class="list-group-item " href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder Selectors in SASS</a>
@@ -1181,8 +1190,6 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
     <a class="list-group-item " href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing Code When Using Modernizr and SASS</a>
     
     <a class="list-group-item " href="/2013/11/22/format-json-output-from-curl-neatly/">Format Json Output From cUrl Neatly</a>
-    
-    <a class="list-group-item " href="/2013/11/10/color-schemes-and-productivity/">Color Schemes and Productivity</a>
     
   </div>
 </section>

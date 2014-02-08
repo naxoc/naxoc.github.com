@@ -4,10 +4,10 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: octopress - naxoc.net</title>
+  <title>Keyboard shortcuts in PHPStorm - naxoc.net</title>
   <meta name="author" content="Camilla Krag Jensen">
 
-  <meta name="description" content="Category: octopress">
+  
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://naxoc.netblog/categories/octopress">
+  <link rel="canonical" href="http://naxoc.net/2014/02/08/keyboard-shortcuts-in-phpstorm">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="naxoc.net" type="application/atom+xml">
 
@@ -60,10 +60,10 @@
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li >
+                <li class="active">
                     <a href="/">Blog</a>
                 </li>
-                <li class="active">
+                <li >
                     <a href="/blog/archives">Archives</a>
                 </li>
                 <li >
@@ -97,31 +97,12 @@
         <div id="content">
           <div class="row">
   <div class="page-content col-md-9">
-    <article role="article">
+    <article class="hentry" role="article">
       
-        <header class="page-header">
-          
-          
-            <h1 class="entry-title">
-              Category: Octopress
-              
-            </h1>
-          
-        </header>
-      
-      <div class="entry-content">
-        <div id="blog-archives" class="category">
-
-
-
-  
-  <h2>2013</h2>
-
-<article class="page-header">
-  
-<h1><a href="/2013/11/10/color-schemes-and-productivity/">Color schemes and productivity</a></h1>
-<p class="meta text-muted">
-  
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
 
 
 
@@ -134,40 +115,125 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-10T13:45:00+01:00" pubdate data-updated="true">Nov 10<span>th</span>, 2013</time>
-  
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-02-08T13:27:35+01:00" pubdate data-updated="true">Feb 8<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://naxoc.net">Comments</a>
+        
+      </p>
+    
+    
+    <h1 class="entry-title">
+        Keyboard Shortcuts in PHPStorm
+        
+    </h1>
+    
+  </header>
 
-<span class="glyphicon glyphicon-tags"></span>&nbsp;
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/phpstorm/'>PHPStorm</a>, <a class='category' href='/blog/categories/color-scheme/'>color scheme</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/vim/'>vim</a>
-  
-</span>
+
+<div class="entry-content clearfix"><p>Coming from Vim to PHPStorm I use the mouse a whole lot more than I did before. Vim is amazing once you learn it and the mouse can take long naps when you do everything with keyboard commands. PHPStorm is a great IDE, so I switched because I felt like I got so much more good stuff like the debugger, easy refactoring, structural overview, and so on. In the beginning I used the IdeaVim plugin in PHPStorm so editing seemed more like Vim, but I ended up abandoning that because I found it buggy.</p>
+
+<p>Anyway. I slowly learned new keyboard shortcuts for PHPStorm and I wanted to share some of my favorites. Jetbrains has a <a href="http://www.jetbrains.com/phpstorm/webhelp/keyboard-shortcuts-you-cannot-miss.html">a list of keyboard shortcuts you cannot miss</a> too, but most of the ones I find to be super useful are not on that list.</p>
+
+<p>It should be said that I am on a Mac using the &ldquo;Mac OS X 10.5&rdquo; <a href="https://www.jetbrains.com/phpstorm/webhelp/keymap.html">keymap in PHPstorm</a>.</p>
+
+<h2>Navigating</h2>
+
+<ul>
+<li><code>command+[</code> and <code>command+]</code> to go back to the place in the code where you just were or forward respectively.</li>
+<li><code>command+shift+delete</code> go back to the last place in code you edited.</li>
+<li><code>cmd+F12</code> bring up a quick window with all functions/classes in the current file. Type to filter and go to. I use this one all the time. I realise that I could also just use <code>option+command+o</code>, but this one is much faster and narrowing down is easier.</li>
+</ul>
 
 
-</p>
+<h2>Tools</h2>
 
-</article>
+<ul>
+<li><code>command+1</code> toggles the project pane that shows the file tree. For extra usefulness, do this one time setting: Click the gear in the menu and choose &ldquo;autoscroll from source&rdquo;. Now the tree always shows you where you are in the file structure.</li>
+<li><code>command+3</code> toggles the &ldquo;find&rdquo; pane. Useful for going back to see a global search done with <code>command+shift+f</code>. To navigate between search results use <code>command+option+arrow-up/down</code></li>
+<li><code>commmand+5</code> toggles the debugger pane.</li>
+<li><code>command+7</code> toggles the PHP structure pane.</li>
+<li><code>command+9</code> toggles the version control pane. I don&rsquo;t use this a whole lot&mdash;-I prefer the command line for Git, but there are some nice features in the VCS tools in PHPStorm. My favorite VCS keyboard shortcut (actually this one is kind of a sequence) is <code>ctrl+v</code> and then hit 5 to get a Git blame panel.</li>
+</ul>
 
+
+<h2>In the debugger</h2>
+
+<ul>
+<li><code>option+command+r</code> will resume.</li>
+<li><code>command+f2</code> will stop (kill).</li>
+<li><code>F8</code> will step.</li>
+<li><code>shift+command+F8</code> will show you a list of all your breakpoints.</li>
+</ul>
+
+
+<p>These are some of my favorites. Comment and share yours!</p>
 </div>
 
-      </div>
-      
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard">Posted by <span class="fn">Camilla Krag Jensen</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-02-08T13:27:35+01:00" pubdate data-updated="true">Feb 8<span>th</span>, 2014</time>
+          
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/2014/02/02/syntax-highlighting-commands-with-zsh/" title="Previous Post: Syntax highlighting commands with Zsh">&laquo; Syntax highlighting commands with Zsh</a></li>
+            
+            
+          </ul>
+        
+      </footer>
     </article>
+    
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
     
   </div>
 
   
-    <aside class="sidebar col-md-3">
-      
-        <section class="panel panel-default">
+  <aside class="sidebar col-md-3">
+    
+      <section class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Recent Posts</h3>
   </div>
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/2014/02/08/keyboard-shortcuts-in-phpstorm/">Keyboard Shortcuts in PHPStorm</a>
+    <a class="list-group-item active" href="/2014/02/08/keyboard-shortcuts-in-phpstorm/">Keyboard Shortcuts in PHPStorm</a>
     
     <a class="list-group-item " href="/2014/02/02/syntax-highlighting-commands-with-zsh/">Syntax Highlighting Commands With Zsh</a>
     
@@ -217,8 +283,8 @@
 </section>
 
 
-      
-    </aside>
+    
+  </aside>
   
 </div>
 
@@ -244,7 +310,10 @@
       var disqus_shortname = 'naxocnet';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://naxoc.net/2014/02/08/keyboard-shortcuts-in-phpstorm/';
+        var disqus_url = 'http://naxoc.net/2014/02/08/keyboard-shortcuts-in-phpstorm/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
