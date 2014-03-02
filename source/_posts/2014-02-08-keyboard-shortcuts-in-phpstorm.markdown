@@ -3,7 +3,7 @@ layout: post
 title: "Keyboard shortcuts in PHPStorm"
 date: 2014-02-08 13:27:35 +0100
 comments: true
-categories:
+categories: [PHPStorm, keyboard shortcuts, productivity]
 ---
 Coming from Vim to PHPStorm I use the mouse a whole lot more than I did before. Vim is amazing once you learn it and the mouse can take long naps when you do everything with keyboard commands. PHPStorm is a great IDE, so I switched because I felt like I got so much more good stuff like the debugger, easy refactoring, structural overview, and so on. In the beginning I used the IdeaVim plugin in PHPStorm so editing seemed more like Vim, but I ended up abandoning that because I found it buggy.
 
