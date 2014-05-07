@@ -3,7 +3,7 @@ layout: post
 title: "Using specific versions of formula with Homebrew"
 date: 2012-06-05 13:54
 comments: true
-categories: [cli, PHP, tools]
+categories: [cli, PHP, tools, homebrew]
 redirects:
 - brew-switch
 - blog/2012/06/05/using-specific-versions-of-formula-with-homebrew
