@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: homebrew | naxoc.net]]></title>
+  <link href="http://naxoc.net/blog/categories/homebrew/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2014-05-07T21:05:00+02:00</updated>
+  <id>http://naxoc.net/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Switch between PHP versions with Homebrew]]></title>
+    <link href="http://naxoc.net/2014/05/07/switch-between-php-versions-with-homebrew/"/>
+    <updated>2014-05-07T20:25:40+02:00</updated>
+    <id>http://naxoc.net/2014/05/07/switch-between-php-versions-with-homebrew</id>
+    <content type="html"><![CDATA[<p>I am working on a few older Drupal sites that are quite insistent on using PHP 5.3 and not PHP 5.4. No problem &ndash; I&rsquo;ll just use Homebrew to switch between versions! But I have been running into all kinds of problems every time I have done this, so I figured I would post what I do to repair things here.</p>
+
+<p>So, in theory all you should have to do is install the versions you need if you don&rsquo;t already have them.
+<code>brew install php53</code>
+And when you want to switch just run this:
+<code>brew unlink php54 &amp;&amp; brew link php53</code></p>
+
+<p>Apache also needs to know what version to use, so edit <em>/private/etc/apache2/httpd.conf</em> so that the line that looks like this has the right (major) version number:
+<code>LoadModule php5_module /usr/local/opt/php54/libexec/apache2/libphp5.so</code></p>
+
+<p>So far so good. You can check the version from the command line:
+```
+➜  ~  php &mdash;version
+PHP 5.3.28 (cli) (built: May  7 2014 09:50:08)
+Copyright &copy; 1997-2013 The PHP Group
+Zend Engine v2.3.0, Copyright &copy; 1998-2013 Zend Technologies</p>
+
+<pre><code>with Xdebug v2.2.5, Copyright (c) 2002-2014, by Derick Rethans
+</code></pre>
+
+<p>```</p>
+
+<p>If you are not seeing what you expect, try adding add this to your <em>.bashrc</em> or <em>.zshrc</em> with the correct version number:
+ <code>export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"</code></p>
+
+<p>If things are working now thats great! It doesn&rsquo;t always for me. I get this:
+<code>
+➜  ~  php -i
+dyld: Library not loaded: /usr/local/lib/libpng15.15.dylib
+  Referenced from: /usr/local/opt/php53/bin/php
+  Reason: image not found
+</code>
+Sadly the only workaround I have found is to uninstall and install again:
+  <code>brew uninstall php53 &amp; brew install php53</code></p>
+
+<p>  It takes quite a long time but it does the trick.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using specific versions of formula with Homebrew]]></title>
+    <link href="http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew/"/>
+    <updated>2012-06-05T13:54:00+02:00</updated>
+    <id>http://naxoc.net/2012/06/05/using-specific-versions-of-formula-with-homebrew</id>
+    <content type="html"><![CDATA[<p>I have my LAMP stack and other things set up on my mac with the wonderful <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</p>
+
+<p>I recently did a <code>brew upgrade</code> on my system and it seemed that everything went smooth. But when I later ran PHP from the command line I got this error:
+<code>
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/Cellar/memcached-php/2.0.1/memcached.so' - dlopen(/usr/local/Cellar/memcached-php/2.0.1/memcached.so, 9): Library not loaded: /usr/local/lib/libmemcached.9.dylib
+  Referenced from: /usr/local/Cellar/memcached-php/2.0.1/memcached.so
+  Reason: image not found in Unknown on line 0
+</code></p>
+
+<p>I poked around in my php.ini to see if the wrong file was being included or something like that, but it turned out that I had upgraded to a newer version of libmemcached than the one memcached was using. So I needed to downgrade libmemcached. Here is how to switch to any version available with Homebrew:</p>
+
+<ol>
+<li>
+<code>brew versions libmemcached</code>
+</li>
+<li>
+Find and note the version number you want. In my case I wasn't sure, so I just went with the second newest and that worked.
+</li>
+<li>
+<code>brew switch libmemcached 1.0.4</code>
+</li>
+</ol>
+
+
+<p>Change the version number and the formula above to whatever makes sense for what you are doing.</p>
+
+<p>The example above is using a command that is an <a href="https://github.com/mxcl/homebrew/wiki/External-Commands">external command</a> for Homebrew. It works super fast and is easy to use.</p>
+]]></content>
+  </entry>
+  
+</feed>
