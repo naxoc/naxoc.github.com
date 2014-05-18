@@ -29,16 +29,15 @@
 
   <script src="/javascripts/libs/jquery/jquery-2.0.3.min.js"></script>
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-15300952-1']);
-    _gaq.push(['_trackPageview']);
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+    ga('create', 'UA-15300952-1', 'naxoc.net');
+    ga('send', 'pageview');
+
   </script>
 
 
@@ -131,7 +130,7 @@
   </header>
 
 
-<div class="entry-content clearfix"><p>I have been playing around with Github&rsquo;s new editor <a href="Atom">http://atom.io</a> for a while now. I actually quite like it, but it still hasn&rsquo;t taken Vim&rsquo;s place as my default editor yet. Maybe it will at some point, but we&rsquo;ll see.</p>
+<div class="entry-content clearfix"><p>I have been playing around with Github&rsquo;s new editor <a href="http://atom.io">Atom</a> for a while now. I actually quite like it, but it still hasn&rsquo;t taken Vim&rsquo;s place as my default editor yet. Maybe it will at some point, but we&rsquo;ll see.</p>
 
 <p>Atom updates itself and that has been working great, only it stopped working a while ago. It threw some long error to the GUI editor that I can&rsquo;t remember and when I tried to run <code>apm upgrade</code> it said:</p>
 

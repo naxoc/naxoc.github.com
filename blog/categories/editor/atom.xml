@@ -4,7 +4,7 @@
   <title><![CDATA[Category: editor | naxoc.net]]></title>
   <link href="http://naxoc.net/blog/categories/editor/atom.xml" rel="self"/>
   <link href="http://naxoc.net/"/>
-  <updated>2014-05-18T21:08:37+02:00</updated>
+  <updated>2014-05-18T22:05:07+02:00</updated>
   <id>http://naxoc.net/</id>
   <author>
     <name><![CDATA[Camilla Krag Jensen]]></name>
@@ -18,7 +18,7 @@
     <link href="http://naxoc.net/2014/05/18/atom-editor-update-problem/"/>
     <updated>2014-05-18T20:51:03+02:00</updated>
     <id>http://naxoc.net/2014/05/18/atom-editor-update-problem</id>
-    <content type="html"><![CDATA[<p>I have been playing around with Github&rsquo;s new editor <a href="Atom">http://atom.io</a> for a while now. I actually quite like it, but it still hasn&rsquo;t taken Vim&rsquo;s place as my default editor yet. Maybe it will at some point, but we&rsquo;ll see.</p>
+    <content type="html"><![CDATA[<p>I have been playing around with Github&rsquo;s new editor <a href="http://atom.io">Atom</a> for a while now. I actually quite like it, but it still hasn&rsquo;t taken Vim&rsquo;s place as my default editor yet. Maybe it will at some point, but we&rsquo;ll see.</p>
 
 <p>Atom updates itself and that has been working great, only it stopped working a while ago. It threw some long error to the GUI editor that I can&rsquo;t remember and when I tried to run <code>apm upgrade</code> it said:
 <code>
