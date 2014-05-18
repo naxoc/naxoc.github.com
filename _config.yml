@@ -96,6 +96,7 @@ disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id: UA-15300952-1
+google_analytics_name: naxoc.net
 
 # Facebook Like
 facebook_like: false
