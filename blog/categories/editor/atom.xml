@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: editor | naxoc.net]]></title>
+  <link href="http://naxoc.net/blog/categories/editor/atom.xml" rel="self"/>
+  <link href="http://naxoc.net/"/>
+  <updated>2014-05-18T21:08:37+02:00</updated>
+  <id>http://naxoc.net/</id>
+  <author>
+    <name><![CDATA[Camilla Krag Jensen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Atom editor update problem]]></title>
+    <link href="http://naxoc.net/2014/05/18/atom-editor-update-problem/"/>
+    <updated>2014-05-18T20:51:03+02:00</updated>
+    <id>http://naxoc.net/2014/05/18/atom-editor-update-problem</id>
+    <content type="html"><![CDATA[<p>I have been playing around with Github&rsquo;s new editor <a href="Atom">http://atom.io</a> for a while now. I actually quite like it, but it still hasn&rsquo;t taken Vim&rsquo;s place as my default editor yet. Maybe it will at some point, but we&rsquo;ll see.</p>
+
+<p>Atom updates itself and that has been working great, only it stopped working a while ago. It threw some long error to the GUI editor that I can&rsquo;t remember and when I tried to run <code>apm upgrade</code> it said:
+<code>
+➜  ~  apm upgrade
+Package Updates Available (0)
+└── (empty)
+</code>
+&mdash; even though in the UI it said it had an update ready.</p>
+
+<p>I poked around a for a while until I found a couple of mentions in the support forums <a href="http://discuss.atom.io/t/cant-install-or-update-packages/1623">like this one</a> saying that you should just set file permissions on your <code>~/.atom/.node-gyp</code> folder. So I did
+<code>
+chmod -R 777 ~/.atom/.node-gyp
+</code>
+and restarted the GUI Atom.app. Now my update was applied and everybody was happy again!</p>
+]]></content>
+  </entry>
+  
+</feed>

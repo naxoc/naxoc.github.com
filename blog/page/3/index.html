@@ -119,6 +119,112 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2009-11-16T21:06:00+01:00" pubdate data-updated="true">Nov 16<span>th</span>, 2009</time>
+        
+           | <a href="/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/">Backup and Migrate Module + Dropbox = Peace of Mind</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>The <a href="http://drupal.org/project/backup_migrate">backup and migrate</a> module is truly sweet. We all know that it is a <em>really</em> good idea to back up data. But if you are like me &ndash; you forgot to do it or just don&rsquo;t do it for some lame reason. So backups should be automated. The backup and migrate module does exactly that &ndash; it can be configured to run every X hours if you have cron (and you should have) running on your site.
+The module makes a dump of the database and puts it in a folder in the files folder of the site. Even if you use the public <a href="http://drupal.org/node/22240">download method</a>, the security is OK &ndash; a .htacces file put in the folder by the backup and migrate module and dissalows access to the folder&rsquo;s content.</p>
+
+<p>In the unlikely event that my server goes up in flames, I like to have some backups that are not physically on the same server as the site. I really like Dropbox, so I thought I would figure out a way to use that for the database dumps. I found this very <a href="http://jaka.kubje.org/software/dropboxuploader/">nice and simple php script</a>, that will upload files to your dropbox. I used that to write a super simple php file that my cronjob will call once a day. I settled with having daily backups a week back in time, so the filenames are day names. That way monday&rsquo;s file will be overwritten next monday.</p>
+
+<p>Here is what I did:</p>
+
+<ol>
+<li>Enable the backup migrate module</li>
+<li>Go to yoursite.com/admin/content/backup_migrate/export and choose gz under compression, put your sitename in <em>Backup file name</em>, and put &ldquo;D&rdquo; for dayname under Timestamp format:
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/timestamp_append.png"></li>
+<li>Download and unzip the latest <a href="http://jaka.kubje.org/software/dropboxuploader/">Dropbox uploader</a> (I used the 1.1.5 version)</li>
+<li>Edit the variables capitalized in the php below and save the it to a file called dropbox_backup.php. Put it next to the Dropbox uploader file. The files should be put somewhere outside the drupal installation.</li>
+<li>Put a line that in your crontab that calls the php script. It could look like this one, that will run every night at 1 and report to a log file how it went.
+<code>00 01 * * * php PATH_TO_SCRIPT/dropbox_backup.php &gt;&gt; PATH_TO_SCRIPT/log.txt</code>
+And that&rsquo;s it! Easy backup of your database and easy use of the ample storage space that Dropbox offers.</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'><span class="nv">$site_name</span> <span class="o">=</span> <span class="s1">&#39;SITENAME&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$backup_dir</span> <span class="o">=</span> <span class="s1">&#39;WHERE_YOUR_DB_DUMPS_ARE_PUT_BY_BACKUP_MIGRATE&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$todays_filename</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s1">&#39;%s-%s.sql.gz&#39;</span><span class="p">,</span> <span class="nv">$site_name</span><span class="p">,</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$backup_dir</span> <span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span> <span class="nv">$todays_filename</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// Get todays file from where backup_migrate module puts it</span>
+</span><span class='line'>  <span class="c1">// and drop it in this folder (just to get it out of the &quot;files&quot;</span>
+</span><span class='line'>  <span class="c1">// folder in Drupal).</span>
+</span><span class='line'>  <span class="nb">exec</span><span class="p">(</span><span class="s2">&quot;mv </span><span class="si">$backup_dir</span><span class="s2">/</span><span class="si">$todays_filename</span><span class="s2"> &quot;</span> <span class="o">.</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;SCRIPT_FILENAME&#39;</span><span class="p">]));</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// And upload todays file to the Dropbox.</span>
+</span><span class='line'>  <span class="k">require</span> <span class="s1">&#39;DropboxUploader.php&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">try</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nv">$uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DropboxUploader</span><span class="p">(</span><span class="s1">&#39;YOUR_EMAIL&#39;</span><span class="p">,</span> <span class="s1">&#39;YOUR_PASSWORD&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="nv">$uploader</span><span class="o">-&gt;</span><span class="na">upload</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;SCRIPT_NAME&#39;</span><span class="p">])</span> <span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span> <span class="nv">$todays_filename</span><span class="p">,</span> <span class="s1">&#39;FOLDER_IN_DROPBOX&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;m/d Y&#39;</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;: Uploaded </span><span class="si">$todays_filename</span><span class="s2"> to Dropbox</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;m/d Y&#39;</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;: I had a problem uploading </span><span class="si">$todays_filename</span><span class="s2"> to Dropbox</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2009-11-13T23:50:00+01:00" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time>
         
            | <a href="/2009/11/13/hide-drupal-files-with-htaccess/#disqus_thread"
@@ -203,6 +309,8 @@
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/2014/05/18/atom-editor-update-problem/">Atom Editor Update Problem</a>
+    
     <a class="list-group-item " href="/2014/05/07/switch-between-php-versions-with-homebrew/">Switch Between PHP Versions With Homebrew</a>
     
     <a class="list-group-item " href="/2014/02/08/keyboard-shortcuts-in-phpstorm/">Keyboard Shortcuts in PHPStorm</a>
@@ -210,8 +318,6 @@
     <a class="list-group-item " href="/2014/02/02/syntax-highlighting-commands-with-zsh/">Syntax Highlighting Commands With Zsh</a>
     
     <a class="list-group-item " href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder Selectors in SASS</a>
-    
-    <a class="list-group-item " href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing Code When Using Modernizr and SASS</a>
     
   </div>
 </section>

@@ -119,6 +119,66 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-18T20:51:03+02:00" pubdate data-updated="true">May 18<span>th</span>, 2014</time>
+        
+           | <a href="/2014/05/18/atom-editor-update-problem/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2014/05/18/atom-editor-update-problem/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2014/05/18/atom-editor-update-problem/">Atom Editor Update Problem</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>I have been playing around with Github&rsquo;s new editor <a href="Atom">http://atom.io</a> for a while now. I actually quite like it, but it still hasn&rsquo;t taken Vim&rsquo;s place as my default editor yet. Maybe it will at some point, but we&rsquo;ll see.</p>
+
+<p>Atom updates itself and that has been working great, only it stopped working a while ago. It threw some long error to the GUI editor that I can&rsquo;t remember and when I tried to run <code>apm upgrade</code> it said:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>➜  ~  apm upgrade
+</span><span class='line'>Package Updates Available (0)
+</span><span class='line'>└── (empty)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&mdash; even though in the UI it said it had an update ready.</p>
+
+<p>I poked around a for a while until I found a couple of mentions in the support forums <a href="http://discuss.atom.io/t/cant-install-or-update-packages/1623">like this one</a> saying that you should just set file permissions on your <code>~/.atom/.node-gyp</code> folder. So I did</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chmod -R 777 ~/.atom/.node-gyp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and restarted the GUI Atom.app. Now my update was applied and everybody was happy again!</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-07T20:25:40+02:00" pubdate data-updated="true">May 7<span>th</span>, 2014</time>
         
            | <a href="/2014/05/07/switch-between-php-versions-with-homebrew/#disqus_thread"
@@ -1002,63 +1062,6 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
 
         </article>
       
-      
-        <article class="post">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-10-06T20:55:00+02:00" pubdate data-updated="true">Oct 6<span>th</span>, 2013</time>
-        
-           | <a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/#disqus_thread"
-             data-disqus-identifier="http://naxoc.net/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/">Setting Up a File Watcher for Compass in PHPStorm</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix"><p>EDIT: <em>It seems that the version 7 early access now has a file watcher preset for Compass &ndash; nice work JetBrains! The part about scope from this blog post is still useful to you if you are on PHPStorm 7 though.</em></p>
-
-<p>I started using PHPStorm about 6 months ago and while it is an extremely awesome and powerful IDE there are just so many things you can set up and configure. I have to admit that for the first couple of months I pretty much used PHPStorm just like I did Vim and not using any of the many configurable things except for the debugger. I am slowly venturing into playing around with setting more stuff up, and I thought I would share this one because it took me a while to get right.</p>
-
-<p>It is super simple to use the <a href="http://compass-style.org/">Compass compiler</a> from the command line and I always have. But PHPStorm can compile your .scss files into .css on the fly so why not take advantage of that.</p>
-
-<p>So here is what I did. The settings assume that you use something that resembles the default settings in a Compass project with a folder for the scss files and the css being output to another folder called something like &ldquo;stylesheets&rdquo; or &ldquo;css&rdquo; (could be anything really). You also need to have <a href="http://compass-style.org/install/">Compass installed on your machine</a>.</p>
-
-<ol>
-<li>In the PHPStorm settings, go to &ldquo;File Watchers&rdquo;.</li>
-<li>Click the plus to add a watcher and choose SCSS.</li>
-<li>Edit the settings to look like the ones on the screenshot. Where Compass is installed on your machine may not be in /usr/bin/compass like it is on mine, but you can use the command <code>whereis compass</code> from your command line to figure out where compass is. The output path is &ldquo;stylesheets&rdquo; for me for this particular project, but you shold edit that to whatever your project has named the css output folder.</li>
-</ol>
-
-
-<p><img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/compass-phpstorm.png" title="'Settings in PHPStorm'" ></p>
-
-<p>Note that I have created a &ldquo;scope&rdquo; called Theme. Scopes in PHPStorm are parts of your project that you would like included or excluded in things like searches and settings like this Compass setup. There is no reason for PHPStorm to listen for changes to your module files if your theme folder is where you have your Compass project. So if you click the button with the three dots at the scope field you can setup PHPStorm to only look where it is relevant. I use scopes a lot to cut down on how long searches take, so setting up a few scopes for each project is time well spent.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -1082,6 +1085,8 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/2014/05/18/atom-editor-update-problem/">Atom Editor Update Problem</a>
+    
     <a class="list-group-item " href="/2014/05/07/switch-between-php-versions-with-homebrew/">Switch Between PHP Versions With Homebrew</a>
     
     <a class="list-group-item " href="/2014/02/08/keyboard-shortcuts-in-phpstorm/">Keyboard Shortcuts in PHPStorm</a>
@@ -1089,8 +1094,6 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
     <a class="list-group-item " href="/2014/02/02/syntax-highlighting-commands-with-zsh/">Syntax Highlighting Commands With Zsh</a>
     
     <a class="list-group-item " href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder Selectors in SASS</a>
-    
-    <a class="list-group-item " href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/">Organizing Code When Using Modernizr and SASS</a>
     
   </div>
 </section>
