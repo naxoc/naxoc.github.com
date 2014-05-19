@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Upgraded to Drupal 7 - naxoc.net</title>
+  <title>naxoc.net</title>
   <meta name="author" content="Camilla Krag Jensen">
 
   
@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://naxoc.net/2010/10/18/upgraded-to-drupal-7">
+  <link rel="canonical" href="http://naxoc.net/blog/page/4">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="naxoc.net" type="application/atom+xml">
 
@@ -96,8 +96,217 @@
         <div id="content">
           <div class="row">
   <div class="page-content col-md-9">
-    <article class="hentry" role="article">
+    <div class="blog-index">
       
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2011-05-11T15:22:00+02:00" pubdate data-updated="true">May 11<span>th</span>, 2011</time>
+        
+           | <a href="/2011/05/11/moving-an-itunes-library/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2011/05/11/moving-an-itunes-library/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2011/05/11/moving-an-itunes-library/">Moving an iTunes Library</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>If you are moving an iTunes library to a new mac it will go smooth if the user login is the same. So if I move my iTunes library from an old machine where it was located in <code>/Users/ckj/iTunes</code> to a new machine where it is gonna go in <code>/Users/ckj/iTunes</code> &ndash; I have no problems. But if I changed to another username on the new machine &ndash; all the paths in the iTunes Library.xml file will not be correct anymore. I have moved libraries so many times now and I thought I would share a really quick way to fix the iTunes Library.xml file to reflect the correct user directory.</p>
+
+<p>If you use the built-in command line tool called <a href="http://en.wikipedia.org/wiki/Sed">sed</a>, you can type one line in the terminal and be done. Let’s say I was moving from a mac with a user directory called &ldquo;ckj&rdquo; to another machine with a user directory called &ldquo;naxoc&rdquo;. All I would have to do in the terminal would be this:</p>
+
+<ol>
+<li>cd to the iTunes folder in the user directory you are moving to.</li>
+<li>Enter this: <code>sed -i "" -e "s,Users/ckj,Users/naxoc,g" files iTunes\ Library.xml</code></li>
+</ol>
+
+
+<p>Note the funky syntax with the <code>-i ""</code> This is a mac quirck in sed. I found some info on it <a href="http://stackoverflow.com/questions/2320564/variations-of-sed-between-osx-and-gnu-linux">here</a>.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2011-04-27T21:48:00+02:00" pubdate data-updated="true">Apr 27<span>th</span>, 2011</time>
+        
+           | <a href="/2011/04/27/hot-laptop-vacuum-it/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2011/04/27/hot-laptop-vacuum-it/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2011/04/27/hot-laptop-vacuum-it/">Hot Laptop? Vacuum It!</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>My beloved 3years old Macbook Pro was starting to get really hot when I used it. It had gotten to the point where I would burn my legs if it was on my lap, and since having your <em>lap</em>top on the lap is kinda the point, I felt had to do something about it.</p>
+
+<p>I bought a <a href="%E2%80%9Chttp://www.amazon.com/Logitech-Notebook-Cooling-N100-Gray/dp/B003BEDQYY/ref=sr_1_1?ie=UTF8&amp;qid=1303933766&amp;sr=8-1%E2%80%9D">Logitech Notebook Cooling Pad</a> that actually is very comfortable and does exactly as it says it will, but I was still curious to see if I could get my old healthy Macbook back.</p>
+
+<p>I found <a href="%E2%80%9Chttp://www.andrew.co.za/2008/02/quick-macbook-clean.html%E2%80%9D">this blog post</a> about how to vacuum the laptop and the result is amazing. I was a little worried about the static, so I turned the machine completely off and removed the battery before vacuuming. The happy laptop is now quieter and cooler! Very simple and very recommended.</p>
+
+<p><img class="center" src="http://naxoc.net/files/naxoc.net/styles/large/public/kitty_vacuum.jpg">
+<em>Image from <a href="http://www.flickr.com/photos/noortje/268437984/"><em>n</em>o<em>o</em>r*</a>.</em></p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2010-12-10T14:27:00+01:00" pubdate data-updated="true">Dec 10<span>th</span>, 2010</time>
+        
+           | <a href="/2010/12/10/pet-peeve-number-1-the-comparison-operator/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2010/12/10/pet-peeve-number-1-the-comparison-operator/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2010/12/10/pet-peeve-number-1-the-comparison-operator/">Pet Peeve #1 - the Comparison Operator</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>I have a lot of pet peeves when it comes to programming, databases, web content, food, beer, and, well just about everyting. I am thinking of making a series of pet peeves here on this site. Some will seem like plain rants, and others will be more like tips.</p>
+
+<p>When making comparisons, switch the order of the things you compare like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;book&#39;</span> <span class="o">==</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">type</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'><span class="c1">// Stuff happens.</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You might think why? And that looks weird! Yes, it does look a little weird. But I do this to not accidentially assign the $node->type the value I am comparing it with. It is hell to find an error like this when debugging:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nv">$node</span><span class="o">-&gt;</span><span class="na">type</span> <span class="o">=</span> <span class="s1">&#39;book&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'><span class="c1">// Stuff happens whether you like it or not.</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>See what happened? I only put one = instead of two. PHP will not complain about this, I will just not get what I expect. If I had switched the items, PHP would have complained as I tried to assign an object to a non-variable.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2010-10-20T11:33:00+02:00" pubdate data-updated="true">Oct 20<span>th</span>, 2010</time>
+        
+           | <a href="/2010/10/20/social-media-meta/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2010/10/20/social-media-meta/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2010/10/20/social-media-meta/">Social Media Meta</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>I am doing some integration with facebook these days. I don&rsquo;t use facebook much and I certainly no not want all kinds of test data on my profile so I made a test profile using names that just came to mind :-P</p>
+
+<p>On the facebook developer pages there is a demonstration of the like button. That you can like&hellip; Gotta love the meta!</p>
+
+<p><img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/like.png"></p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
   <header class="page-header">
     
       <p class="meta text-muted text-uppercase">
@@ -116,21 +325,18 @@
 
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2010-10-18T20:58:00+02:00" pubdate data-updated="true">Oct 18<span>th</span>, 2010</time>
         
-           | <a href="#disqus_thread"
-             data-disqus-identifier="http://naxoc.net">Comments</a>
+           | <a href="/2010/10/18/upgraded-to-drupal-7/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2010/10/18/upgraded-to-drupal-7/">Comments</a>
         
       </p>
     
     
-    <h1 class="entry-title">
-        Upgraded to Drupal 7
-        
-    </h1>
+      <h1 class="entry-title"><a href="/2010/10/18/upgraded-to-drupal-7/">Upgraded to Drupal 7</a></h1>
     
   </header>
 
 
-<div class="entry-content clearfix"><p>I updated this website to D7 this weekend. <a href="http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7" title="Relauching my blog on Drupal 7 | Mikkel Høgh">Mikkel</a> upgraded his site and urges others to do so now, so I thought I&rsquo;d give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.</p>
+  <div class="entry-content clearfix"><p>I updated this website to D7 this weekend. <a href="http://mikkel.hoegh.org/blog/2010/oct/7/relaunching-blog-drupal-7" title="Relauching my blog on Drupal 7 | Mikkel Høgh">Mikkel</a> upgraded his site and urges others to do so now, so I thought I&rsquo;d give it a shot too. And it was good fun! OK, granted, this site is 4 posts and pretty much nothing else, but that makes it a perfect time to upgrade.</p>
 
 <p>I actually never did an actual core upgrade via the upgrade path before. The sites I have upgraded from D5 to D6 have pretty much all had such a complex data structure that I had to do an upgrade with a data migration. While that is a lot of work (and requires a programmer), I still like the opportunity it gives to clear out a data model that might have grown a little too organically. For this site though, that would be gross overkill. So my approach was simply to read UPGRADE.txt and follow the steps.</p>
 
@@ -168,73 +374,29 @@ I use <a href="http://illuminex.com/ecto/" title="illumineX :: ecto - blog edito
 
 <p>I am excited to finally run Drupal 7! And I can&rsquo;t wait to play with more contrib modules more and see what cool stuff comes out of all the new opportunities in D7.</p>
 </div>
-
-
-      <footer>
-        <p class="meta text-muted">
-          
-  
-
-<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard">Posted by <span class="fn">Camilla Krag Jensen</span></span>
-
-          
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2010-10-18T20:58:00+02:00" pubdate data-updated="true">Oct 18<span>th</span>, 2010</time>
-          
-
-<span class="glyphicon glyphicon-tags"></span>&nbsp;
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/d7/'>D7</a>, <a class='category' href='/blog/categories/drupal-planet/'>Drupal Planet</a>, <a class='category' href='/blog/categories/drupal/'>drupal</a>
-  
-</span>
-
-
-        </p>
-        
-          <div class="sharing">
   
   
-  
-</div>
 
-        
-        
-          <ul class="meta text-muted pager">
-            
-            <li class="previous"><a href="/2009/11/16/backup-and-migrate-module-plus-dropbox-equals-peace-of-mind/" title="Previous Post: Backup and migrate module + Dropbox = peace of mind">&laquo; Backup and migrate module + Dropbox = peace of mind</a></li>
-            
-            
-            <li class="next"><a href="/2010/10/20/social-media-meta/" title="Next Post: Social media meta">Social media meta &raquo;</a></li>
-            
-          </ul>
-        
-      </footer>
-    </article>
-    
-      <section>
-        <h1>Comments</h1>
-        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-      </section>
-    
+
+        </article>
+      
+    </div>
+
+    <ul class="pager">
+      
+        <li class="previous"><a href="/blog/page/5/">&larr;&nbsp;Older</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+        <li class="next"><a href="/blog/page/3/">Newer&nbsp;&rarr;</a></li>
+      
+    </ul>
   </div>
 
   
-  <aside class="sidebar col-md-3">
-    
-      <section class="panel panel-default">
+    <aside class="sidebar col-md-3">
+      
+        <section class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Recent Posts</h3>
   </div>
@@ -301,8 +463,8 @@ I use <a href="http://illuminex.com/ecto/" title="illumineX :: ecto - blog edito
 </section>
 
 
-    
-  </aside>
+      
+    </aside>
   
 </div>
 
@@ -328,10 +490,7 @@ I use <a href="http://illuminex.com/ecto/" title="illumineX :: ecto - blog edito
       var disqus_shortname = 'naxocnet';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://naxoc.net/2010/10/18/upgraded-to-drupal-7/';
-        var disqus_url = 'http://naxoc.net/2010/10/18/upgraded-to-drupal-7/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
