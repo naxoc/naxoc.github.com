@@ -118,6 +118,101 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-06-03T16:38:30+02:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2014</time>
+        
+           | <a href="/2014/06/03/switching-back-to-firefox/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2014/06/03/switching-back-to-firefox/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2014/06/03/switching-back-to-firefox/">Switching Back to Firefox</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>I have been using Firefox since it came out. I used it back when it was called Firebird and Phoenix. I went to the release party when 1.0 came out and I have advocated using Firefox to anybody that wanted to listen &mdash; and a few that didn&rsquo;t.</p>
+
+<p>2-3 years ago I switched to Chrome along with a lot of other people. Firefox was getting bloated and Chrome had all kinds of shiny tools. But I am back to using Firefox now, and I thought I would explain what lured me back in this post.</p>
+
+<p>I didn&rsquo;t switch because I was tired of, or unhappy with Chrome. I still use both so that I can be logged in to work stuff in one and my own stuff in the other. But I mainly use Firefox for web development now. It should be said that I use the <a href="http://www.mozilla.org/en-US/firefox/channel/#beta">Firefox Beta</a> version and I have had no problems with that. The reason I use the beta is that I really like a couple of the developer tool features, but version 29 also has nice developer tools.</p>
+
+<p>These are some of the features and tools that have impressed me:</p>
+
+<h2>Developer Toolbar</h2>
+
+<p>Of all the shiny things this one was the one that made me switch. Firefox now has a developer toolbar that sits at the bottom of the page for as long as you want it around. Toggle it with Tools > Web Developer > Developer Toolbar. I just keep it around at all times. To change focus and go to it use <code>shift+F2</code>. You can run commands from text in the toolbar and it also shows a little red badge if there are javascript errors on the page.</p>
+
+<h3>So what does it do?</h3>
+
+<p>Well, it&rsquo;s a browser command line for web developers. Try typing <code>help</code> and get a list of commands. I use the <code>cookie</code> and <code>inspect [element]</code> most, but the <code>resize toggle</code> is pretty sweet too. Just like CLI it has completion and arrow up gets your history of commands. Another really cool one is <code>media emulate print</code> &mdash; it will show you the page with the print style sheet (or whatever media you put after emulate).</p>
+
+<p>All these things can be done with the mouse too I&rsquo;m sure, but I like it that I can access these tools really fast with a browser CLI.</p>
+
+<p><img class="center" src="/img/firefox-developer-tools/cookies.png">
+The screenshot shows output from the command <code>cookie list</code>. You can find more info on the toolbar in the <a href="https://developer.mozilla.org/en-US/docs/Tools/GCLI">mozilla.org docs</a>.</p>
+
+<h2>Scratchpad</h2>
+
+<p>The scratchpad is a &lsquo;js-editor&rsquo; that lives in its own window. Invoke it from the Tools > Web Developer menu or by going <code>shift+F4</code>. You can write js and execute it with one of the three buttons. The code you write will be in the scope of the browser window you were in when you invoked the scratchpad so you can test your jQuery snippets or whatever does it for you. There are instructions on how to use the buttons in the comment that is displayed at the top of the file. One thing that is left out that is super helpful though is <code>cmd+shift+r</code>. That will reload the browser window, but keep your js code in the scratchpad.</p>
+
+<p>The keyboard shortcuts are the same as for the style editor and the debugger. There are even key bindings for emacs and vim! To set key bindings, go to <code>about:config</code> in Firefox&rsquo;s location bar and set <code>devtools.editor.keymap</code> to &ldquo;vim&rdquo; or &ldquo;emacs&rdquo;.</p>
+
+<h2>Pretty inspector</h2>
+
+<p>This one is very subjective, but I think that the inspector and the whole developer tools is really pretty. I use the light color scheme, and it just looks better than Chrome&rsquo;s dev tools. I know, but I had to get that one of my chest. There is a dark color scheme setting in the options (click the gear).</p>
+
+<p>There is a font preview tab in the right box on the inspector tab. It&rsquo;s nice to have a clue about the font. I am not a designer, so most the time I don&rsquo;t have a clue. This helps:</p>
+
+<p><img class="center" src="/img/firefox-developer-tools/fonts.png"></p>
+
+<p>Another cool thing about the inspector is the &ldquo;guides&rdquo; it shows when it highlights an element. It is best illustrated with an image. I am talking about the dotted lines that helps you see if you are aligned with what you want to be aligned with.</p>
+
+<p><img class="center" src="/img/firefox-developer-tools/inspector.png"></p>
+
+<h2>Network tab</h2>
+
+<p>Like with the inspector &mdash; I just think it&rsquo;s pretty. And there are some useful things too! The filtering in the right hand box is really good. There is also a view with pie charts showing the page loaded twice: once with an empty browser cache and once with a primed browser cache. It is quite interesting to compare the two when you are slimming your page weight down. To get to it click the button on the lower right hand when on the network tab: <img src="/img/firefox-developer-tools/cache-button.png"></p>
+
+<p>You then get this:</p>
+
+<p><img class="center" src="/img/firefox-developer-tools/primed-cache.png"></p>
+
+<p>See more about the network tab at the developer docs on <a href="https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor">mozilla.org</a></p>
+
+<h2>Mobile version</h2>
+
+<p>I have an Android phone whose factory default browser is Chrome. Firefox can sync between desktop and phone just like Chrome and I think it is as fast. Plus I also just like how it looks.</p>
+
+<h2>So what?</h2>
+
+<p>I don&rsquo;t have a strong enough opinion to start a browser war. I like both Chrome and Firefox and I will continue to use both. This blog post is just to describe the new cool stuff in Firefox and once again &mdash; whether you want to listen or not &mdash; I encourage you to try Firefox and play around with the new dev tools.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-18T20:51:03+02:00" pubdate data-updated="true">May 18<span>th</span>, 2014</time>
         
            | <a href="/2014/05/18/atom-editor-update-problem/#disqus_thread"
@@ -378,233 +473,6 @@ My main worry was that I would &ldquo;forget how to bash&rdquo; and be lost on v
 
         </article>
       
-      
-        <article class="post">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-28T19:45:00+01:00" pubdate data-updated="true">Jan 28<span>th</span>, 2014</time>
-        
-           | <a href="/2014/01/28/placeholder-selectors-in-sass/#disqus_thread"
-             data-disqus-identifier="http://naxoc.net/2014/01/28/placeholder-selectors-in-sass/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder Selectors in SASS</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix"><p>When I found that you can &lsquo;@extend&rsquo; classes in SASS to reuse code and compile to neater CSS I was pretty excited. Here is an example of &lsquo;inheriting&rsquo; code with @extend:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="nc">.speak</span> <span class="p">{</span>
-</span><span class='line'>  <span class="na">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="no">monospace</span><span class="p">;</span>
-</span><span class='line'>  <span class="na">max-width</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
-</span><span class='line'>  <span class="na">clear</span><span class="o">:</span> <span class="no">both</span><span class="p">;</span>
-</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>    <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span><span class="p">;</span>
-</span><span class='line'>    <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-1</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">@extend</span> <span class="nc">.speak</span><span class="o">;</span>
-</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>    <span class="na">color</span><span class="o">:</span> <span class="ni">magenta</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">@extend</span> <span class="nc">.speak</span><span class="o">;</span>
-</span><span class='line'>  <span class="nt">float</span><span class="nd">:</span> <span class="nt">right</span><span class="o">;</span>
-</span><span class='line'>    <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>      <span class="na">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That will compile to:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.speak</span><span class="o">,</span> <span class="nc">.voice-1</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="k">monospace</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">max-width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.speak</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.voice-1</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-1</span> <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">magenta</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So <code>voice-1</code> and <code>voice-2</code> get the same properties as the <code>speak</code> class and the code is reused. All is good, but I don&rsquo;t really have a class called <code>speak</code>. And more importantly &ndash; I want to be able to define my <code>speak</code> selector in a base file that is included in lots of other .scss files so that it becomes truly reusable. But here I run into the problem that every time I include the _base.scss file, the selector gets written to the file including the file. That becomes a mess of repeated code really fast.</p>
-
-<p>I found out about SASS placeholder selectors recently and once again my mind was blown. So a placeholder selector is a selector just like <code>.speak</code>, but instead of a dot (for class) it is prefixed with a percent sign. Selectors prefixed with <code>%</code> don&rsquo;t get rendered to CSS, so I don&rsquo;t have to worry about duplicated code or not actually having a class somewhere called <code>speak</code>. Now I can define the selector in a base file and extend it over and over in included files.</p>
-
-<p>So:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="err">%</span><span class="nt">speak</span> <span class="p">{</span>
-</span><span class='line'>  <span class="na">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="no">monospace</span><span class="p">;</span>
-</span><span class='line'>  <span class="na">max-width</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
-</span><span class='line'>  <span class="na">clear</span><span class="o">:</span> <span class="no">both</span><span class="p">;</span>
-</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>    <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span><span class="p">;</span>
-</span><span class='line'>    <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-1</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">@extend</span> <span class="err">%</span><span class="nt">speak</span><span class="o">;</span>
-</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>    <span class="na">color</span><span class="o">:</span> <span class="ni">magenta</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">@extend</span> <span class="err">%</span><span class="nt">speak</span><span class="o">;</span>
-</span><span class='line'>  <span class="nt">float</span><span class="nd">:</span> <span class="nt">right</span><span class="o">;</span>
-</span><span class='line'>    <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>      <span class="na">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Becomes:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.voice-1</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="k">monospace</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">max-width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-1</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-1</span> <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">magenta</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-</div>
-  
-  
-    <footer>
-      <a class="btn btn-default" rel="full-article" href="/2014/01/28/placeholder-selectors-in-sass/">Read on &rarr;</a>
-    </footer>
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -628,6 +496,8 @@ My main worry was that I would &ldquo;forget how to bash&rdquo; and be lost on v
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/2014/06/03/switching-back-to-firefox/">Switching Back to Firefox</a>
+    
     <a class="list-group-item " href="/2014/05/18/atom-editor-update-problem/">Atom Editor Update Problem</a>
     
     <a class="list-group-item " href="/2014/05/07/switch-between-php-versions-with-homebrew/">Switch Between PHP Versions With Homebrew</a>
@@ -646,13 +516,12 @@ My main worry was that I would &ldquo;forget how to bash&rdquo; and be lost on v
     
     <a class="list-group-item " href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding Unused Images in Your Website Code</a>
     
-    <a class="list-group-item " href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a>
-    
   </div>
 </section>
 <section class="drupal-association">
-<img src="http://drupal.org/files/images/DA-individual-80.png" />
-</section><section class="clearfix">
+<img src="https://assoc.drupal.org/files/da_individual_medium.png" />
+</section>
+<section class="clearfix">
   <h1>On Goodreads</h1>
   <div id="goodreads"></div>
       <style type="text/css" media="screen">

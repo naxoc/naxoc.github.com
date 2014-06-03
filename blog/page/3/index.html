@@ -118,6 +118,102 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-10-22T21:06:00+02:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2013</time>
+        
+           | <a href="/2013/10/22/windows-in-virtualbox-on-the-mac/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2013/10/22/windows-in-virtualbox-on-the-mac/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>I have been doing more CSS and front-end stuff lately. I am having a lot of fun learning more about these things that I have somehow avoided doing for the last many years.</p>
+
+<p>Today I realized that I don&rsquo;t have to own a MS Windows license to run a setup in a VM for browser-testing. While I don&rsquo;t hate Microsoft (anymore) I would really rather not buy a license for a product that I think is horrible. Anyway &ndash; I had no idea that it is super simple to set up a VM running whatever version of IE you want on Windows.</p>
+
+<p>Installing the disk image was easy and I was up and running in very short time. I did however struggle a little with getting Windows to recognize the localhost (my Mac) and the vhosts I have on my local machine. I do all my development on my localhost, so I really needed Windows to understand my vhosts. Here is a writeup of what I did:</p>
+
+<p>Note that I installed Win7 &ndash; the instructions for editing the hosts file might be different on other versions of Windows.</p>
+
+<h2>Install VirtualBox</h2>
+
+<p>First you need to install VirtualBox if you don&rsquo;t have it. Go grab an installer from the <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Downloads page</a> and install it.</p>
+
+<h2>Install the Windows image</h2>
+
+<p>Now go to <a href="http://www.modern.ie/en-us/virtualization-tools">modern.ie&rsquo;s download page</a> and download a virtual machine in the IE version you would like to test stuff on. For this writeup I got an IE9 on Win7. Note that instead of downloading a lot of rar-files, you can just grab a cUrl command at the bottom of the downloadboxes and paste that into your terminal.</p>
+
+<p>This part takes a good while, so be patient.</p>
+
+<h2>Configure networking in VirtualBox</h2>
+
+<p>Before you start Windows, you need to configure networking in VirtualBox. So go to VirtualBox and choose &lsquo;Preferences&rsquo; from the menu (or go Command-,). In the settings window &ndash; click &ldquo;Network&rdquo; and choose the &ldquo;Host-only Networks&rdquo; tab. On that tab there is a plus that you just click and accept. I didn&rsquo;t have to configure anything &ndash; I just got a configuration called <em>vboxnet0</em>. Go ahead and close preferences &ndash; this is a onetime setup thing. All images you install will be able to use these settings (if you want).
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/vbox-networks.png" title="'Host-only Networks'" ></p>
+
+<h2>Boot up Windows</h2>
+
+<p> Now you can double click the image in VirtualBox&rsquo;s main window to start up Windows. Yup &ndash; you get the Windows sound.</p>
+
+<h2>Find the Gateway</h2>
+
+<p>Once Windows has booted up we need to configure the image to talk to our localhost. Click the start button or whatever it&rsquo;s called and type &lsquo;cmd&rsquo; in the textfield to get a &ldquo;terminal&rdquo;. Type <code>ipconfig</code> at the prompt and find the part in the output where it says &ldquo;Default Gateway&rdquo; under the &ldquo;Ethernet adapter Local Area Connection&rdquo;. Note that IP. It should be something like 10.0.x.x. Mine is 10.0.2.2.</p>
+
+<h2>Set file permissions on the hosts file</h2>
+
+<p>Now we need to edit Windows&#8217; hosts-file so that the vhosts we have on our Mac can be used. But first we have to change the file rights on the file. To open the Finder thingy, type <code>explorer C:\Windows\System32\drivers\etc</code> in at the prompt. That gives you the folder with the hosts-file. Now right click on that and select &ldquo;Properties&rdquo;. In the window you get, click the &ldquo;Security&rdquo; tab and then click the &ldquo;Edit button&rdquo;.
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-1.png" title="'File permissions'" >
+ Select the &ldquo;Users&rdquo; group/user and tick the &ldquo;Full control&rdquo; box.
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-2.png">
+All this probably is a horrible idea securitywise, but I don&rsquo;t really care &ndash; I&rsquo;ll use this Windows install very little. Click save and you&rsquo;re good.</p>
+
+<h2>Edit the hosts file</h2>
+
+<p>Now we can edit the hosts file. Double click on the hosts file and choose Notepad in the &ldquo;Open with dialog&rdquo;. Now you can add the urls that you have set up as vhosts on your Mac. Use the 10.0.x.x IP address from the <code>ipconfig</code> command like this for example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>10.0.2.2 d7.dev 
+</span><span class='line'>10.0.2.2 d8.dev </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Save the file and you&rsquo;re done! I made a desktop shortcut to the file because I feel like I&rsquo;ll be back for more vhost-editing soon.</p>
+
+<h2>Use IE!</h2>
+
+<p>Now you can see your Mac&rsquo;s webserver&rsquo;s pages from your VM. So open up IE(!) and go to whatever url you put in the hosts file. I just want to point out one last thing: There is a Firebug Lite to be found in (this) IE if you click the gear in the upper right corner.
+<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/firebug-lite.png"></p>
+
+<p>Hope you found this very verbose walktrough helpful.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-10-06T20:55:00+02:00" pubdate data-updated="true">Oct 6<span>th</span>, 2013</time>
         
            | <a href="/2013/10/06/setting-up-a-file-watcher-for-compass-in-phpstorm/#disqus_thread"
@@ -450,55 +546,6 @@ Find and note the version number you want. In my case I wasn&#8217;t sure, so I 
 
         </article>
       
-      
-        <article class="post">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2011-09-14T09:13:00+02:00" pubdate data-updated="true">Sep 14<span>th</span>, 2011</time>
-        
-           | <a href="/2011/09/14/navigating-with-krumo/#disqus_thread"
-             data-disqus-identifier="http://naxoc.net/2011/09/14/navigating-with-krumo/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/2011/09/14/navigating-with-krumo/">Navigating With Krumo</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix"><p><a href="http://drupal.org/project/devel" title="Devel | drupal.org">The Devel module</a> includes the super helpful <a href="http://krumo.sourceforge.net/">Krumo library</a>. I use <code>dsm()</code> and <code>krumo()</code> all the time. If you are not familiar with Devel, you should try it. Morten Wulff wrote a <a href="https://ratatosk.backpackit.com/pub/1836982-debugging-drupal">demo page for the module</a>.
-<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo.png">
-Today a client suggested that the Devel module Krumo could display the &ldquo;path&rdquo; to an item in an array by right clicking or otherwise interacting with the nested elements in the output from Krumo. I was really excited about that idea &ndash; I can&rsquo;t count the number of times I have tried and failed to target an item deep in a form array or an item in the node object simply because my human brain can&rsquo;t remember a structure like <code>$form['#node']-&gt;content['links']['comment']['#attributes']['class']</code> for more than 3 seconds.</p>
-
-<p>Still very happy with this new idea I went straight home and started to hack away at the Krumo library to make it display the path to a desired item. After looking at the javascript for a while, and saying out loud that Javascript hates me, I realized that the killer feature I was trying to make already exists in Krumo! This is a well hidden gem that I haven&rsquo;t seen before today, so I thought I would share it:
-If you double click an item in the Krumo output it prints the items array &ldquo;path&rdquo; so that you can copy paste it into your code and stop worrying about remembering long array structures.
-<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/krumo_path.png" title="'krumo with array path'" >
-Thanks to Niels Fanøe for the inspiration.</p>
-
-<p>EDIT: I was using the dev D7 version, and the feature just went in this August. Thanks to Mark Theunissen for pointing that out. I also feel less stupid for not discovering the feature before now!</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -522,6 +569,8 @@ Thanks to Niels Fanøe for the inspiration.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/2014/06/03/switching-back-to-firefox/">Switching Back to Firefox</a>
+    
     <a class="list-group-item " href="/2014/05/18/atom-editor-update-problem/">Atom Editor Update Problem</a>
     
     <a class="list-group-item " href="/2014/05/07/switch-between-php-versions-with-homebrew/">Switch Between PHP Versions With Homebrew</a>
@@ -540,13 +589,12 @@ Thanks to Niels Fanøe for the inspiration.</p>
     
     <a class="list-group-item " href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding Unused Images in Your Website Code</a>
     
-    <a class="list-group-item " href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a>
-    
   </div>
 </section>
 <section class="drupal-association">
-<img src="http://drupal.org/files/images/DA-individual-80.png" />
-</section><section class="clearfix">
+<img src="https://assoc.drupal.org/files/da_individual_medium.png" />
+</section>
+<section class="clearfix">
   <h1>On Goodreads</h1>
   <div id="goodreads"></div>
       <style type="text/css" media="screen">

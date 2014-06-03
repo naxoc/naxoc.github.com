@@ -118,6 +118,233 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-28T19:45:00+01:00" pubdate data-updated="true">Jan 28<span>th</span>, 2014</time>
+        
+           | <a href="/2014/01/28/placeholder-selectors-in-sass/#disqus_thread"
+             data-disqus-identifier="http://naxoc.net/2014/01/28/placeholder-selectors-in-sass/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/2014/01/28/placeholder-selectors-in-sass/">Placeholder Selectors in SASS</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><p>When I found that you can &lsquo;@extend&rsquo; classes in SASS to reuse code and compile to neater CSS I was pretty excited. Here is an example of &lsquo;inheriting&rsquo; code with @extend:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="nc">.speak</span> <span class="p">{</span>
+</span><span class='line'>  <span class="na">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="no">monospace</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">max-width</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">clear</span><span class="o">:</span> <span class="no">both</span><span class="p">;</span>
+</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span><span class="p">;</span>
+</span><span class='line'>    <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="nc">.speak</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">color</span><span class="o">:</span> <span class="ni">magenta</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="nc">.speak</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">float</span><span class="nd">:</span> <span class="nt">right</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>      <span class="na">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That will compile to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.speak</span><span class="o">,</span> <span class="nc">.voice-1</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="k">monospace</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">max-width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.speak</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.voice-1</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">magenta</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So <code>voice-1</code> and <code>voice-2</code> get the same properties as the <code>speak</code> class and the code is reused. All is good, but I don&rsquo;t really have a class called <code>speak</code>. And more importantly &ndash; I want to be able to define my <code>speak</code> selector in a base file that is included in lots of other .scss files so that it becomes truly reusable. But here I run into the problem that every time I include the _base.scss file, the selector gets written to the file including the file. That becomes a mess of repeated code really fast.</p>
+
+<p>I found out about SASS placeholder selectors recently and once again my mind was blown. So a placeholder selector is a selector just like <code>.speak</code>, but instead of a dot (for class) it is prefixed with a percent sign. Selectors prefixed with <code>%</code> don&rsquo;t get rendered to CSS, so I don&rsquo;t have to worry about duplicated code or not actually having a class somewhere called <code>speak</code>. Now I can define the selector in a base file and extend it over and over in included files.</p>
+
+<p>So:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="err">%</span><span class="nt">speak</span> <span class="p">{</span>
+</span><span class='line'>  <span class="na">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="no">monospace</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">max-width</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">clear</span><span class="o">:</span> <span class="no">both</span><span class="p">;</span>
+</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span><span class="p">;</span>
+</span><span class='line'>    <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="err">%</span><span class="nt">speak</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">color</span><span class="o">:</span> <span class="ni">magenta</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="err">%</span><span class="nt">speak</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">float</span><span class="nd">:</span> <span class="nt">right</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>      <span class="na">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Becomes:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.voice-1</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="n">Courier</span> <span class="n">New</span><span class="o">,</span> <span class="k">monospace</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">max-width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-1</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">magenta</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.voice-2</span> <span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+</div>
+  
+  
+    <footer>
+      <a class="btn btn-default" rel="full-article" href="/2014/01/28/placeholder-selectors-in-sass/">Read on &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-15T12:45:00+01:00" pubdate data-updated="true">Jan 15<span>th</span>, 2014</time>
         
            | <a href="/2014/01/15/organizing-code-when-using-modernizr-and-scss/#disqus_thread"
@@ -459,102 +686,6 @@ And here is the light version (Tomorrow).
 
         </article>
       
-      
-        <article class="post">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-10-22T21:06:00+02:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2013</time>
-        
-           | <a href="/2013/10/22/windows-in-virtualbox-on-the-mac/#disqus_thread"
-             data-disqus-identifier="http://naxoc.net/2013/10/22/windows-in-virtualbox-on-the-mac/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix"><p>I have been doing more CSS and front-end stuff lately. I am having a lot of fun learning more about these things that I have somehow avoided doing for the last many years.</p>
-
-<p>Today I realized that I don&rsquo;t have to own a MS Windows license to run a setup in a VM for browser-testing. While I don&rsquo;t hate Microsoft (anymore) I would really rather not buy a license for a product that I think is horrible. Anyway &ndash; I had no idea that it is super simple to set up a VM running whatever version of IE you want on Windows.</p>
-
-<p>Installing the disk image was easy and I was up and running in very short time. I did however struggle a little with getting Windows to recognize the localhost (my Mac) and the vhosts I have on my local machine. I do all my development on my localhost, so I really needed Windows to understand my vhosts. Here is a writeup of what I did:</p>
-
-<p>Note that I installed Win7 &ndash; the instructions for editing the hosts file might be different on other versions of Windows.</p>
-
-<h2>Install VirtualBox</h2>
-
-<p>First you need to install VirtualBox if you don&rsquo;t have it. Go grab an installer from the <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Downloads page</a> and install it.</p>
-
-<h2>Install the Windows image</h2>
-
-<p>Now go to <a href="http://www.modern.ie/en-us/virtualization-tools">modern.ie&rsquo;s download page</a> and download a virtual machine in the IE version you would like to test stuff on. For this writeup I got an IE9 on Win7. Note that instead of downloading a lot of rar-files, you can just grab a cUrl command at the bottom of the downloadboxes and paste that into your terminal.</p>
-
-<p>This part takes a good while, so be patient.</p>
-
-<h2>Configure networking in VirtualBox</h2>
-
-<p>Before you start Windows, you need to configure networking in VirtualBox. So go to VirtualBox and choose &lsquo;Preferences&rsquo; from the menu (or go Command-,). In the settings window &ndash; click &ldquo;Network&rdquo; and choose the &ldquo;Host-only Networks&rdquo; tab. On that tab there is a plus that you just click and accept. I didn&rsquo;t have to configure anything &ndash; I just got a configuration called <em>vboxnet0</em>. Go ahead and close preferences &ndash; this is a onetime setup thing. All images you install will be able to use these settings (if you want).
-<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/vbox-networks.png" title="'Host-only Networks'" ></p>
-
-<h2>Boot up Windows</h2>
-
-<p> Now you can double click the image in VirtualBox&rsquo;s main window to start up Windows. Yup &ndash; you get the Windows sound.</p>
-
-<h2>Find the Gateway</h2>
-
-<p>Once Windows has booted up we need to configure the image to talk to our localhost. Click the start button or whatever it&rsquo;s called and type &lsquo;cmd&rsquo; in the textfield to get a &ldquo;terminal&rdquo;. Type <code>ipconfig</code> at the prompt and find the part in the output where it says &ldquo;Default Gateway&rdquo; under the &ldquo;Ethernet adapter Local Area Connection&rdquo;. Note that IP. It should be something like 10.0.x.x. Mine is 10.0.2.2.</p>
-
-<h2>Set file permissions on the hosts file</h2>
-
-<p>Now we need to edit Windows&#8217; hosts-file so that the vhosts we have on our Mac can be used. But first we have to change the file rights on the file. To open the Finder thingy, type <code>explorer C:\Windows\System32\drivers\etc</code> in at the prompt. That gives you the folder with the hosts-file. Now right click on that and select &ldquo;Properties&rdquo;. In the window you get, click the &ldquo;Security&rdquo; tab and then click the &ldquo;Edit button&rdquo;.
-<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-1.png" title="'File permissions'" >
- Select the &ldquo;Users&rdquo; group/user and tick the &ldquo;Full control&rdquo; box.
-<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/win7-edit-file-rights-2.png">
-All this probably is a horrible idea securitywise, but I don&rsquo;t really care &ndash; I&rsquo;ll use this Windows install very little. Click save and you&rsquo;re good.</p>
-
-<h2>Edit the hosts file</h2>
-
-<p>Now we can edit the hosts file. Double click on the hosts file and choose Notepad in the &ldquo;Open with dialog&rdquo;. Now you can add the urls that you have set up as vhosts on your Mac. Use the 10.0.x.x IP address from the <code>ipconfig</code> command like this for example:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>10.0.2.2 d7.dev 
-</span><span class='line'>10.0.2.2 d8.dev </span></code></pre></td></tr></table></div></figure>
-
-
-<p>Save the file and you&rsquo;re done! I made a desktop shortcut to the file because I feel like I&rsquo;ll be back for more vhost-editing soon.</p>
-
-<h2>Use IE!</h2>
-
-<p>Now you can see your Mac&rsquo;s webserver&rsquo;s pages from your VM. So open up IE(!) and go to whatever url you put in the hosts file. I just want to point out one last thing: There is a Firebug Lite to be found in (this) IE if you click the gear in the upper right corner.
-<img class="center" src="https://dl.dropboxusercontent.com/u/157691/cdn/naxocnet/vm/firebug-lite.png"></p>
-
-<p>Hope you found this very verbose walktrough helpful.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -578,6 +709,8 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/2014/06/03/switching-back-to-firefox/">Switching Back to Firefox</a>
+    
     <a class="list-group-item " href="/2014/05/18/atom-editor-update-problem/">Atom Editor Update Problem</a>
     
     <a class="list-group-item " href="/2014/05/07/switch-between-php-versions-with-homebrew/">Switch Between PHP Versions With Homebrew</a>
@@ -596,13 +729,12 @@ All this probably is a horrible idea securitywise, but I don&rsquo;t really care
     
     <a class="list-group-item " href="/2013/10/28/finding-unused-images-in-your-website-code/">Finding Unused Images in Your Website Code</a>
     
-    <a class="list-group-item " href="/2013/10/22/windows-in-virtualbox-on-the-mac/">Windows in VirtualBox on the Mac</a>
-    
   </div>
 </section>
 <section class="drupal-association">
-<img src="http://drupal.org/files/images/DA-individual-80.png" />
-</section><section class="clearfix">
+<img src="https://assoc.drupal.org/files/da_individual_medium.png" />
+</section>
+<section class="clearfix">
   <h1>On Goodreads</h1>
   <div id="goodreads"></div>
       <style type="text/css" media="screen">
